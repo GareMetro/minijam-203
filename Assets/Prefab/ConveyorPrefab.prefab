@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4419726104045664695}
+  - component: {fileID: 2849224877654530544}
   m_Layer: 0
   m_Name: ConveyorPrefab
   m_TagString: Untagged
@@ -32,6 +33,23 @@ Transform:
   - {fileID: 242585333301468813}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2849224877654530544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3292237273507998538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bc1f395a45b6fa40aa7b3bdd86162fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ConveyorBelt
+  LocalTiles:
+  - {x: 0, y: 0}
+  rotation: 0
+  bouffeTickActuel: []
+  bouffeTickSuivant: []
 --- !u!1001 &348870015280888166
 PrefabInstance:
   m_ObjectHideFlags: 0
