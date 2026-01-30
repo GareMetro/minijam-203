@@ -69,3 +69,9 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+.vscode/extensions.json
+.vscode/launch.json
+.vscode/settings.json
+minijam-203.slnx
+ProjectSettings/EditorBuildSettings.asset
+ProjectSettings/EditorBuildSettings.asset
