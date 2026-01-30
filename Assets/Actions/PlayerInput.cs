@@ -98,7 +98,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""id"": ""76d018ce-fcc3-4989-975d-fbd6a3cdf3ba"",
                     ""expectedControlType"": """",
                     ""processors"": """",
-                    ""interactions"": ""Press,Hold"",
+                    ""interactions"": ""Hold"",
                     ""initialStateCheck"": false
                 },
                 {
@@ -107,7 +107,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""id"": ""0d695e70-86ca-4f32-a566-d79a62352d23"",
                     ""expectedControlType"": """",
                     ""processors"": """",
-                    ""interactions"": """",
+                    ""interactions"": ""Hold"",
                     ""initialStateCheck"": false
                 },
                 {
@@ -116,22 +116,13 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""id"": ""0b33b6bf-1894-4b83-832f-73f5ef5cf6d6"",
                     ""expectedControlType"": """",
                     ""processors"": """",
-                    ""interactions"": """",
+                    ""interactions"": ""Hold"",
                     ""initialStateCheck"": false
                 },
                 {
                     ""name"": ""MoveUp"",
                     ""type"": ""Button"",
                     ""id"": ""1879040a-d9ef-4008-a29d-cbeb462bb318"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""HoldRight"",
-                    ""type"": ""Button"",
-                    ""id"": ""67265d49-157d-4afa-b518-1dccf608bfc0"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": ""Hold"",
@@ -248,17 +239,6 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""action"": ""MoveUp"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""ae3938ad-c4e6-4522-911e-a38d48c026f1"",
-                    ""path"": """",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""HoldRight"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -271,7 +251,6 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         m_PlayerActions_MoveLeft = m_PlayerActions.FindAction("MoveLeft", throwIfNotFound: true);
         m_PlayerActions_MoveDown = m_PlayerActions.FindAction("MoveDown", throwIfNotFound: true);
         m_PlayerActions_MoveUp = m_PlayerActions.FindAction("MoveUp", throwIfNotFound: true);
-        m_PlayerActions_HoldRight = m_PlayerActions.FindAction("HoldRight", throwIfNotFound: true);
     }
 
     ~@PlayerInput()
@@ -356,7 +335,6 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     private readonly InputAction m_PlayerActions_MoveLeft;
     private readonly InputAction m_PlayerActions_MoveDown;
     private readonly InputAction m_PlayerActions_MoveUp;
-    private readonly InputAction m_PlayerActions_HoldRight;
     /// <summary>
     /// Provides access to input actions defined in input action map "PlayerActions".
     /// </summary>
@@ -384,10 +362,6 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "PlayerActions/MoveUp".
         /// </summary>
         public InputAction @MoveUp => m_Wrapper.m_PlayerActions_MoveUp;
-        /// <summary>
-        /// Provides access to the underlying input action "PlayerActions/HoldRight".
-        /// </summary>
-        public InputAction @HoldRight => m_Wrapper.m_PlayerActions_HoldRight;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -426,9 +400,6 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @MoveUp.started += instance.OnMoveUp;
             @MoveUp.performed += instance.OnMoveUp;
             @MoveUp.canceled += instance.OnMoveUp;
-            @HoldRight.started += instance.OnHoldRight;
-            @HoldRight.performed += instance.OnHoldRight;
-            @HoldRight.canceled += instance.OnHoldRight;
         }
 
         /// <summary>
@@ -452,9 +423,6 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @MoveUp.started -= instance.OnMoveUp;
             @MoveUp.performed -= instance.OnMoveUp;
             @MoveUp.canceled -= instance.OnMoveUp;
-            @HoldRight.started -= instance.OnHoldRight;
-            @HoldRight.performed -= instance.OnHoldRight;
-            @HoldRight.canceled -= instance.OnHoldRight;
         }
 
         /// <summary>
@@ -523,12 +491,5 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnMoveUp(InputAction.CallbackContext context);
-        /// <summary>
-        /// Method invoked when associated input action "HoldRight" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-        /// </summary>
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnHoldRight(InputAction.CallbackContext context);
     }
 }

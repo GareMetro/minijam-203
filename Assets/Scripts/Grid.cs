@@ -17,22 +17,16 @@ public class Grid : MonoBehaviour
     [SerializeField]
     public Vector2Int SelectedTile;
 
-    private Dictionary<Vector2Int, Coroutine> coroutines = new();
+    [SerializeField] float keyRepeatDelay = 0.1f;
 
-    private void MoveInteraction(InputAction.CallbackContext context, Vector2Int movement)
-    {
-        if (context.interaction is PressInteraction)
-            MoveCursor(movement);
-        if (context.interaction is HoldInteraction)
-            coroutines.Add(movement, StartCoroutine(MovementRepeat(movement)));
-    }
+    private Dictionary<Vector2Int, Coroutine> coroutines = new();
 
     private IEnumerator MovementRepeat(Vector2Int movement)
     {
         while(true)
         {
             MoveCursor(movement);
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(keyRepeatDelay);
         }
 
     }
@@ -41,47 +35,34 @@ public class Grid : MonoBehaviour
     {
         Controls = new();
 
+        Controls.PlayerActions.MoveRight.performed += (context) => StartHold(Vector2Int.right);
+        Controls.PlayerActions.MoveLeft.performed += (context) => StartHold(Vector2Int.left);
+        Controls.PlayerActions.MoveUp.performed += (context) => StartHold(Vector2Int.up);
+        Controls.PlayerActions.MoveDown.performed += (context) => StartHold(Vector2Int.down);
 
-        Controls.PlayerActions.MoveRight.performed += (context) => MoveInteraction(context, Vector2Int.right);
-        Controls.PlayerActions.MoveLeft.performed += (context) => MoveInteraction(context, Vector2Int.left);
-        Controls.PlayerActions.MoveUp.performed += (context) => MoveInteraction(context, Vector2Int.up);
-        Controls.PlayerActions.MoveDown.performed += (context) => MoveInteraction(context, Vector2Int.down);
+        Controls.PlayerActions.MoveRight.started += (context) => MoveCursor(Vector2Int.right);
+        Controls.PlayerActions.MoveLeft.started += (context) => MoveCursor(Vector2Int.left);
+        Controls.PlayerActions.MoveUp.started += (context) => MoveCursor(Vector2Int.up);
+        Controls.PlayerActions.MoveDown.started += (context) => MoveCursor(Vector2Int.down);
 
-        Controls.PlayerActions.MoveRight.canceled += (context) =>
+        Controls.PlayerActions.MoveRight.canceled += (context) => StopHold(Vector2Int.right);
+        Controls.PlayerActions.MoveUp.canceled += (context) => StopHold(Vector2Int.up);
+        Controls.PlayerActions.MoveLeft.canceled += (context) => StopHold(Vector2Int.left);
+        Controls.PlayerActions.MoveDown.canceled += (context) => StopHold(Vector2Int.down);
+    }
+
+    private void StartHold(Vector2Int dir)
+    {
+        coroutines.Add(dir, StartCoroutine(MovementRepeat(dir)));
+    }
+
+    private void StopHold(Vector2Int dir)
+    {
+        if (coroutines.TryGetValue(dir, out Coroutine c))
         {
-            if (coroutines[Vector2Int.right] != null)
-            {
-                StopCoroutine(coroutines[Vector2Int.right]);
-                coroutines.Remove(Vector2Int.right);
-            }
-        };
-
-        Controls.PlayerActions.MoveLeft.canceled += (context) =>
-        {
-            if (coroutines[Vector2Int.left] != null)
-            {
-                StopCoroutine(coroutines[Vector2Int.left]);
-                coroutines.Remove(Vector2Int.left);
-            }
-        };
-
-        Controls.PlayerActions.MoveUp.canceled += (context) =>
-        {
-            if (coroutines[Vector2Int.up] != null)
-            {
-                StopCoroutine(coroutines[Vector2Int.up]);
-                coroutines.Remove(Vector2Int.up);
-            }
-        };
-
-        Controls.PlayerActions.MoveDown.canceled += (context) =>
-        {
-            if (coroutines[Vector2Int.down] != null)
-            {
-                StopCoroutine(coroutines[Vector2Int.down]);
-                coroutines.Remove(Vector2Int.down);
-            }
-        };
+            StopCoroutine(c);
+            coroutines.Remove(dir);
+        }
     }
 
     private void OnEnable()
