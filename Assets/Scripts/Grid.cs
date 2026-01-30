@@ -81,6 +81,8 @@ public class Grid : MonoBehaviour
         Controls.PlayerActions.MoveUp.canceled += (context) => StopHold(Vector2Int.up);
         Controls.PlayerActions.MoveLeft.canceled += (context) => StopHold(Vector2Int.left);
         Controls.PlayerActions.MoveDown.canceled += (context) => StopHold(Vector2Int.down);
+
+        StartCoroutine(TickBuildings());
     }
 
     private void StartHold(Vector2Int dir)
