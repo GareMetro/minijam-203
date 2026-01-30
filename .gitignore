@@ -75,3 +75,6 @@ crashlytics-build.properties
 minijam-203.slnx
 ProjectSettings/EditorBuildSettings.asset
 ProjectSettings/EditorBuildSettings.asset
+
+#JetBrains Rider idea
+.idea
