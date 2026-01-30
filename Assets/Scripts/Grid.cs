@@ -5,9 +5,12 @@ using System.Collections;
 using UnityEngine.InputSystem.Interactions;
 using UnityEngine.InputSystem;
 using Unity.VisualScripting;
+using UnityEngine.Events;
 
 public class Grid : MonoBehaviour
 {
+    public static Grid GridInstance;
+
     private PlayerInput Controls;
     [SerializeField]
     public Vector2Int Size;
@@ -20,6 +23,18 @@ public class Grid : MonoBehaviour
     [SerializeField] float keyRepeatDelay = 0.1f;
 
     private Dictionary<Vector2Int, Coroutine> coroutines = new();
+    [SerializeField]
+    public float TickDuration = 1;
+
+    public UnityAction OnTick;
+
+    private void MoveInteraction(InputAction.CallbackContext context, Vector2Int movement)
+    {
+        if (context.interaction is PressInteraction)
+            MoveCursor(movement);
+        if (context.interaction is HoldInteraction)
+            coroutines.Add(movement, StartCoroutine(MovementRepeat(movement)));
+    }
 
     private IEnumerator MovementRepeat(Vector2Int movement)
     {
@@ -30,9 +45,26 @@ public class Grid : MonoBehaviour
         }
 
     }
+    private IEnumerator TickBuildings()
+    {
+        while(true)
+        {
+            OnTick?.Invoke();
+            yield return new WaitForSeconds(TickDuration);
+        }
+    }
+
 
     private void Awake()
     {
+        if (GridInstance)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        
+        GridInstance = this;
+
         Controls = new();
 
         Controls.PlayerActions.MoveRight.performed += (context) => StartHold(Vector2Int.right);
