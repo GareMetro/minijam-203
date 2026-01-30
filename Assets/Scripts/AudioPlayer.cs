@@ -10,7 +10,13 @@ public class AudioPlayer : MonoBehaviour
 
     private void Awake() 
     {
-        selfSource = GetComponent<AudioSource>();        
+        selfSource = GetComponent<AudioSource>();
+    }
+
+    void Update()
+    {
+        if (isMusic)
+            selfSource.volume = AudioManager.Instance.generalVolume * AudioManager.Instance.musicVolume;
     }
 
     public void PlaySound(int clipId)
