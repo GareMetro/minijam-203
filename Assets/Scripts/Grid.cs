@@ -28,6 +28,11 @@ public class Grid : MonoBehaviour
 
     public UnityAction OnTick;
 
+    [SerializeField]
+    public float TickDuration = 1;
+
+    public UnityAction OnTick;
+
     private void MoveInteraction(InputAction.CallbackContext context, Vector2Int movement)
     {
         if (context.interaction is PressInteraction)
