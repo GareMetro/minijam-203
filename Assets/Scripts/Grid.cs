@@ -4,29 +4,24 @@ using System.Collections.Generic;
 using System.Collections;
 using UnityEngine.InputSystem.Interactions;
 using UnityEngine.InputSystem;
-using Unity.VisualScripting;
 using UnityEngine.Events;
 
 public class Grid : MonoBehaviour
 {
     public static Grid GridInstance;
 
-    private PlayerInput Controls;
     [SerializeField]
     public Vector2Int Size;
 
-    [SerializeField] private float tileSize = 10f;
+    [SerializeField] public float tileSize = 10f;
 
     private List<List<Tile>> PlayGrid;
 
     [SerializeField]
-    public Vector2Int SelectedTile;
-
-    [SerializeField] float keyRepeatDelay = 0.1f;
-
-    private Dictionary<Vector2Int, Coroutine> coroutines = new();
-    [SerializeField]
     public float TickDuration = 1;
+
+    [SerializeField]
+    public BatiInfos batiInfos;
 
     public ConveyorBelt TESTCONVEYOR1;
     public ConveyorBelt TESTCONVEYOR2;
@@ -36,25 +31,7 @@ public class Grid : MonoBehaviour
     public UnityAction OnTick;
     public UnityAction NextTick;
 
-    private GameObject cursor;
-
-    private void MoveInteraction(InputAction.CallbackContext context, Vector2Int movement)
-    {
-        if (context.interaction is PressInteraction)
-            MoveCursor(movement);
-        if (context.interaction is HoldInteraction)
-            coroutines.Add(movement, StartCoroutine(MovementRepeat(movement)));
-    }
-
-    private IEnumerator MovementRepeat(Vector2Int movement)
-    {
-        while(true)
-        {
-            MoveCursor(movement);
-            yield return new WaitForSeconds(keyRepeatDelay);
-        }
-
-    }
+    
     private IEnumerator TickBuildings()
     {
         while(true)
@@ -75,32 +52,10 @@ public class Grid : MonoBehaviour
         }
         
         GridInstance = this;
-
-        Controls = new();
-
-        Controls.PlayerActions.MoveRight.performed += (context) => StartHold(Vector2Int.right);
-        Controls.PlayerActions.MoveLeft.performed += (context) => StartHold(Vector2Int.left);
-        Controls.PlayerActions.MoveUp.performed += (context) => StartHold(Vector2Int.up);
-        Controls.PlayerActions.MoveDown.performed += (context) => StartHold(Vector2Int.down);
-
-        Controls.PlayerActions.MoveRight.started += (context) => MoveCursor(Vector2Int.right);
-        Controls.PlayerActions.MoveLeft.started += (context) => MoveCursor(Vector2Int.left);
-        Controls.PlayerActions.MoveUp.started += (context) => MoveCursor(Vector2Int.up);
-        Controls.PlayerActions.MoveDown.started += (context) => MoveCursor(Vector2Int.down);
-
-        Controls.PlayerActions.MoveRight.canceled += (context) => StopHold(Vector2Int.right);
-        Controls.PlayerActions.MoveUp.canceled += (context) => StopHold(Vector2Int.up);
-        Controls.PlayerActions.MoveLeft.canceled += (context) => StopHold(Vector2Int.left);
-        Controls.PlayerActions.MoveDown.canceled += (context) => StopHold(Vector2Int.down);
-        
-        cursor = GameObject.CreatePrimitive(PrimitiveType.Cube);
-        MeshRenderer meshRenderer = cursor.GetComponent<MeshRenderer>();
-        meshRenderer.material.color = Color.white;
         
         StartCoroutine(TickBuildings());
         CreateGrid();
     }
-
     private void CreateGrid()
     {
         for (int i = 0; i < Size.x; ++i)
@@ -112,34 +67,6 @@ public class Grid : MonoBehaviour
                 newPlane.transform.localScale = (tileSize/10f) * 0.95f * Vector3.one;
             }
         }
-    }
-
-    private void StartHold(Vector2Int dir)
-    {
-        coroutines.Add(dir, StartCoroutine(MovementRepeat(dir)));
-    }
-
-    private void StopHold(Vector2Int dir)
-    {
-        if (coroutines.TryGetValue(dir, out Coroutine c))
-        {
-            StopCoroutine(c);
-            coroutines.Remove(dir);
-        }
-    }
-
-    private void OnEnable()
-    {
-        Controls.Enable();
-    }
-
-    private void OnDisable()
-    {
-        Controls.Disable();
-    }
-    private void OnDestroy()
-    {
-        Controls.Dispose();
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -179,13 +106,7 @@ public class Grid : MonoBehaviour
     {
     }
 
-    void MoveCursor(Vector2Int move)
-    {
-        SelectedTile += move;
-        SelectedTile.Clamp(new Vector2Int(0, 0), Size - new Vector2Int(1, 1));
-        
-        cursor.transform.position = new Vector3(SelectedTile.x * tileSize, 3f, SelectedTile.y * tileSize);
-    }
+    
 
     public Tile GetTile(Vector2Int position)
     {

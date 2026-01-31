@@ -127,6 +127,114 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": ""Hold"",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Select1"",
+                    ""type"": ""Button"",
+                    ""id"": ""a8892bd8-a379-41f0-bd39-9e9ba392d3a4"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Select2"",
+                    ""type"": ""Button"",
+                    ""id"": ""f7d374a3-b33f-4c88-b40e-8be148ecf94a"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Select3"",
+                    ""type"": ""Button"",
+                    ""id"": ""0fd6de19-b122-4f2a-9f86-c09c2750e744"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Select4"",
+                    ""type"": ""Button"",
+                    ""id"": ""ab47d8cd-e81d-4db8-94f1-94aed10f3120"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Select5"",
+                    ""type"": ""Button"",
+                    ""id"": ""5766c667-ab65-4de0-a6b2-5cbb36b8edae"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Select6"",
+                    ""type"": ""Button"",
+                    ""id"": ""02d4aaa5-6b7d-4bd3-8989-34b5a2412f03"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Select7"",
+                    ""type"": ""Button"",
+                    ""id"": ""ae359300-6872-410f-bb44-b30b9445fb8d"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Select8"",
+                    ""type"": ""Button"",
+                    ""id"": ""688e8e3b-4d7d-4f6d-a750-29070961000d"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Select9"",
+                    ""type"": ""Button"",
+                    ""id"": ""ea8807fe-05ae-4028-be2d-7d3b4a428972"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Select0"",
+                    ""type"": ""Button"",
+                    ""id"": ""e9bb9a62-fa63-457d-9885-f9d04f503a67"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SelectLeft"",
+                    ""type"": ""Button"",
+                    ""id"": ""59d77b8d-3f30-4fed-a793-a8d5a8a563be"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SelectRight"",
+                    ""type"": ""Button"",
+                    ""id"": ""3f669059-39ab-4095-84c5-34a732407b35"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -239,6 +347,138 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""action"": ""MoveUp"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a27c1728-1943-43e1-b7f3-267a20e969b2"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Select1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""15dcdbf4-d230-4463-9d1d-1b6384c8d73b"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Select2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""59df854e-4030-4ba5-969a-83d4357c868b"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Select3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""65290f7f-9e65-4ac3-8f0f-47377bcfa319"",
+                    ""path"": ""<Keyboard>/4"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Select4"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""31523dcb-4d13-4031-8b7c-de7ad275b2f0"",
+                    ""path"": ""<Keyboard>/5"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Select5"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8b4144ef-59b3-4c91-ae8d-20090f2edcc6"",
+                    ""path"": ""<Keyboard>/6"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Select6"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d06848ab-5358-4504-bc86-037016cf7a4f"",
+                    ""path"": ""<Keyboard>/7"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Select7"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""23ea634c-073c-42fa-beaa-8ea8f795af70"",
+                    ""path"": ""<Keyboard>/8"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Select8"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0a39dfb9-783a-42b1-a82c-b81c866c81e9"",
+                    ""path"": ""<Keyboard>/9"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Select9"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""44fb566a-cb85-4055-99f9-fba5515dddb5"",
+                    ""path"": ""<Keyboard>/0"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Select0"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0f415d93-8245-4d83-b040-ce0213525750"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SelectLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ad39ea70-e504-49d0-8c85-4b44b739cc67"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SelectRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -251,6 +491,18 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         m_PlayerActions_MoveLeft = m_PlayerActions.FindAction("MoveLeft", throwIfNotFound: true);
         m_PlayerActions_MoveDown = m_PlayerActions.FindAction("MoveDown", throwIfNotFound: true);
         m_PlayerActions_MoveUp = m_PlayerActions.FindAction("MoveUp", throwIfNotFound: true);
+        m_PlayerActions_Select1 = m_PlayerActions.FindAction("Select1", throwIfNotFound: true);
+        m_PlayerActions_Select2 = m_PlayerActions.FindAction("Select2", throwIfNotFound: true);
+        m_PlayerActions_Select3 = m_PlayerActions.FindAction("Select3", throwIfNotFound: true);
+        m_PlayerActions_Select4 = m_PlayerActions.FindAction("Select4", throwIfNotFound: true);
+        m_PlayerActions_Select5 = m_PlayerActions.FindAction("Select5", throwIfNotFound: true);
+        m_PlayerActions_Select6 = m_PlayerActions.FindAction("Select6", throwIfNotFound: true);
+        m_PlayerActions_Select7 = m_PlayerActions.FindAction("Select7", throwIfNotFound: true);
+        m_PlayerActions_Select8 = m_PlayerActions.FindAction("Select8", throwIfNotFound: true);
+        m_PlayerActions_Select9 = m_PlayerActions.FindAction("Select9", throwIfNotFound: true);
+        m_PlayerActions_Select0 = m_PlayerActions.FindAction("Select0", throwIfNotFound: true);
+        m_PlayerActions_SelectLeft = m_PlayerActions.FindAction("SelectLeft", throwIfNotFound: true);
+        m_PlayerActions_SelectRight = m_PlayerActions.FindAction("SelectRight", throwIfNotFound: true);
     }
 
     ~@PlayerInput()
@@ -335,6 +587,18 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     private readonly InputAction m_PlayerActions_MoveLeft;
     private readonly InputAction m_PlayerActions_MoveDown;
     private readonly InputAction m_PlayerActions_MoveUp;
+    private readonly InputAction m_PlayerActions_Select1;
+    private readonly InputAction m_PlayerActions_Select2;
+    private readonly InputAction m_PlayerActions_Select3;
+    private readonly InputAction m_PlayerActions_Select4;
+    private readonly InputAction m_PlayerActions_Select5;
+    private readonly InputAction m_PlayerActions_Select6;
+    private readonly InputAction m_PlayerActions_Select7;
+    private readonly InputAction m_PlayerActions_Select8;
+    private readonly InputAction m_PlayerActions_Select9;
+    private readonly InputAction m_PlayerActions_Select0;
+    private readonly InputAction m_PlayerActions_SelectLeft;
+    private readonly InputAction m_PlayerActions_SelectRight;
     /// <summary>
     /// Provides access to input actions defined in input action map "PlayerActions".
     /// </summary>
@@ -362,6 +626,54 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "PlayerActions/MoveUp".
         /// </summary>
         public InputAction @MoveUp => m_Wrapper.m_PlayerActions_MoveUp;
+        /// <summary>
+        /// Provides access to the underlying input action "PlayerActions/Select1".
+        /// </summary>
+        public InputAction @Select1 => m_Wrapper.m_PlayerActions_Select1;
+        /// <summary>
+        /// Provides access to the underlying input action "PlayerActions/Select2".
+        /// </summary>
+        public InputAction @Select2 => m_Wrapper.m_PlayerActions_Select2;
+        /// <summary>
+        /// Provides access to the underlying input action "PlayerActions/Select3".
+        /// </summary>
+        public InputAction @Select3 => m_Wrapper.m_PlayerActions_Select3;
+        /// <summary>
+        /// Provides access to the underlying input action "PlayerActions/Select4".
+        /// </summary>
+        public InputAction @Select4 => m_Wrapper.m_PlayerActions_Select4;
+        /// <summary>
+        /// Provides access to the underlying input action "PlayerActions/Select5".
+        /// </summary>
+        public InputAction @Select5 => m_Wrapper.m_PlayerActions_Select5;
+        /// <summary>
+        /// Provides access to the underlying input action "PlayerActions/Select6".
+        /// </summary>
+        public InputAction @Select6 => m_Wrapper.m_PlayerActions_Select6;
+        /// <summary>
+        /// Provides access to the underlying input action "PlayerActions/Select7".
+        /// </summary>
+        public InputAction @Select7 => m_Wrapper.m_PlayerActions_Select7;
+        /// <summary>
+        /// Provides access to the underlying input action "PlayerActions/Select8".
+        /// </summary>
+        public InputAction @Select8 => m_Wrapper.m_PlayerActions_Select8;
+        /// <summary>
+        /// Provides access to the underlying input action "PlayerActions/Select9".
+        /// </summary>
+        public InputAction @Select9 => m_Wrapper.m_PlayerActions_Select9;
+        /// <summary>
+        /// Provides access to the underlying input action "PlayerActions/Select0".
+        /// </summary>
+        public InputAction @Select0 => m_Wrapper.m_PlayerActions_Select0;
+        /// <summary>
+        /// Provides access to the underlying input action "PlayerActions/SelectLeft".
+        /// </summary>
+        public InputAction @SelectLeft => m_Wrapper.m_PlayerActions_SelectLeft;
+        /// <summary>
+        /// Provides access to the underlying input action "PlayerActions/SelectRight".
+        /// </summary>
+        public InputAction @SelectRight => m_Wrapper.m_PlayerActions_SelectRight;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -400,6 +712,42 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @MoveUp.started += instance.OnMoveUp;
             @MoveUp.performed += instance.OnMoveUp;
             @MoveUp.canceled += instance.OnMoveUp;
+            @Select1.started += instance.OnSelect1;
+            @Select1.performed += instance.OnSelect1;
+            @Select1.canceled += instance.OnSelect1;
+            @Select2.started += instance.OnSelect2;
+            @Select2.performed += instance.OnSelect2;
+            @Select2.canceled += instance.OnSelect2;
+            @Select3.started += instance.OnSelect3;
+            @Select3.performed += instance.OnSelect3;
+            @Select3.canceled += instance.OnSelect3;
+            @Select4.started += instance.OnSelect4;
+            @Select4.performed += instance.OnSelect4;
+            @Select4.canceled += instance.OnSelect4;
+            @Select5.started += instance.OnSelect5;
+            @Select5.performed += instance.OnSelect5;
+            @Select5.canceled += instance.OnSelect5;
+            @Select6.started += instance.OnSelect6;
+            @Select6.performed += instance.OnSelect6;
+            @Select6.canceled += instance.OnSelect6;
+            @Select7.started += instance.OnSelect7;
+            @Select7.performed += instance.OnSelect7;
+            @Select7.canceled += instance.OnSelect7;
+            @Select8.started += instance.OnSelect8;
+            @Select8.performed += instance.OnSelect8;
+            @Select8.canceled += instance.OnSelect8;
+            @Select9.started += instance.OnSelect9;
+            @Select9.performed += instance.OnSelect9;
+            @Select9.canceled += instance.OnSelect9;
+            @Select0.started += instance.OnSelect0;
+            @Select0.performed += instance.OnSelect0;
+            @Select0.canceled += instance.OnSelect0;
+            @SelectLeft.started += instance.OnSelectLeft;
+            @SelectLeft.performed += instance.OnSelectLeft;
+            @SelectLeft.canceled += instance.OnSelectLeft;
+            @SelectRight.started += instance.OnSelectRight;
+            @SelectRight.performed += instance.OnSelectRight;
+            @SelectRight.canceled += instance.OnSelectRight;
         }
 
         /// <summary>
@@ -423,6 +771,42 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @MoveUp.started -= instance.OnMoveUp;
             @MoveUp.performed -= instance.OnMoveUp;
             @MoveUp.canceled -= instance.OnMoveUp;
+            @Select1.started -= instance.OnSelect1;
+            @Select1.performed -= instance.OnSelect1;
+            @Select1.canceled -= instance.OnSelect1;
+            @Select2.started -= instance.OnSelect2;
+            @Select2.performed -= instance.OnSelect2;
+            @Select2.canceled -= instance.OnSelect2;
+            @Select3.started -= instance.OnSelect3;
+            @Select3.performed -= instance.OnSelect3;
+            @Select3.canceled -= instance.OnSelect3;
+            @Select4.started -= instance.OnSelect4;
+            @Select4.performed -= instance.OnSelect4;
+            @Select4.canceled -= instance.OnSelect4;
+            @Select5.started -= instance.OnSelect5;
+            @Select5.performed -= instance.OnSelect5;
+            @Select5.canceled -= instance.OnSelect5;
+            @Select6.started -= instance.OnSelect6;
+            @Select6.performed -= instance.OnSelect6;
+            @Select6.canceled -= instance.OnSelect6;
+            @Select7.started -= instance.OnSelect7;
+            @Select7.performed -= instance.OnSelect7;
+            @Select7.canceled -= instance.OnSelect7;
+            @Select8.started -= instance.OnSelect8;
+            @Select8.performed -= instance.OnSelect8;
+            @Select8.canceled -= instance.OnSelect8;
+            @Select9.started -= instance.OnSelect9;
+            @Select9.performed -= instance.OnSelect9;
+            @Select9.canceled -= instance.OnSelect9;
+            @Select0.started -= instance.OnSelect0;
+            @Select0.performed -= instance.OnSelect0;
+            @Select0.canceled -= instance.OnSelect0;
+            @SelectLeft.started -= instance.OnSelectLeft;
+            @SelectLeft.performed -= instance.OnSelectLeft;
+            @SelectLeft.canceled -= instance.OnSelectLeft;
+            @SelectRight.started -= instance.OnSelectRight;
+            @SelectRight.performed -= instance.OnSelectRight;
+            @SelectRight.canceled -= instance.OnSelectRight;
         }
 
         /// <summary>
@@ -491,5 +875,89 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnMoveUp(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Select1" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnSelect1(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Select2" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnSelect2(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Select3" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnSelect3(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Select4" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnSelect4(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Select5" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnSelect5(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Select6" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnSelect6(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Select7" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnSelect7(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Select8" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnSelect8(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Select9" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnSelect9(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Select0" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnSelect0(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "SelectLeft" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnSelectLeft(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "SelectRight" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnSelectRight(InputAction.CallbackContext context);
     }
 }
