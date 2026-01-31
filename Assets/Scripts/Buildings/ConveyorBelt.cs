@@ -20,12 +20,9 @@ public class ConveyorBelt : AbstractBuilding
 
     [SerializeField] Mover mover;
 
-    Vector2Int TileSortie; //tile vers où vont sortir 
 
     protected override void Start() {
         base.Start();
-
-        TileSortie = ToWorldSpace(OutputTiles[0].Direction);
 
         if(TESTFIRST)
         {
@@ -33,28 +30,14 @@ public class ConveyorBelt : AbstractBuilding
         }
     }
 
-    public override void TickBuilding() //1 tick par seconde
+    public override void ProcessInputs()
     {
-        if(bouffeTickActuel.Count > 0)
+        base.ProcessInputs();
+
+        foreach (var item in bouffesTickActuel)
         {
-            Tile tile = GridInstance.GetTile(TileSortie);
-            if (tile.ContentObject == null || tile == null)
-            {
-                // TODO add food drop "animation"
-                Destroy(bouffeTickActuel[0].food.gameObject); //temporary !
-                return;
-            }
-            // else we ask the mover to do things
-            foreach (var item in bouffeTickActuel)
-            {
-                //if(item.tile == Vector2Int.zero)
-                {
-                    mover.MoveObject(item.food.transform);
-                }
-            }
-            // and pass the food data-wise
-            tile?.ContentObject.bouffeTickSuivant.Add(bouffeTickActuel[0]);
-            // TODO if tile.ContentObject.bouffeTickSuivant pas vide ET est Conveyor Belt, tout retirer et remplacer par du caca
+            mover.MoveObject(item.transform);
         }
     }
+
 }

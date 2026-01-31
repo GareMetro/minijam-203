@@ -32,15 +32,15 @@ public class Grid : MonoBehaviour
     public List<AbstractBuilding> TESTBUILDINGS;
     public List<Vector2Int> TESTBUILDINGSPOS;
 
-    public UnityAction OnTick;
-    public UnityAction NextTick;
+    public UnityAction GiveOutput;
+    public UnityAction ProcessInputs;
 
     private IEnumerator TickBuildings()
     {
         while(true)
         {
-            NextTick?.Invoke();
-            OnTick?.Invoke();
+            GiveOutput?.Invoke();
+            ProcessInputs?.Invoke();
             yield return new WaitForSeconds(TickDuration);
         }
     }
@@ -112,15 +112,21 @@ public class Grid : MonoBehaviour
         return PlayGrid[position.x][position.y];
     }
 
+    public bool TryGetTile(Vector2Int position, out Tile tile)
+    {
+        tile = GetTile(position);
+        return tile != null;
+    }
+
     public void AddObject(AbstractBuilding building, Vector2Int pos, int rot)
     {
-        //Si la tile est occupée
+        //Si la tile est occupï¿½e
         if (GetTile(pos).ContentObject) 
         {
             return;
         }
 
-        //on créé une instance du type séléctioné
+        //on crï¿½ï¿½ une instance du type sï¿½lï¿½ctionï¿½
         GameObject added = Instantiate(building.gameObject, new Vector3((pos.x) * tileSize, 0f, pos.y * tileSize), Quaternion.AngleAxis(- rot * 90f, Vector3.up));
 
         AbstractBuilding Addedbuilding = added.GetComponent<AbstractBuilding>();

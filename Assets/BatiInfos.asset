@@ -16,9 +16,12 @@ MonoBehaviour:
   - batiPrefab: {fileID: 2849224877654530544, guid: 22ec5af967aec9d989fbf76f1b6f6aea, type: 3}
     holoPrefab: {fileID: 0}
     icon: {fileID: 0}
-  - batiPrefab: {fileID: 6254647307260134877, guid: 28d8e2094ce8c85a2b45619e61bfc290, type: 3}
+    inputAction: {fileID: -1644453454207993798, guid: 1bc8ccc1a1dcd844f8c8348e5b957de9, type: 3}
+  - batiPrefab: {fileID: 0}
     holoPrefab: {fileID: 0}
     icon: {fileID: 0}
-  - batiPrefab: {fileID: 6664970647668242297, guid: 6781669dd23a78dd6b2189169b7f95ea, type: 3}
+    inputAction: {fileID: 0}
+  - batiPrefab: {fileID: 0}
     holoPrefab: {fileID: 0}
     icon: {fileID: 0}
+    inputAction: {fileID: 0}

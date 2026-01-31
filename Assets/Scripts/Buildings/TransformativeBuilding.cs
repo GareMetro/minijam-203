@@ -13,11 +13,11 @@ public class TransformativeBuilding : AbstractBuilding
 {
     public List<Recipe> recipes;
 
-    public override void TickBuilding()
+    public override void GiveOutput()
     {
         foreach (var recipe in recipes)
         {
-            if (recipe.ingredients.All(f => bouffeTickActuel.Any(fd => fd.food == f)) && recipe.ingredients.Count == bouffeTickActuel.Count)
+            if (recipe.ingredients.All(f => bouffesTickActuel.Any(fd => fd == f)) && recipe.ingredients.Count == bouffesTickActuel.Count)
             {
                 Debug.Log("Recipe found !");
                 // Recipe.outputs.Count should always be equal to (or maybe lesser than) OutputTiles.Count
@@ -28,7 +28,7 @@ public class TransformativeBuilding : AbstractBuilding
                     if (tile.ContentObject == null)
                     {
                         // TODO add food drop "animation"
-                        Destroy(bouffeTickActuel[0].food.gameObject); //temporary !
+                        Destroy(bouffesTickActuel[0].gameObject); //temporary !
                         return;
                     }
                     tile?.ContentObject.bouffeTickSuivant.Add(
@@ -43,7 +43,7 @@ public class TransformativeBuilding : AbstractBuilding
             return;
         }
         // if we get here, this means the food is either invalid for recipe or we have no food at all : let's check those cases
-        if (bouffeTickActuel.Count <= 0)
+        if (bouffesTickActuel.Count <= 0)
             return;
         else
         {

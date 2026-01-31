@@ -22,6 +22,21 @@ public class Mover : MonoBehaviour
         
         toMove.DOPath(positions.ToArray(), Grid.GridInstance.TickDuration).SetEase(Ease.Linear);
     }
+
+    public IEnumerator MoveObjectRoutine(Transform toMove)
+    {
+        List<Vector3> positions = new()
+        {
+            toMove.position
+        };
+
+        foreach(Transform wayPoint in wayPoints)
+            positions.Add(wayPoint.transform.position);
+        
+        var tween = toMove.DOPath(positions.ToArray(), Grid.GridInstance.TickDuration).SetEase(Ease.Linear);
+
+        yield return new WaitUntil(() => !tween.IsComplete());
+    }
     
 
     private void OnDrawGizmos() {

@@ -53,7 +53,7 @@ public abstract class AbstractBuilding : MonoBehaviour
         }
     }
 
-    public List<FoodDelivery> bouffeTickActuel = new();
+    public List<Food> bouffesTickActuel = new();
     public List<FoodDelivery> bouffeTickSuivant = new();
 
     protected Grid GridInstance {get => GetGridInstance(); set => _gridInstance = value;}
@@ -74,15 +74,14 @@ public abstract class AbstractBuilding : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     virtual protected void Start()
     {
-        Grid.GridInstance.OnTick+=TickBuilding;
-        Grid.GridInstance.NextTick+=NextTick;
+        Grid.GridInstance.GiveOutput+=GiveOutput;
+        Grid.GridInstance.ProcessInputs+=ProcessInputs;
     }
 
     virtual protected void OnDestroy()
     {
-        Grid.GridInstance.OnTick-=TickBuilding;
-        Grid.GridInstance.NextTick-=NextTick;
-
+        Grid.GridInstance.GiveOutput-=GiveOutput;
+        Grid.GridInstance.ProcessInputs-=ProcessInputs;
     }
 
     // Update is called once per frame
@@ -91,26 +90,40 @@ public abstract class AbstractBuilding : MonoBehaviour
 
     }
 
-    public virtual void TickBuilding() //1 tick par seconde
+    public virtual void GiveOutput() //1 tick par seconde
     {
-        Debug.Log("Not Implemented");
+        // donner ce qu'il y a besoins au autres
+
+        for (int i = 0; i < bouffesTickActuel.Count && i < OutputTiles.Count; ++i)
+        {
+            Vector2Int output = ToWorldSpace(OutputTiles[i].Tile);
+            if(Grid.GridInstance.TryGetTile(output, out Tile tile))
+            {
+                tile?.ContentObject.AddDelivery(output, OutputTiles[i].Direction, bouffesTickActuel[i]);
+            }
+            else
+            {
+                //todo: ragdoll lol olololollloolololololols
+            }
+        }
+
+        bouffesTickActuel.Clear();
     }
 
-     public virtual void NextTick() //1 tick par seconde
+    public virtual void ProcessInputs() //1 tick par seconde
     {
-        bouffeTickActuel.Clear();
+        //récupérer ce qu'on nous donne ce tick
+
         foreach(var item in bouffeTickSuivant)
         {
-            bouffeTickActuel.Add(item);
+            bouffesTickActuel.Add(item.food);
         }
         bouffeTickSuivant.Clear();
     }
 
-    public void AddDelivery(Vector2Int from, Vector2Int to, Food food)
+    public void AddDelivery(Vector2Int to, Vector2Int dir, Food food)
     {
-        to = ToLocalSpace(to);
-        from = ToLocalSpace(from);
-        bouffeTickSuivant.Add(new FoodDelivery(to, to - from, food));
+        bouffeTickSuivant.Add(new FoodDelivery(to, dir, food));
     }
 
     public Vector2Int ToLocalSpace(Vector2Int tile)

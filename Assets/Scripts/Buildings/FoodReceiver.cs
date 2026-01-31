@@ -17,13 +17,13 @@ public class FoodReceiver : AbstractBuilding
     [SerializeField]
     //Combien on perd quand il y a rien
     private float satisfactionDecayPerTick;
-    public override void TickBuilding()
+    public override void ProcessInputs()
     {
-        if (bouffeTickActuel.Count == 0)
+        if (bouffeTickSuivant.Count == 0)
         {
             satisfaction -= satisfactionDecayPerTick;
         }
-        foreach (FoodDelivery delivery in bouffeTickActuel)
+        foreach (FoodDelivery delivery in bouffeTickSuivant)
         {
             if (delivery.food == requiredFood)
             {
@@ -39,5 +39,14 @@ public class FoodReceiver : AbstractBuilding
         {
             //TODO perdu mdr
         }
+    }
+
+    public override void GiveOutput()
+    {
+        foreach (var item in bouffesTickActuel)
+        {
+            Destroy(item.gameObject);
+        }
+        bouffesTickActuel.Clear();
     }
 }
