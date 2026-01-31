@@ -2,16 +2,25 @@ using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
 
-[System.Serializable]
-public enum BaseIngredient
+//[System.Serializable]
+//public enum BaseIngredient
+//{
+//    RawSteak,
+//    CookedSteak,
+//    RawRice,
+//    CookedRice,
+//    SteakWithRice
+//    // TODO : add other ingredients
+//}
+
+[CreateAssetMenu(fileName = "BaseIngredient", menuName = "Scriptable Objects/BaseIngredient")]
+public class BaseIngredient : ScriptableObject
 {
-    RawSteak,
-    CookedSteak,
-    RawRice,
-    CookedRice,
-    SteakWithRice
-    // TODO : add other ingredients
+    [SerializeField] public string name;
+    [SerializeField] public Sprite icon;
+    [SerializeField] public GameObject prefab;
 }
+
 
 [System.Serializable]
 public struct FoodIO

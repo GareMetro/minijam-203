@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: Steak
+  m_EditorClassIdentifier: Assembly-CSharp::BaseIngredient
+  name: Steak
+  icon: {fileID: 0}
+  prefab: {fileID: 8193169958412426211, guid: ef9d45f64d5a05a459b6224e25c8926f, type: 3}
