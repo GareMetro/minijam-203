@@ -235,6 +235,33 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Place"",
+                    ""type"": ""Button"",
+                    ""id"": ""a9093545-38e4-4125-8218-556a9f69d00f"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Delete"",
+                    ""type"": ""Button"",
+                    ""id"": ""308d5510-7ac3-478a-b240-f4c4d012e923"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Rotate"",
+                    ""type"": ""Button"",
+                    ""id"": ""d55af910-a957-4c78-9ad9-08687c38f1bd"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -479,6 +506,39 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""action"": ""SelectRight"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""11c02bee-79b7-4d52-9ccc-00e23b2a0df3"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Place"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""039dda51-3df9-4578-8d00-e8f0a9f6f17c"",
+                    ""path"": ""<Keyboard>/ctrl"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Delete"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""68921410-a7f5-4490-a55d-194cd0a2b7b9"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -503,6 +563,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         m_PlayerActions_Select0 = m_PlayerActions.FindAction("Select0", throwIfNotFound: true);
         m_PlayerActions_SelectLeft = m_PlayerActions.FindAction("SelectLeft", throwIfNotFound: true);
         m_PlayerActions_SelectRight = m_PlayerActions.FindAction("SelectRight", throwIfNotFound: true);
+        m_PlayerActions_Place = m_PlayerActions.FindAction("Place", throwIfNotFound: true);
+        m_PlayerActions_Delete = m_PlayerActions.FindAction("Delete", throwIfNotFound: true);
+        m_PlayerActions_Rotate = m_PlayerActions.FindAction("Rotate", throwIfNotFound: true);
     }
 
     ~@PlayerInput()
@@ -599,6 +662,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     private readonly InputAction m_PlayerActions_Select0;
     private readonly InputAction m_PlayerActions_SelectLeft;
     private readonly InputAction m_PlayerActions_SelectRight;
+    private readonly InputAction m_PlayerActions_Place;
+    private readonly InputAction m_PlayerActions_Delete;
+    private readonly InputAction m_PlayerActions_Rotate;
     /// <summary>
     /// Provides access to input actions defined in input action map "PlayerActions".
     /// </summary>
@@ -675,6 +741,18 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         /// </summary>
         public InputAction @SelectRight => m_Wrapper.m_PlayerActions_SelectRight;
         /// <summary>
+        /// Provides access to the underlying input action "PlayerActions/Place".
+        /// </summary>
+        public InputAction @Place => m_Wrapper.m_PlayerActions_Place;
+        /// <summary>
+        /// Provides access to the underlying input action "PlayerActions/Delete".
+        /// </summary>
+        public InputAction @Delete => m_Wrapper.m_PlayerActions_Delete;
+        /// <summary>
+        /// Provides access to the underlying input action "PlayerActions/Rotate".
+        /// </summary>
+        public InputAction @Rotate => m_Wrapper.m_PlayerActions_Rotate;
+        /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
         public InputActionMap Get() { return m_Wrapper.m_PlayerActions; }
@@ -748,6 +826,15 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @SelectRight.started += instance.OnSelectRight;
             @SelectRight.performed += instance.OnSelectRight;
             @SelectRight.canceled += instance.OnSelectRight;
+            @Place.started += instance.OnPlace;
+            @Place.performed += instance.OnPlace;
+            @Place.canceled += instance.OnPlace;
+            @Delete.started += instance.OnDelete;
+            @Delete.performed += instance.OnDelete;
+            @Delete.canceled += instance.OnDelete;
+            @Rotate.started += instance.OnRotate;
+            @Rotate.performed += instance.OnRotate;
+            @Rotate.canceled += instance.OnRotate;
         }
 
         /// <summary>
@@ -807,6 +894,15 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @SelectRight.started -= instance.OnSelectRight;
             @SelectRight.performed -= instance.OnSelectRight;
             @SelectRight.canceled -= instance.OnSelectRight;
+            @Place.started -= instance.OnPlace;
+            @Place.performed -= instance.OnPlace;
+            @Place.canceled -= instance.OnPlace;
+            @Delete.started -= instance.OnDelete;
+            @Delete.performed -= instance.OnDelete;
+            @Delete.canceled -= instance.OnDelete;
+            @Rotate.started -= instance.OnRotate;
+            @Rotate.performed -= instance.OnRotate;
+            @Rotate.canceled -= instance.OnRotate;
         }
 
         /// <summary>
@@ -959,5 +1055,26 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnSelectRight(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Place" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnPlace(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Delete" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnDelete(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Rotate" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnRotate(InputAction.CallbackContext context);
     }
 }

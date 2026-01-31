@@ -16,6 +16,7 @@ public class Grid : MonoBehaviour
 
     public float tileSize = 10f;
 
+    [SerializeField]
     private List<List<Tile>> PlayGrid;
 
     [SerializeField]
@@ -111,18 +112,45 @@ public class Grid : MonoBehaviour
         return PlayGrid[position.x][position.y];
     }
 
-    private void AddObject(AbstractBuilding building, Vector2Int pos, int rot)
+    public void AddObject(AbstractBuilding building, Vector2Int pos, int rot)
     {
-        building.Position = pos;
-        building.Rotation = rot;
-        GameObject added = Instantiate(building.gameObject, new Vector3((pos.x + 0.5f) * tileSize, 0f, pos.y), Quaternion.AngleAxis(rot * 90f, Vector3.up));
-        
+        //Si la tile est occupée
+        if (GetTile(pos).ContentObject) 
+        {
+            return;
+        }
+
+        //on créé une instance du type séléctioné
+        GameObject added = Instantiate(building.gameObject, new Vector3((pos.x) * tileSize, 0f, pos.y * tileSize), Quaternion.AngleAxis(rot * 90f, Vector3.up));
+
+        AbstractBuilding Addedbuilding = added.GetComponent<AbstractBuilding>();
+        //Rotation et position dans la grille du batiment
+        Addedbuilding.Position = pos;
+        Addedbuilding.Rotation = rot;
+        added.transform.localScale = (tileSize/2) * 0.95f * Vector3.one;
+
         foreach (var item in building.LocalTiles)
         {
-            Vector2Int tilePos = building.ToWorldSpace(item);
-            AbstractBuilding addedAbstractBuilding = added.GetComponent<AbstractBuilding>();
-            PlayGrid[tilePos.x][tilePos.y].ContentObject = addedAbstractBuilding;
-            addedAbstractBuilding.TilesList.Add(PlayGrid[tilePos.x][tilePos.y]);
+            Vector2Int tilePos = Addedbuilding.ToWorldSpace(item);
+            PlayGrid[tilePos.x][tilePos.y].ContentObject = Addedbuilding;
+            Addedbuilding.TilesList.Add(PlayGrid[tilePos.x][tilePos.y]);
         }
+    }
+
+    public void RemoveObject(Vector2Int pos)
+    {
+        AbstractBuilding Building = PlayGrid[pos.x][pos.y].ContentObject;
+        if (Building)
+        {
+            List<Tile> BuildingTiles = Building.TilesList;
+
+            foreach (var item in BuildingTiles)
+            {
+                item.ContentObject = null;
+            }
+
+            Destroy(Building.gameObject);
+        }
+
     }
 }

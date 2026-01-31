@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class Controller : MonoBehaviour
@@ -9,6 +10,7 @@ public class Controller : MonoBehaviour
 
     [SerializeField] public Vector2Int SelectedTile;
     [HideInInspector] public int SelectedBati = 0;
+    [HideInInspector] public int RotationBati = 0;
 
     [SerializeField] private Toolbar Toolbar;
     private GameObject cursor;
@@ -42,6 +44,9 @@ public class Controller : MonoBehaviour
         Controls.PlayerActions.MoveLeft.canceled += (context) => StopHold(Vector2Int.left);
         Controls.PlayerActions.MoveDown.canceled += (context) => StopHold(Vector2Int.down);
 
+        Controls.PlayerActions.Place.started += (context) => PlaceBuilding();
+        Controls.PlayerActions.Delete.started += (context) => DeleteBuilding();
+
         for (int i = 0; i < batiInfos.batiInfos.Count ; i++)
         {
             BatiInfo batiInfo  = batiInfos.batiInfos[i];
@@ -52,6 +57,7 @@ public class Controller : MonoBehaviour
         }
 
         cursor = new();
+        ChangedSelected(0);
     }
 
     public delegate void SelectionEvent(int i);
@@ -61,7 +67,20 @@ public class Controller : MonoBehaviour
     {
         OnSelectedChange?.Invoke(i);
         Toolbar.SelectTool(i);
+        SelectedBati = i;
         UpdateCursorPreview(i);
+    }
+
+    private void PlaceBuilding()
+    {
+        if (batiInfos.batiInfos[SelectedBati].batiPrefab)
+        {
+            Grid.GridInstance.AddObject(batiInfos.batiInfos[SelectedBati].batiPrefab, SelectedTile, RotationBati);
+        }
+    }
+    private void DeleteBuilding()
+    {
+        Grid.GridInstance.RemoveObject(SelectedTile);
     }
 
     private void UpdateCursorPreview(int i)
