@@ -21,7 +21,7 @@ public class Toolbar : MonoBehaviour
         if (toolIndex == 0)
         {
             //On a 8 outils donc ça arrive pas (c'est en dehors de l'écran btw)
-            SelectionTransform.localPosition = new Vector2(FirstToolPos + 10 * ToolSpacing, SelectionTransform.localPosition.y); //nice hardcoded position
+            //SelectionTransform.localPosition = new Vector2(FirstToolPos + 10 * ToolSpacing, SelectionTransform.localPosition.y); //nice hardcoded position
         }
         else
         {

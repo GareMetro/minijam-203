@@ -262,6 +262,15 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""RecipeViewer"",
+                    ""type"": ""Button"",
+                    ""id"": ""35bdaa6f-60aa-4ef4-9545-c473a8b92a67"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -539,6 +548,17 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""action"": ""Rotate"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cab1d33a-2815-4612-80ec-16dbdeb3952c"",
+                    ""path"": ""<Keyboard>/tab"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RecipeViewer"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -566,6 +586,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         m_PlayerActions_Place = m_PlayerActions.FindAction("Place", throwIfNotFound: true);
         m_PlayerActions_Delete = m_PlayerActions.FindAction("Delete", throwIfNotFound: true);
         m_PlayerActions_Rotate = m_PlayerActions.FindAction("Rotate", throwIfNotFound: true);
+        m_PlayerActions_RecipeViewer = m_PlayerActions.FindAction("RecipeViewer", throwIfNotFound: true);
     }
 
     ~@PlayerInput()
@@ -665,6 +686,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     private readonly InputAction m_PlayerActions_Place;
     private readonly InputAction m_PlayerActions_Delete;
     private readonly InputAction m_PlayerActions_Rotate;
+    private readonly InputAction m_PlayerActions_RecipeViewer;
     /// <summary>
     /// Provides access to input actions defined in input action map "PlayerActions".
     /// </summary>
@@ -753,6 +775,10 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         /// </summary>
         public InputAction @Rotate => m_Wrapper.m_PlayerActions_Rotate;
         /// <summary>
+        /// Provides access to the underlying input action "PlayerActions/RecipeViewer".
+        /// </summary>
+        public InputAction @RecipeViewer => m_Wrapper.m_PlayerActions_RecipeViewer;
+        /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
         public InputActionMap Get() { return m_Wrapper.m_PlayerActions; }
@@ -835,6 +861,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Rotate.started += instance.OnRotate;
             @Rotate.performed += instance.OnRotate;
             @Rotate.canceled += instance.OnRotate;
+            @RecipeViewer.started += instance.OnRecipeViewer;
+            @RecipeViewer.performed += instance.OnRecipeViewer;
+            @RecipeViewer.canceled += instance.OnRecipeViewer;
         }
 
         /// <summary>
@@ -903,6 +932,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Rotate.started -= instance.OnRotate;
             @Rotate.performed -= instance.OnRotate;
             @Rotate.canceled -= instance.OnRotate;
+            @RecipeViewer.started -= instance.OnRecipeViewer;
+            @RecipeViewer.performed -= instance.OnRecipeViewer;
+            @RecipeViewer.canceled -= instance.OnRecipeViewer;
         }
 
         /// <summary>
@@ -1076,5 +1108,12 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnRotate(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "RecipeViewer" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnRecipeViewer(InputAction.CallbackContext context);
     }
 }

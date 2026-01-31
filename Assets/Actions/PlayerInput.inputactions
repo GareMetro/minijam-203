@@ -176,6 +176,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "RecipeViewer",
+                    "type": "Button",
+                    "id": "35bdaa6f-60aa-4ef4-9545-c473a8b92a67",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -451,6 +460,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Rotate",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "cab1d33a-2815-4612-80ec-16dbdeb3952c",
+                    "path": "<Keyboard>/tab",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RecipeViewer",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

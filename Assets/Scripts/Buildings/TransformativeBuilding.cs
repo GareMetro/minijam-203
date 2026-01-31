@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 [System.Serializable]
 public struct Recipe
@@ -12,6 +13,8 @@ public struct Recipe
 public class TransformativeBuilding : AbstractBuilding
 {
     public List<Recipe> recipes;
+
+    public Sprite Icon;
 
     public override void GiveOutput()
     {

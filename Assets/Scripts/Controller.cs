@@ -14,6 +14,7 @@ public class Controller : MonoBehaviour
     [HideInInspector] public int RotationBati = 0;
 
     [SerializeField] private Toolbar Toolbar;
+    [SerializeField] private RecipeViewer recipeViewer;
     private GameObject cursor;
     private GameObject cursorHolo;
 
@@ -48,6 +49,7 @@ public class Controller : MonoBehaviour
         Controls.PlayerActions.Place.started += (context) => PlaceBuilding();
         Controls.PlayerActions.Delete.started += (context) => DeleteBuilding();
         Controls.PlayerActions.Rotate.started += (context) => RotateSelection();
+        Controls.PlayerActions.RecipeViewer.started += (context) => HideOrShowRecipeViewer();
 
         for (int i = 0; i < batiInfos.batiInfos.Count ; i++)
         {
@@ -77,6 +79,23 @@ public class Controller : MonoBehaviour
     {
         RotationBati = (RotationBati + 3) % 4;
         UpdateCursorPreview(SelectedBati);
+    }
+
+    private void HideOrShowRecipeViewer()
+    {
+        if (recipeViewer != null)
+        {
+            if (recipeViewer.IsVisible)
+            {
+                recipeViewer.Hide();
+                recipeViewer.IsVisible = false;
+            }
+            else
+            {
+                recipeViewer.Show();
+                recipeViewer.IsVisible = true;
+            }
+        }
     }
 
     private void PlaceBuilding()
