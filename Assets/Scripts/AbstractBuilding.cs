@@ -16,7 +16,7 @@ Les bâtiments ne gèrent pas si ils sont en train d'envoyer de la bouffe vers u
 
 
 */
-public abstract class AbstractBuilding : MonoBehaviour
+public class AbstractBuilding : MonoBehaviour
  {
 
     [HideInInspector] public List<Tile> TilesList = new();
