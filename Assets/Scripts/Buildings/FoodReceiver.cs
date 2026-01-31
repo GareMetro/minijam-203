@@ -62,6 +62,7 @@ public class FoodReceiver : AbstractBuilding
             Destroy(item.gameObject);
         }
         bouffesTickActuel.Clear();
+        Boing();
     }
 #if UNITY_EDITOR
     void OnDrawGizmos()

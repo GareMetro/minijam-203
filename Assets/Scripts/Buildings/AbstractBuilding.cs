@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Collections;
 using Unity.IntegerTime;
 using System;
+using DG.Tweening;
 
 // Permet de gérer les cas d'envoi invalides
 [System.Serializable]
@@ -184,6 +185,11 @@ public abstract class AbstractBuilding : MonoBehaviour
         }
 
         return tile + Position;
+    }
+
+    public void Boing()
+    {
+        transform.DOPunchScale(transform.localScale * 0.2f, 0.3f, 6, 1);
     }
 
 }

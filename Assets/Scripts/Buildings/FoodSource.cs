@@ -33,6 +33,8 @@ public class FoodSource : AbstractBuilding
 
         GameObject g = Instantiate(food.prefab, spawnPoint.position, Quaternion.identity);
 
+        Boing();
+
         bouffesTickActuel.Add(g.GetComponent<Food>());
 
         mover.MoveObject(g.transform, Grid.GridInstance.TickDuration / 2f);
