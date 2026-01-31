@@ -61,7 +61,7 @@ public class FoodManager : Singleton<FoodManager>
         if (currentFoodOrder == foodDict.Count)
         {
             // TODO : add victory (oui)
-            //GameManager.Instance.Victory();
+            GameManager.Instance.Defeat();
             yield return null;
         }
         else
