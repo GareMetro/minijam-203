@@ -48,6 +48,7 @@ public class FoodManager : Singleton<FoodManager>
     [SerializeField] float timeBeforeFirstOrder = 50;
     [SerializeField] List<FoodInfo> foodDict;
     [SerializeField] List<BaseIngredient> givenIngredients;
+    [SerializeField] public BaseIngredient caca;
     [SerializeField] GameObject ingredientEntryPrefab;
     [SerializeField] GameObject foodOutputPrefab;
 
@@ -65,8 +66,8 @@ public class FoodManager : Singleton<FoodManager>
 
         if (currentFoodOrder == foodDict.Count)
         {
-            // TODO : add victory
-            GameManager.Instance.Victory();
+            // TODO : add victory (oui)
+            //GameManager.Instance.Victory();
             yield return null;
         }
         else

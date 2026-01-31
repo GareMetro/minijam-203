@@ -75,7 +75,7 @@ public class Controller : MonoBehaviour
 
     private void RotateSelection()
     {
-        RotationBati = (RotationBati - 1) % 4;
+        RotationBati = (RotationBati + 3) % 4;
         UpdateCursorPreview(SelectedBati);
     }
 

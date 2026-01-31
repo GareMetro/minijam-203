@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: Caca2
+  m_EditorClassIdentifier: Assembly-CSharp::BaseIngredient
+  name: Caca
+  icon: {fileID: 0}
+  prefab: {fileID: 8193169958412426211, guid: dca968c10c89ec55089a71a759c2c5a7, type: 3}

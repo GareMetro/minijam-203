@@ -82,6 +82,18 @@ public abstract class AbstractBuilding : MonoBehaviour
     {
         Grid.GridInstance.GiveOutput-=GiveOutput;
         Grid.GridInstance.ProcessInputs-=ProcessInputs;
+
+        foreach (var item in bouffesTickActuel)
+        {
+            if(item)
+                Destroy(item.gameObject);
+        }
+
+        foreach (var item in bouffeTickSuivant)
+        {
+            if(item.food)
+                Destroy(item.food.gameObject);
+        }
     }
 
     // Update is called once per frame
@@ -97,12 +109,13 @@ public abstract class AbstractBuilding : MonoBehaviour
         for (int i = 0; i < bouffesTickActuel.Count && i < OutputTiles.Count; ++i)
         {
             Vector2Int output = ToWorldSpace(OutputTiles[i].Tile);
-            if(Grid.GridInstance.TryGetTile(output, out Tile tile))
+            if(Grid.GridInstance.TryGetObjectAt(output, out AbstractBuilding building))
             {
-                tile?.ContentObject.AddDelivery(output, OutputTiles[i].Direction, bouffesTickActuel[i]);
+                building.AddDelivery(output, OutputTiles[i].Direction, bouffesTickActuel[i]);
             }
             else
             {
+                Destroy( bouffesTickActuel[i].gameObject);
                 //todo: ragdoll lol olololollloolololololols
             }
         }
@@ -118,7 +131,21 @@ public abstract class AbstractBuilding : MonoBehaviour
         {
             bouffesTickActuel.Add(item.food);
         }
+
+        if(bouffeTickSuivant.Count >1)
+        {
+            HandleCaca();
+        }
+
         bouffeTickSuivant.Clear();
+    }
+
+    public virtual void HandleCaca()
+    {
+        foreach (var item in bouffeTickSuivant)
+        {
+            Destroy(item.food.gameObject);
+        }
     }
 
     public void AddDelivery(Vector2Int to, Vector2Int dir, Food food)

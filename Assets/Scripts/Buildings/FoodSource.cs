@@ -4,23 +4,28 @@ using UnityEngine;
 
 public class FoodSource : AbstractBuilding
 {
-    [SerializeField] FoodInfo food;
+    [SerializeField] BaseIngredient food;
 
     [SerializeField] Transform spawnPoint;
 
     [SerializeField] Mover mover;
 
-    public override void GiveOutput()
+    public override void ProcessInputs()
     {
-        base.GiveOutput();
-
-        foreach (var item in bouffesTickActuel)
+        foreach (var item in bouffeTickSuivant)
         {
-            ;
+            Destroy(item.food.gameObject);
         }
+        bouffeTickSuivant.Clear();
 
         StartCoroutine(ProduceItem());
     }
+
+    public override void GiveOutput()
+    {
+        base.GiveOutput();
+    }
+
 
     IEnumerator ProduceItem()
     {
@@ -28,7 +33,9 @@ public class FoodSource : AbstractBuilding
 
         GameObject g = Instantiate(food.prefab, spawnPoint.position, Quaternion.identity);
 
-        mover.MoveObject(g.transform);
+        bouffesTickActuel.Add(g.GetComponent<Food>());
+
+        mover.MoveObject(g.transform, Grid.GridInstance.TickDuration / 2f);
     }
 
 }

@@ -13,15 +13,19 @@ MonoBehaviour:
   m_Name: BatiInfos
   m_EditorClassIdentifier: Assembly-CSharp::BatiInfos
   batiInfos:
-  - batiPrefab: {fileID: 2849224877654530544, guid: 22ec5af967aec9d989fbf76f1b6f6aea, type: 3}
-    holoPrefab: {fileID: 0}
-    icon: {fileID: 0}
+  - batiPrefab: {fileID: 0}
+    holoPrefab: {fileID: 637970752212827650, guid: 76ab39af984f7aa48b0915e9723f3470, type: 3}
+    icon: {fileID: 21300000, guid: 84709a8826faeaf4893b59aab83049ff, type: 3}
     inputAction: {fileID: -1644453454207993798, guid: 1bc8ccc1a1dcd844f8c8348e5b957de9, type: 3}
-  - batiPrefab: {fileID: 0}
-    holoPrefab: {fileID: 0}
-    icon: {fileID: 0}
-    inputAction: {fileID: 0}
-  - batiPrefab: {fileID: 0}
-    holoPrefab: {fileID: 0}
-    icon: {fileID: 0}
-    inputAction: {fileID: 0}
+  - batiPrefab: {fileID: 2849224877654530544, guid: 22ec5af967aec9d989fbf76f1b6f6aea, type: 3}
+    holoPrefab: {fileID: 3292237273507998538, guid: 74215088328e9a243bb8087ecc56af68, type: 3}
+    icon: {fileID: 21300000, guid: 84709a8826faeaf4893b59aab83049ff, type: 3}
+    inputAction: {fileID: -3450790408624426092, guid: 1bc8ccc1a1dcd844f8c8348e5b957de9, type: 3}
+  - batiPrefab: {fileID: 5620856709639682498, guid: 6781669dd23a78dd6b2189169b7f95ea, type: 3}
+    holoPrefab: {fileID: 6796099674159690248, guid: 9d330021e4e48db4a93529c616cde8f8, type: 3}
+    icon: {fileID: 21300000, guid: 84709a8826faeaf4893b59aab83049ff, type: 3}
+    inputAction: {fileID: 2258143661776562743, guid: 1bc8ccc1a1dcd844f8c8348e5b957de9, type: 3}
+  - batiPrefab: {fileID: 8300613802659117624, guid: 96cffbe1950891d588dc69ed374df956, type: 3}
+    holoPrefab: {fileID: 1679295307948364946, guid: cdcf1b4d766924e9c844cae944c77c70, type: 3}
+    icon: {fileID: 21300000, guid: 84709a8826faeaf4893b59aab83049ff, type: 3}
+    inputAction: {fileID: 2366658624961901663, guid: 1bc8ccc1a1dcd844f8c8348e5b957de9, type: 3}

@@ -1,9 +1,10 @@
+using UnityEditor;
 using System;
 using UnityEngine;
 
 public class FoodReceiver : AbstractBuilding
 {
-    public Food requiredFood;
+    public BaseIngredient requiredFood;
 
     private float satisfaction = 0.5f;
 
@@ -18,15 +19,21 @@ public class FoodReceiver : AbstractBuilding
     [SerializeField]
     //Combien on perd quand il y a rien
     private float satisfactionDecayPerTick;
+
+
+    [SerializeField] Mover mover;
+
     public override void ProcessInputs()
     {
-        if (bouffeTickSuivant.Count == 0)
+        base.ProcessInputs();
+
+        if (bouffesTickActuel.Count == 0)
         {
             satisfaction -= satisfactionDecayPerTick;
         }
-        foreach (FoodDelivery delivery in bouffeTickSuivant)
+        foreach (Food food in bouffesTickActuel)
         {
-            if (delivery.food == requiredFood)
+            if (food.baseIngredient == requiredFood)
             {
                 satisfaction += satisfactionPerGoodFood;
             }
@@ -34,6 +41,9 @@ public class FoodReceiver : AbstractBuilding
             {
                 satisfaction -= satisfactionPerBadFood;
             }
+
+            
+            mover.MoveObject(food.transform, Grid.GridInstance.TickDuration / 2f);
         }
 
         satisfaction = Math.Min(satisfaction, 1f); //1 == 100% = max SATISFAIT
@@ -42,6 +52,7 @@ public class FoodReceiver : AbstractBuilding
         {
             GameManager.Instance.Defeat();
         }
+
     }
 
     public override void GiveOutput()
@@ -52,4 +63,10 @@ public class FoodReceiver : AbstractBuilding
         }
         bouffesTickActuel.Clear();
     }
+#if UNITY_EDITOR
+    void OnDrawGizmos()
+    {
+        Handles.Label(transform.position + Vector3.up * Grid.GridInstance.tileSize * 2f, "sat: " + satisfaction.ToString());
+    }
+#endif
 }

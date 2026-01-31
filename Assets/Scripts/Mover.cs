@@ -8,9 +8,9 @@ using UnityEditor;
 
 public class Mover : MonoBehaviour
 {
-    [SerializeField] List<Transform> wayPoints;
+    [SerializeField] List<Transform> wayPoints = new();
 
-    public void MoveObject(Transform toMove)
+    public void MoveObject(Transform toMove, float duration)
     {
         List<Vector3> positions = new()
         {
@@ -20,29 +20,22 @@ public class Mover : MonoBehaviour
         foreach(Transform wayPoint in wayPoints)
             positions.Add(wayPoint.transform.position);
         
-        toMove.DOPath(positions.ToArray(), Grid.GridInstance.TickDuration).SetEase(Ease.Linear);
+        toMove.DOPath(positions.ToArray(), duration).SetEase(Ease.Linear);
     }
 
-    public IEnumerator MoveObjectRoutine(Transform toMove)
+    public IEnumerator MoveObjectRoutine(Transform toMove,  float duration)
     {
-        List<Vector3> positions = new()
-        {
-            toMove.position
-        };
+        MoveObject(toMove, duration);
 
-        foreach(Transform wayPoint in wayPoints)
-            positions.Add(wayPoint.transform.position);
-        
-        var tween = toMove.DOPath(positions.ToArray(), Grid.GridInstance.TickDuration).SetEase(Ease.Linear);
-
-        yield return new WaitUntil(() => !tween.IsComplete());
+        yield return new WaitForSeconds(duration);
     }
     
 
     private void OnDrawGizmos() {
         foreach (var item in wayPoints)
         {
-            Gizmos.DrawSphere(item.position, 0.2f);
+            if(item)
+                Gizmos.DrawSphere(item.position, 0.05f);
         }
     }
 }

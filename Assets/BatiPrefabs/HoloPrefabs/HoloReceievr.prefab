@@ -61,8 +61,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: -0.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 3088971829887204123}
+  m_Children: []
   m_Father: {fileID: 1620135712737575303}
   m_LocalEulerAnglesHint: {x: 90, y: 180, z: -90}
   m_AnchorMin: {x: 0, y: 0}
@@ -145,7 +144,7 @@ GameObject:
   - component: {fileID: 5620856709639682498}
   - component: {fileID: 6296677920594019739}
   m_Layer: 0
-  m_Name: FoodReceiver
+  m_Name: HoloReceievr
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -183,17 +182,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FoodReceiver
   Position: {x: 0, y: 0}
   Rotation: 0
-  LocalTiles:
-  - {x: 0, y: 0}
+  LocalTiles: []
   InputTiles: []
   OutputTiles: []
   bouffesTickActuel: []
   bouffeTickSuivant: []
   requiredFood: {fileID: 11400000, guid: c7991b2ee2d0b1644ae838f786f6f5e2, type: 2}
-  satisfactionPerGoodFood: 0.1
-  satisfactionPerBadFood: 0.2
-  satisfactionDecayPerTick: 0.03
-  mover: {fileID: 6296677920594019739}
+  satisfactionPerGoodFood: 0
+  satisfactionPerBadFood: 0
+  satisfactionDecayPerTick: 0
+  mover: {fileID: 0}
 --- !u!114 &6296677920594019739
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,81 +206,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Mover
   wayPoints:
   - {fileID: 8272400537587341866}
---- !u!1 &7491192852551339866
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3088971829887204123}
-  - component: {fileID: 3944511869774978935}
-  - component: {fileID: 5865638967988785924}
-  m_Layer: 5
-  m_Name: Image
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &3088971829887204123
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7491192852551339866}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2259769407337296533}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &3944511869774978935
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7491192852551339866}
-  m_CullTransparentMesh: 1
---- !u!114 &5865638967988785924
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7491192852551339866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!1001 &5321432926475189644
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -331,6 +254,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: c83de449d0079e04fab8117743e92f48, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: -876546973899608171, guid: 9c9f275cc3f08b14ab180b57efee3d98, type: 3}
     - target: {fileID: 919132149155446097, guid: c83de449d0079e04fab8117743e92f48, type: 3}
       propertyPath: m_Name
       value: foodOutputPlaceholder

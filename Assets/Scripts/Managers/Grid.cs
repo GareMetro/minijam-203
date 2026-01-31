@@ -112,10 +112,16 @@ public class Grid : MonoBehaviour
         return PlayGrid[position.x][position.y];
     }
 
-    public bool TryGetTile(Vector2Int position, out Tile tile)
+    public bool TryGetObjectAt(Vector2Int position, out AbstractBuilding outBuilding)
     {
-        tile = GetTile(position);
-        return tile != null;
+        outBuilding = null;
+        Tile tile = GetTile(position);
+        if(tile == null || tile.ContentObject == null)
+            return false;
+
+        outBuilding = tile.ContentObject;
+        return true;
+
     }
 
     public void AddObject(AbstractBuilding building, Vector2Int pos, int rot)
