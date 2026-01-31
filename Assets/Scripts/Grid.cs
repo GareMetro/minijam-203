@@ -196,8 +196,20 @@ public class Grid : MonoBehaviour
         return PlayGrid[position.x][position.y];
     }
 
-    private void OnDrawGizmos()
+    private void AddObject(AbstractBuilding building, Vector2Int pos, int rot)
     {
+        building.Position = pos;
+        building.Rotation = rot;
+        GameObject added = Instantiate(building.gameObject, new Vector3((pos.x + 0.5f) * tileSize, 0f, pos.y), Quaternion.AngleAxis(rot * 90f, Vector3.up));
         
+        foreach (var item in building.LocalTiles)
+        {
+            Vector2Int tilePos = building.ToWorldSpace(item);
+            AbstractBuilding addedAbstractBuilding = added.GetComponent<AbstractBuilding>();
+            PlayGrid[tilePos.x][tilePos.y].ContentObject = addedAbstractBuilding;
+            addedAbstractBuilding.TilesList.Add(PlayGrid[tilePos.x][tilePos.y]);
+        }
     }
+
+    
 }

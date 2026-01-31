@@ -3,6 +3,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
 using Unity.IntegerTime;
+using System.ComponentModel;
 
 /*
 
@@ -18,7 +19,7 @@ Les bâtiments ne gèrent pas si ils sont en train d'envoyer de la bouffe vers u
 public abstract class AbstractBuilding : MonoBehaviour
  {
 
-    public List<Tile> TilesList = new();
+    [HideInInspector] public List<Tile> TilesList = new();
     public Vector2Int Position = Vector2Int.zero;
     public int Rotation = 0;// sens trigo
 
