@@ -4,6 +4,17 @@ using System.Collections.Generic;
 using System.Collections;
 using Unity.IntegerTime;
 
+/*
+
+Phase 1 du tick : copie toutes les bouffes de bouffeTickSuivant vers bouffeTickActuel
+Phase 2 du tick : gère tout ce qu'il y a dans sa liste bouffeTickActuel et les envoient vers les bouffeTickSuivant de ses voisins
+
+Uniquement le conveyor a été réalisé, il ne gère pas plusieurs bouffe en entrée (il devrait)
+Les bâtiments ne gèrent pas si ils sont en train d'envoyer de la bouffe vers un endroit invalide (sur le mur d'un four, sur l'avant d'un conveyor par exemple)
+
+
+
+*/
 public abstract class AbstractBuilding : MonoBehaviour
  {
 
