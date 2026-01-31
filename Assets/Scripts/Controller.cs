@@ -10,6 +10,7 @@ public class Controller : MonoBehaviour
     [SerializeField] public Vector2Int SelectedTile;
     [HideInInspector] public int SelectedBati = 0;
 
+    [SerializeField] private Toolbar Toolbar;
     private GameObject cursor;
     private GameObject cursorHolo;
 
@@ -46,7 +47,7 @@ public class Controller : MonoBehaviour
             BatiInfo batiInfo  = batiInfos.batiInfos[i];
             var index = i;
             batiInfo.inputAction.action.started += (context) => ChangedSelected(index);
-            // TODO add to buildingsBar UI here
+
             batiInfo.inputAction.action.Enable();
         }
 
@@ -59,7 +60,7 @@ public class Controller : MonoBehaviour
     private void ChangedSelected(int i)
     {
         OnSelectedChange?.Invoke(i);
-
+        Toolbar.SelectTool(i);
         UpdateCursorPreview(i);
     }
 
