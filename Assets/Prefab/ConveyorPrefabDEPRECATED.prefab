@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2849224877654530544}
   - component: {fileID: 817686374026817671}
   m_Layer: 0
-  m_Name: ConveyorPrefab
+  m_Name: ConveyorPrefabDEPRECATED
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

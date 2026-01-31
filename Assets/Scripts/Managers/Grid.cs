@@ -121,7 +121,7 @@ public class Grid : MonoBehaviour
         }
 
         //on créé une instance du type séléctioné
-        GameObject added = Instantiate(building.gameObject, new Vector3((pos.x) * tileSize, 0f, pos.y * tileSize), Quaternion.AngleAxis(rot * 90f, Vector3.up));
+        GameObject added = Instantiate(building.gameObject, new Vector3((pos.x) * tileSize, 0f, pos.y * tileSize), Quaternion.AngleAxis(- rot * 90f, Vector3.up));
 
         AbstractBuilding Addedbuilding = added.GetComponent<AbstractBuilding>();
         //Rotation et position dans la grille du batiment

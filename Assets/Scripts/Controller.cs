@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Controller : MonoBehaviour
@@ -46,6 +47,7 @@ public class Controller : MonoBehaviour
 
         Controls.PlayerActions.Place.started += (context) => PlaceBuilding();
         Controls.PlayerActions.Delete.started += (context) => DeleteBuilding();
+        Controls.PlayerActions.Rotate.started += (context) => RotateSelection();
 
         for (int i = 0; i < batiInfos.batiInfos.Count ; i++)
         {
@@ -71,6 +73,12 @@ public class Controller : MonoBehaviour
         UpdateCursorPreview(i);
     }
 
+    private void RotateSelection()
+    {
+        RotationBati = (RotationBati - 1) % 4;
+        UpdateCursorPreview(SelectedBati);
+    }
+
     private void PlaceBuilding()
     {
         if (batiInfos.batiInfos[SelectedBati].batiPrefab)
@@ -91,6 +99,8 @@ public class Controller : MonoBehaviour
         }
         
         cursorHolo = Instantiate(batiInfos.batiInfos[i].holoPrefab, cursor.transform.position, Quaternion.identity, cursor.transform);
+        cursorHolo.transform.localScale = (Grid.GridInstance.tileSize / 2) * 0.95f * Vector3.one;
+        cursorHolo.transform.rotation *= Quaternion.AngleAxis(-90f * RotationBati, Vector3.up);
     }
 
     void MoveCursor(Vector2Int move)
