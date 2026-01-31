@@ -11,6 +11,7 @@ public class Controller : MonoBehaviour
     [HideInInspector] public int SelectedBati = 0;
 
     private GameObject cursor;
+    private GameObject cursorHolo;
 
     BatiInfos batiInfos;
 
@@ -39,10 +40,17 @@ public class Controller : MonoBehaviour
         Controls.PlayerActions.MoveUp.canceled += (context) => StopHold(Vector2Int.up);
         Controls.PlayerActions.MoveLeft.canceled += (context) => StopHold(Vector2Int.left);
         Controls.PlayerActions.MoveDown.canceled += (context) => StopHold(Vector2Int.down);
-        
-        cursor = GameObject.CreatePrimitive(PrimitiveType.Cube);
-        MeshRenderer meshRenderer = cursor.GetComponent<MeshRenderer>();
-        meshRenderer.material.color = Color.white;
+
+        for (int i = 0; i < batiInfos.batiInfos.Count ; i++)
+        {
+            BatiInfo batiInfo  = batiInfos.batiInfos[i];
+            var index = i;
+            batiInfo.inputAction.action.started += (context) => ChangedSelected(index);
+            // TODO add to buildingsBar UI here
+            batiInfo.inputAction.action.Enable();
+        }
+
+        cursor = new();
     }
 
     public delegate void SelectionEvent(int i);
@@ -51,6 +59,18 @@ public class Controller : MonoBehaviour
     private void ChangedSelected(int i)
     {
         OnSelectedChange?.Invoke(i);
+
+        UpdateCursorPreview(i);
+    }
+
+    private void UpdateCursorPreview(int i)
+    {
+        if (cursorHolo)
+        {
+            Destroy(cursorHolo);
+        }
+        
+        cursorHolo = Instantiate(batiInfos.batiInfos[i].holoPrefab, cursor.transform.position, Quaternion.identity, cursor.transform);
     }
 
     void MoveCursor(Vector2Int move)

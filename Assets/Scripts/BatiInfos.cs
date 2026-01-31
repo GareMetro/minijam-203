@@ -1,14 +1,16 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 
 [Serializable]
 public struct BatiInfo
 {
-    [SerializeField] AbstractBuilding batiPrefab;
-    [SerializeField] GameObject holoPrefab;
-    [SerializeField] Sprite icon; // jsp si on utilisera hehe
+    [SerializeField] public AbstractBuilding batiPrefab;
+    [SerializeField] public GameObject holoPrefab;
+    [SerializeField] public Sprite icon; // jsp si on utilisera hehe
+    [SerializeField] public InputActionReference inputAction;
 }
 
 [CreateAssetMenu(fileName = "BatiInfos", menuName = "Scriptable Objects/BatiInfos")]
