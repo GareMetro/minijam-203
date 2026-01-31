@@ -140,6 +140,18 @@ PrefabInstance:
       value: ConveyorPrefab (3)
       objectReference: {fileID: 0}
     - target: {fileID: 4419726104045664695, guid: db35f9a0a54987b4ea837dde33efb099, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4419726104045664695, guid: db35f9a0a54987b4ea837dde33efb099, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4419726104045664695, guid: db35f9a0a54987b4ea837dde33efb099, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4419726104045664695, guid: db35f9a0a54987b4ea837dde33efb099, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.289
       objectReference: {fileID: 0}
@@ -178,6 +190,10 @@ PrefabInstance:
     - target: {fileID: 4419726104045664695, guid: db35f9a0a54987b4ea837dde33efb099, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4419726104045664695, guid: db35f9a0a54987b4ea837dde33efb099, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -245,8 +261,8 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 0
-  orthographic size: 5
+  orthographic: 1
+  orthographic size: 60
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -270,13 +286,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 454303093}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.088691376, y: -0, z: -0, w: 0.9960591}
-  m_LocalPosition: {x: 1.68, y: 2.19, z: -11.41}
+  m_LocalRotation: {x: 0.3420201, y: 0, z: 0, w: 0.9396927}
+  m_LocalPosition: {x: 90, y: 25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 10.177, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 40, y: 0, z: 0}
 --- !u!114 &454303097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -346,6 +362,18 @@ PrefabInstance:
       value: ConveyorPrefab (2)
       objectReference: {fileID: 0}
     - target: {fileID: 4419726104045664695, guid: db35f9a0a54987b4ea837dde33efb099, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4419726104045664695, guid: db35f9a0a54987b4ea837dde33efb099, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4419726104045664695, guid: db35f9a0a54987b4ea837dde33efb099, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4419726104045664695, guid: db35f9a0a54987b4ea837dde33efb099, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.594
       objectReference: {fileID: 0}
@@ -384,6 +412,10 @@ PrefabInstance:
     - target: {fileID: 4419726104045664695, guid: db35f9a0a54987b4ea837dde33efb099, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4419726104045664695, guid: db35f9a0a54987b4ea837dde33efb099, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -582,6 +614,18 @@ PrefabInstance:
       value: ConveyorPrefab (1)
       objectReference: {fileID: 0}
     - target: {fileID: 4419726104045664695, guid: db35f9a0a54987b4ea837dde33efb099, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4419726104045664695, guid: db35f9a0a54987b4ea837dde33efb099, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4419726104045664695, guid: db35f9a0a54987b4ea837dde33efb099, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4419726104045664695, guid: db35f9a0a54987b4ea837dde33efb099, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.883
       objectReference: {fileID: 0}
@@ -620,6 +664,10 @@ PrefabInstance:
     - target: {fileID: 4419726104045664695, guid: db35f9a0a54987b4ea837dde33efb099, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4419726104045664695, guid: db35f9a0a54987b4ea837dde33efb099, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -784,7 +832,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 159903be248f2184a9e3334f812766cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Grid
-  Size: {x: 15, y: 15}
+  Size: {x: 10, y: 5}
+  tileSize: 20
   SelectedTile: {x: 0, y: 0}
   keyRepeatDelay: 0.1
   TickDuration: 1
@@ -823,9 +872,25 @@ PrefabInstance:
       propertyPath: first
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2849224877654530544, guid: db35f9a0a54987b4ea837dde33efb099, type: 3}
+      propertyPath: TESTFIRST
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3292237273507998538, guid: db35f9a0a54987b4ea837dde33efb099, type: 3}
       propertyPath: m_Name
       value: ConveyorPrefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 4419726104045664695, guid: db35f9a0a54987b4ea837dde33efb099, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4419726104045664695, guid: db35f9a0a54987b4ea837dde33efb099, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4419726104045664695, guid: db35f9a0a54987b4ea837dde33efb099, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4419726104045664695, guid: db35f9a0a54987b4ea837dde33efb099, type: 3}
       propertyPath: m_LocalPosition.x
@@ -866,6 +931,10 @@ PrefabInstance:
     - target: {fileID: 4419726104045664695, guid: db35f9a0a54987b4ea837dde33efb099, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4419726104045664695, guid: db35f9a0a54987b4ea837dde33efb099, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
