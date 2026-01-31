@@ -3,6 +3,11 @@ using UnityEngine;
 public class GameManager : Singleton<GameManager>
 {
     [SerializeField] private EndGameUI endGameUI;
+
+#if UNITY_EDITOR
+    [SerializeField] private bool DontEndGame = false;
+#endif
+
     private new void Awake()
     {
         base.Awake();
@@ -20,10 +25,14 @@ public class GameManager : Singleton<GameManager>
 
     public void Victory()
     {
-        // stop game
-        
-        
-        // temp solution
+#if UNITY_EDITOR
+        if (DontEndGame) return;
+#endif
+
+            // stop game
+
+
+            // temp solution
         Time.timeScale = 0;
         
         // display victory UI
@@ -39,8 +48,12 @@ public class GameManager : Singleton<GameManager>
 
     public void Defeat()
     {
+#if UNITY_EDITOR
+        if (DontEndGame) return;
+#endif
+
         // stop game
-        
+
         // temp solution
         Time.timeScale = 0;
         

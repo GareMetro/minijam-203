@@ -18,10 +18,6 @@ public class ConveyorBelt : AbstractBuilding
     [SerializeField] Food TEST;
     [SerializeField] bool TESTFIRST;
 
-    [SerializeField] Mover mover;
-    [SerializeField] Transform middle;
-
-
     protected override void Start() {
         base.Start();
 
@@ -35,6 +31,12 @@ public class ConveyorBelt : AbstractBuilding
     {
         base.ProcessInputs();
 
+        if (bouffesTickActuel.Count > 1)
+        {
+            HandleCaca();
+            return;
+        }
+
         foreach (var item in bouffesTickActuel)
         {
             mover.MoveObject(item.transform, Grid.GridInstance.TickDuration);
@@ -46,29 +48,4 @@ public class ConveyorBelt : AbstractBuilding
     {
         StartCoroutine(CacaRoutine());
     }
-
-    IEnumerator CacaRoutine()
-    {
-        foreach (var item in bouffesTickActuel)
-        {
-            mover.MoveObject(item.transform, Grid.GridInstance.TickDuration);
-        }
-
-        yield return new WaitForSeconds(Grid.GridInstance.TickDuration / 2f);
-
-
-        foreach (var item in bouffesTickActuel)
-        {
-            Destroy(item.gameObject);
-        }
-        bouffesTickActuel.Clear();
-
-        //Todo: produire caca
-
-        GameObject caca = Instantiate(FoodManager.Instance.caca.prefab, middle.transform.position, Quaternion.identity);
-        bouffesTickActuel.Add(caca.GetComponent<Food>());
-        mover.MoveObject(caca.transform, Grid.GridInstance.TickDuration / 2f);
-
-    }
-
 }

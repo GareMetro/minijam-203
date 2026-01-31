@@ -29,15 +29,15 @@ public class RecipeViewer : MonoBehaviour
                 added.TryGetComponent<RecipeUI>(out RecipeUI recipeUIComponent);
 
                 int i = 0;
-                foreach(Food food in recipe.ingredients)
+                foreach(BaseIngredient food in recipe.ingredients)
                 {
-                    recipeUIComponent.iconList[i].sprite = food.baseIngredient.icon;
+                    recipeUIComponent.iconList[i].sprite = food.icon;
                     ++i;
                     if (i > 2) break;
                 }
 
                 recipeUIComponent.iconList[3].sprite = building.Icon;
-                recipeUIComponent.iconList[4].sprite = recipe.outputs[0].baseIngredient.icon;
+                recipeUIComponent.iconList[4].sprite = recipe.outputs[0].icon;
 
             }
         }

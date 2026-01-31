@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Collections;
 using Unity.IntegerTime;
 using System;
+using System.Reflection;
 
 // Permet de gérer les cas d'envoi invalides
 [System.Serializable]
@@ -37,6 +38,9 @@ public abstract class AbstractBuilding : MonoBehaviour
     //Sert pour savoir quelles tiles du bâtiment peuvent recevoir/sortir de la bouffe, et dans quelle direction
     public List<InOutInfo> InputTiles = new();
     public List<InOutInfo> OutputTiles = new();
+
+    [SerializeField] protected Mover mover;
+    [SerializeField] protected Transform middle;
 
     [Serializable]
     public struct FoodDelivery
@@ -127,14 +131,9 @@ public abstract class AbstractBuilding : MonoBehaviour
     {
         //récupérer ce qu'on nous donne ce tick
 
-        foreach(var item in bouffeTickSuivant)
+        foreach (var item in bouffeTickSuivant)
         {
             bouffesTickActuel.Add(item.food);
-        }
-
-        if(bouffeTickSuivant.Count >1)
-        {
-            HandleCaca();
         }
 
         bouffeTickSuivant.Clear();
@@ -184,6 +183,31 @@ public abstract class AbstractBuilding : MonoBehaviour
         }
 
         return tile + Position;
+    }
+
+
+    protected IEnumerator CacaRoutine()
+    {
+        foreach (var item in bouffesTickActuel)
+        {
+            mover.MoveObject(item.transform, Grid.GridInstance.TickDuration);
+        }
+
+        yield return new WaitForSeconds(Grid.GridInstance.TickDuration / 2f);
+
+
+        foreach (var item in bouffesTickActuel)
+        {
+            Destroy(item.gameObject);
+        }
+        bouffesTickActuel.Clear();
+
+        //Todo: produire caca
+
+        GameObject caca = Instantiate(FoodManager.Instance.caca.prefab, middle.transform.position, Quaternion.identity);
+        bouffesTickActuel.Add(caca.GetComponent<Food>());
+        mover.MoveObject(caca.transform, Grid.GridInstance.TickDuration / 2f);
+
     }
 
 }

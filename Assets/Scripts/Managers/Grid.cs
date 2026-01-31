@@ -16,7 +16,6 @@ public class Grid : MonoBehaviour
 
     public float tileSize = 10f;
 
-    [SerializeField]
     private List<List<Tile>> PlayGrid;
 
     [SerializeField]

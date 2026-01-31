@@ -19,7 +19,7 @@ public class Mover : MonoBehaviour
 
         foreach(Transform wayPoint in wayPoints)
             positions.Add(wayPoint.transform.position);
-        
+
         toMove.DOPath(positions.ToArray(), duration).SetEase(Ease.Linear);
     }
 

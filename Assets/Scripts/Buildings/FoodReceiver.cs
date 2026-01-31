@@ -50,7 +50,7 @@ public class FoodReceiver : AbstractBuilding
 
         if (satisfaction <= 0)
         {
-            GameManager.Instance.Defeat();
+            //GameManager.Instance.Defeat();
         }
 
     }
