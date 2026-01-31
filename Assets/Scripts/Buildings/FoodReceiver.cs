@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class FoodReceiver : AbstractBuilding
@@ -35,9 +36,11 @@ public class FoodReceiver : AbstractBuilding
             }
         }
 
+        satisfaction = Math.Min(satisfaction, 1f); //1 == 100% = max SATISFAIT
+
         if (satisfaction <= 0)
         {
-            //TODO perdu mdr
+            GameManager.Instance.Defeat();
         }
     }
 
