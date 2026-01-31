@@ -111,9 +111,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1620135712737575303}
-  - component: {fileID: 6664970647668242297}
+  - component: {fileID: 5620856709639682498}
   m_Layer: 0
-  m_Name: Output
+  m_Name: FoodReceiver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -136,7 +136,7 @@ Transform:
   - {fileID: 5643923409053391463}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
---- !u!114 &6664970647668242297
+--- !u!114 &5620856709639682498
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -145,13 +145,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 6796099674159690248}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52e874b96dd511d4b8437fa19b19a5aa, type: 3}
+  m_Script: {fileID: 11500000, guid: bd158bd9292017347a3b6205c3508940, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AbstractBuilding
+  m_EditorClassIdentifier: Assembly-CSharp::FoodReceiver
   Position: {x: 0, y: 0}
   Rotation: 0
-  LocalTiles:
-  - {x: 0, y: 0}
+  LocalTiles: []
+  InputTiles: []
+  OutputTiles: []
+  bouffeTickActuel: []
+  bouffeTickSuivant: []
+  requiredFood: {fileID: 0}
+  satisfactionPerGoodFood: 0
+  satisfactionPerBadFood: 0
+  satisfactionDecayPerTick: 0
 --- !u!1 &7491192852551339866
 GameObject:
   m_ObjectHideFlags: 0
