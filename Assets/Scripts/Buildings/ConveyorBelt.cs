@@ -20,15 +20,12 @@ public class ConveyorBelt : AbstractBuilding
 
     [SerializeField] Mover mover;
 
-    //Parametre de base, à priori ne pas toucher, par défaut les conveyor envoie toujous en haut dans leur ref local (la rotation est prise en compte pour savoir ou envoyer la bouffe)
-    [SerializeField] Vector2Int direction;
-
     Vector2Int TileSortie; //tile vers où vont sortir 
 
     protected override void Start() {
         base.Start();
 
-        TileSortie = ToWorldSpace(direction);
+        TileSortie = ToWorldSpace(OutputTiles[0].Direction);
 
         if(TESTFIRST)
         {
@@ -41,7 +38,7 @@ public class ConveyorBelt : AbstractBuilding
         if(bouffeTickActuel.Count > 0)
         {
             Tile tile = GridInstance.GetTile(TileSortie);
-            if (tile.ContentObject == null)
+            if (tile.ContentObject == null || tile == null)
             {
                 // TODO add food drop "animation"
                 Destroy(bouffeTickActuel[0].food.gameObject); //temporary !

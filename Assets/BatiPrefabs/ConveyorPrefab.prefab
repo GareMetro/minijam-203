@@ -53,10 +53,15 @@ MonoBehaviour:
   Rotation: 0
   LocalTiles:
   - {x: 0, y: 0}
+  InputTiles: []
+  OutputTiles:
+  - Tile: {x: 0, y: 0}
+    Direction: {x: 0, y: 1}
+  bouffeTickActuel: []
+  bouffeTickSuivant: []
   TEST: {fileID: 0}
   TESTFIRST: 0
   mover: {fileID: 817686374026817671}
-  direction: {x: 0, y: 1}
 --- !u!114 &817686374026817671
 MonoBehaviour:
   m_ObjectHideFlags: 0
