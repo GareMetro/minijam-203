@@ -75,6 +75,7 @@ public class TransformativeBuilding : AbstractBuilding
 
         yield return new WaitForSeconds(Grid.GridInstance.TickDuration / 2f);
 
+        Boing();
 
         foreach (var item in bouffesTickActuel)
         {

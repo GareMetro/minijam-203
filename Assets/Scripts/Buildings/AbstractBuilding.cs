@@ -6,6 +6,7 @@ using Unity.IntegerTime;
 using System;
 using System.Reflection;
 using DG.Tweening;
+using UnityEngine.UIElements;
 
 // Permet de gérer les cas d'envoi invalides
 [System.Serializable]
@@ -195,6 +196,7 @@ public abstract class AbstractBuilding : MonoBehaviour
 
         yield return new WaitForSeconds(Grid.GridInstance.TickDuration / 2f);
 
+        BadBoing();
 
         foreach (var item in bouffesTickActuel)
         {
@@ -212,6 +214,11 @@ public abstract class AbstractBuilding : MonoBehaviour
     public void Boing()
     {
         transform.DOPunchScale(transform.localScale * 0.2f, 0.3f, 6, 1);
+    }
+
+    public void BadBoing()
+    {
+        transform.DOShakeRotation(0.3f,15f);
     }
 
 }
