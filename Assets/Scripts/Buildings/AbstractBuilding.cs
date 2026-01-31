@@ -5,6 +5,7 @@ using System.Collections;
 using Unity.IntegerTime;
 using System;
 using System.Reflection;
+using DG.Tweening;
 
 // Permet de gérer les cas d'envoi invalides
 [System.Serializable]
@@ -185,7 +186,6 @@ public abstract class AbstractBuilding : MonoBehaviour
         return tile + Position;
     }
 
-
     protected IEnumerator CacaRoutine()
     {
         foreach (var item in bouffesTickActuel)
@@ -207,7 +207,11 @@ public abstract class AbstractBuilding : MonoBehaviour
         GameObject caca = Instantiate(FoodManager.Instance.caca.prefab, middle.transform.position, Quaternion.identity);
         bouffesTickActuel.Add(caca.GetComponent<Food>());
         mover.MoveObject(caca.transform, Grid.GridInstance.TickDuration / 2f);
+    }
 
+    public void Boing()
+    {
+        transform.DOPunchScale(transform.localScale * 0.2f, 0.3f, 6, 1);
     }
 
 }
