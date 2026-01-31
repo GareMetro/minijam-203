@@ -13,13 +13,7 @@ using System.Collections;
 //    // TODO : add other ingredients
 //}
 
-[CreateAssetMenu(fileName = "BaseIngredient", menuName = "Scriptable Objects/BaseIngredient")]
-public class BaseIngredient : ScriptableObject
-{
-    [SerializeField] public string name;
-    [SerializeField] public Sprite icon;
-    [SerializeField] public GameObject prefab;
-}
+
 
 
 [System.Serializable]
