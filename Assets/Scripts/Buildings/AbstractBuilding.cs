@@ -3,7 +3,15 @@ using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
 using Unity.IntegerTime;
-using System.ComponentModel;
+using System;
+
+// Permet de gérer les cas d'envoi invalides
+[System.Serializable]
+public struct InOutInfo
+{
+    public Vector2Int Tile;
+    public Vector2Int Direction;
+}
 
 /*
 
@@ -16,16 +24,21 @@ Les bâtiments ne gèrent pas si ils sont en train d'envoyer de la bouffe vers u
 
 
 */
-public class AbstractBuilding : MonoBehaviour
+
+public abstract class AbstractBuilding : MonoBehaviour
  {
 
-    [HideInInspector] public List<Tile> TilesList = new();
+    public List<Tile> TilesList = new();
     public Vector2Int Position = Vector2Int.zero;
     public int Rotation = 0;// sens trigo
 
     //Sert au plaçeur de batiment pour savoir où vont être les tiles de ce bâtiment
     public List<Vector2Int> LocalTiles = new();
+    //Sert pour savoir quelles tiles du bâtiment peuvent recevoir/sortir de la bouffe, et dans quelle direction
+    public List<InOutInfo> InputTiles = new();
+    public List<InOutInfo> OutputTiles = new();
 
+    [Serializable]
     public struct FoodDelivery
     {
         public Vector2Int tile;
@@ -42,6 +55,21 @@ public class AbstractBuilding : MonoBehaviour
 
     public List<FoodDelivery> bouffeTickActuel = new();
     public List<FoodDelivery> bouffeTickSuivant = new();
+
+    protected Grid GridInstance {get => GetGridInstance(); set => _gridInstance = value;}
+    protected Grid _gridInstance;
+
+    protected Grid GetGridInstance()
+    {
+        if (_gridInstance == null)
+            _gridInstance = Grid.GridInstance;
+        return _gridInstance;
+    }
+
+    private void Awake() 
+    {
+        GridInstance = Grid.GridInstance;
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     virtual protected void Start()

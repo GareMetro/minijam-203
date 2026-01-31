@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Collections;
 using UnityEngine.InputSystem.Interactions;
 using UnityEngine.InputSystem;
+using Unity.VisualScripting;
 using UnityEngine.Events;
 
 public class Grid : MonoBehaviour
@@ -13,25 +14,26 @@ public class Grid : MonoBehaviour
     [SerializeField]
     public Vector2Int Size;
 
-    [SerializeField] public float tileSize = 10f;
+    public float tileSize = 10f;
 
     private List<List<Tile>> PlayGrid;
 
+    [SerializeField]
+    public Vector2Int SelectedTile;
+
+    private Dictionary<Vector2Int, Coroutine> coroutines = new();
     [SerializeField]
     public float TickDuration = 1;
 
     [SerializeField]
     public BatiInfos batiInfos;
 
-    public ConveyorBelt TESTCONVEYOR1;
-    public ConveyorBelt TESTCONVEYOR2;
-    public ConveyorBelt TESTCONVEYOR3;
-    public ConveyorBelt TESTCONVEYOR4;
+    public List<AbstractBuilding> TESTBUILDINGS;
+    public List<Vector2Int> TESTBUILDINGSPOS;
 
     public UnityAction OnTick;
     public UnityAction NextTick;
 
-    
     private IEnumerator TickBuildings()
     {
         while(true)
@@ -52,10 +54,9 @@ public class Grid : MonoBehaviour
         }
         
         GridInstance = this;
-        
-        StartCoroutine(TickBuildings());
         CreateGrid();
     }
+
     private void CreateGrid()
     {
         for (int i = 0; i < Size.x; ++i)
@@ -82,21 +83,16 @@ public class Grid : MonoBehaviour
             }
         }
 
-        PlayGrid[0][0].ContentObject = TESTCONVEYOR1;
-        if (TESTCONVEYOR1)
-            TESTCONVEYOR1.transform.position = new Vector3(0, 1f, 0);
-        
-        PlayGrid[0][1].ContentObject = TESTCONVEYOR2;
-        if  (TESTCONVEYOR2) 
-            TESTCONVEYOR2.transform.position = new Vector3(0, 1f, 1f * tileSize);
-        
-        PlayGrid[1][1].ContentObject = TESTCONVEYOR3;
-        if   (TESTCONVEYOR3)
-            TESTCONVEYOR3.transform.position = new Vector3(1f * tileSize, 1f, 1f * tileSize);
-        
-        PlayGrid[1][0].ContentObject = TESTCONVEYOR4;
-        if (TESTCONVEYOR4)
-            TESTCONVEYOR4.transform.position = new Vector3(1f * tileSize, 1f, 0f);
+        for (int i = 0; i < TESTBUILDINGS.Count; ++i)
+        {
+            foreach (var tile in TESTBUILDINGS[i].LocalTiles)
+            {
+                Vector2Int locPos = TESTBUILDINGS[i].ToWorldSpace(tile);
+                //Debug.Log(TESTBUILDINGS[i].name + " : " + TESTBUILDINGS[i].ToWorldSpace(tile));
+                PlayGrid[locPos.x][locPos.y].ContentObject = TESTBUILDINGS[i];
+            }
+            TESTBUILDINGS[i].transform.position = new Vector3(TESTBUILDINGSPOS[i].x, 1f, TESTBUILDINGSPOS[i].y);
+        }
 
         StartCoroutine(TickBuildings());
     }
@@ -105,8 +101,6 @@ public class Grid : MonoBehaviour
     void Update()
     {
     }
-
-    
 
     public Tile GetTile(Vector2Int position)
     {
@@ -131,6 +125,4 @@ public class Grid : MonoBehaviour
             addedAbstractBuilding.TilesList.Add(PlayGrid[tilePos.x][tilePos.y]);
         }
     }
-
-    
 }
