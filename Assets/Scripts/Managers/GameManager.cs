@@ -1,16 +1,29 @@
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class GameManager : Singleton<GameManager>
 {
-    public FoodManager foodManager;
-    public HazardManager hazardManager;
-    //Grid reference
-    public AudioManager audioManager;
-
-    private void Awake() 
+    private new void Awake()
     {
-        audioManager = AudioManager.Instance;
-        foodManager.Initialize();
-        hazardManager.Initialize();
+        base.Awake();
+        FoodManager.Instance.Initialize();
+    }
+
+    public void Victory()
+    {
+        // stop game
+        
+        
+        // temp solution
+        Debug.Log("Victory !!!1!1!11!!");
+        Time.timeScale = 0;
+        
+        
+        // display victory UI
+    }
+
+    public void Defeat()
+    {
+        // stop game
+        // display defeat UI
     }
 }
