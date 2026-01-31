@@ -19,11 +19,6 @@ public class Mover : MonoBehaviour
 
         foreach(Transform wayPoint in wayPoints)
             positions.Add(wayPoint.transform.position);
-
-        foreach (var item in positions)
-        {
-            Debug.Log(item);
-        }
         
         toMove.DOPath(positions.ToArray(), Grid.GridInstance.TickDuration).SetEase(Ease.Linear);
     }

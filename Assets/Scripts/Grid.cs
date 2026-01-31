@@ -26,7 +26,13 @@ public class Grid : MonoBehaviour
     [SerializeField]
     public float TickDuration = 1;
 
+    public ConveyorBelt TESTCONVEYOR1;
+    public ConveyorBelt TESTCONVEYOR2;
+    public ConveyorBelt TESTCONVEYOR3;
+    public ConveyorBelt TESTCONVEYOR4;
+
     public UnityAction OnTick;
+    public UnityAction NextTick;
 
     private void MoveInteraction(InputAction.CallbackContext context, Vector2Int movement)
     {
@@ -49,6 +55,7 @@ public class Grid : MonoBehaviour
     {
         while(true)
         {
+            NextTick?.Invoke();
             OnTick?.Invoke();
             yield return new WaitForSeconds(TickDuration);
         }
@@ -81,8 +88,6 @@ public class Grid : MonoBehaviour
         Controls.PlayerActions.MoveUp.canceled += (context) => StopHold(Vector2Int.up);
         Controls.PlayerActions.MoveLeft.canceled += (context) => StopHold(Vector2Int.left);
         Controls.PlayerActions.MoveDown.canceled += (context) => StopHold(Vector2Int.down);
-
-        StartCoroutine(TickBuildings());
     }
 
     private void StartHold(Vector2Int dir)
@@ -122,9 +127,16 @@ public class Grid : MonoBehaviour
             PlayGrid.Add(new());
             for (int j = 0; j < Size.y; ++j)
             {
-                PlayGrid[i].Add(new());
+                PlayGrid[i].Add(new(new(i,j)));
             }
         }
+
+        PlayGrid[0][0].ContentObject = TESTCONVEYOR1;
+        PlayGrid[0][1].ContentObject = TESTCONVEYOR2;
+        PlayGrid[1][1].ContentObject = TESTCONVEYOR3;
+        PlayGrid[1][0].ContentObject = TESTCONVEYOR4;
+
+        StartCoroutine(TickBuildings());
     }
 
     // Update is called once per frame
@@ -139,13 +151,13 @@ public class Grid : MonoBehaviour
         SelectedTile.Clamp(new Vector2Int(0, 0), Size - new Vector2Int(1, 1));
     }
 
-    Tile GetTile(int x, int y)
+    public Tile GetTile(Vector2Int position)
     {
-        if (x < 0 || x >= Size.x)
+        if (position.x < 0 || position.x >= Size.x)
             return null;
-        if (y < 0 || y >= Size.x)
+        if (position.y < 0 || position.y >= Size.x)
             return null;
-        return PlayGrid[x][y];
+        return PlayGrid[position.x][position.y];
     }
 
     private void OnDrawGizmos()
