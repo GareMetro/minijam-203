@@ -19,11 +19,11 @@ public class Toolbar : MonoBehaviour
         if (toolIndex == 0)
         {
             //On a 8 outils donc ça arrive pas (c'est en dehors de l'écran btw)
-            SelectionTransform.position = new Vector2(650, SelectionTransform.position.y); //nice hardcoded position
+            SelectionTransform.localPosition = new Vector2(650, SelectionTransform.localPosition.y); //nice hardcoded position
         }
         else
         {
-            SelectionTransform.position = new Vector2(-350 + 100 * toolIndex, SelectionTransform.position.y); //nice hardcoded position
+            SelectionTransform.localPosition = new Vector2(-450 + 100 * toolIndex, SelectionTransform.localPosition.y); //nice hardcoded position
         }
     }
 }
