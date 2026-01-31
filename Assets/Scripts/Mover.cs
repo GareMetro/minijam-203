@@ -4,18 +4,35 @@ using UnityEngine;
 using DG;
 using DG.Tweening;
 using System.Linq;
+using UnityEditor;
 
 public class Mover : MonoBehaviour
 {
     [SerializeField] List<Transform> wayPoints;
 
-    public void MoveObject(Transform transform)
+    public void MoveObject(Transform toMove)
     {
-        Vector3[] positions = new Vector3[wayPoints.Count + 1];
-        positions.Append(transform.position);
-        foreach(Transform wayPoint in wayPoints)
-            positions.Append(wayPoint.transform.position);
+        List<Vector3> positions = new()
+        {
+            toMove.position
+        };
 
-        transform.DOPath(positions, Grid.GridInstance.TickDuration);
+        foreach(Transform wayPoint in wayPoints)
+            positions.Add(wayPoint.transform.position);
+
+        foreach (var item in positions)
+        {
+            Debug.Log(item);
+        }
+        
+        toMove.DOPath(positions.ToArray(), Grid.GridInstance.TickDuration).SetEase(Ease.Linear);
+    }
+    
+
+    private void OnDrawGizmos() {
+        foreach (var item in wayPoints)
+        {
+            Gizmos.DrawSphere(item.position, 0.2f);
+        }
     }
 }
