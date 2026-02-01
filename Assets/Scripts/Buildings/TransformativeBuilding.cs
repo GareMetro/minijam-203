@@ -16,8 +16,6 @@ public class TransformativeBuilding : AbstractBuilding
 {
     public List<Recipe> recipes;
 
-    public Sprite Icon;
-
     public override void ProcessInputs()
     {
         base.ProcessInputs();

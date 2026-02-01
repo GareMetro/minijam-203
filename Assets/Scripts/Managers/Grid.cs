@@ -28,9 +28,6 @@ public class Grid : MonoBehaviour
     [SerializeField]
     public float TickDuration = 1;
 
-    [SerializeField]
-    public BatiInfos batiInfos;
-
     public List<AbstractBuilding> TESTBUILDINGS;
     public List<Vector2Int> TESTBUILDINGSPOS;
 

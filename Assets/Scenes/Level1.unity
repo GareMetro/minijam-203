@@ -1383,13 +1383,9 @@ MonoBehaviour:
       ingredient: {fileID: 11400000, guid: 835ddd82aff072b4292dd54db971f4f3, type: 2}
       position: {x: 9, y: 4}
       rotation: 2
-    numberOfStepsNeeded: 0
     timeBeforeNextOrder: 5
-    prefab: {fileID: 0}
   givenIngredients: []
-  caca: {fileID: 11400000, guid: 1a2e7d9e7604dea3d9ce21590ce27928, type: 2}
-  ingredientEntryPrefab: {fileID: 0}
-  foodOutputPrefab: {fileID: 0}
+  caca: {fileID: 11400000, guid: 81586f882a13b0e40930719909bfcecf, type: 2}
   inputBuildingPrefab: {fileID: 8300613802659117624, guid: 96cffbe1950891d588dc69ed374df956, type: 3}
   outputBuildingPrefab: {fileID: 5620856709639682498, guid: 6781669dd23a78dd6b2189169b7f95ea, type: 3}
 --- !u!4 &1702569225
@@ -1421,9 +1417,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Grid
   Size: {x: 10, y: 5}
   tileSize: 20
+  tileEvenMat: {fileID: 0}
+  tileOddMat: {fileID: 0}
   SelectedTile: {x: 0, y: 0}
   TickDuration: 1
-  batiInfos: {fileID: 11400000, guid: 2fa1556efe69a9e43952d34e7090b527, type: 2}
   TESTBUILDINGS: []
   TESTBUILDINGSPOS: []
 --- !u!1 &2057735477
@@ -1461,6 +1458,15 @@ MonoBehaviour:
   RotationBati: 0
   Toolbar: {fileID: 400380913}
   recipeViewer: {fileID: 789007010}
+  batiInfos:
+  - {fileID: 11400000, guid: 2e7cfb67dbe2c6648bd4fa93d053745a, type: 2}
+  - {fileID: 11400000, guid: 2e7cfb67dbe2c6648bd4fa93d053745a, type: 2}
+  - {fileID: 11400000, guid: 04824f7900639954782bbdcdab247f49, type: 2}
+  - {fileID: 11400000, guid: 275b6e6aea0546c49a911b83c4bb3d1a, type: 2}
+  - {fileID: 11400000, guid: e5d832f2963074047b076279347167f8, type: 2}
+  - {fileID: 11400000, guid: 2191ed29fec4e754e985a4c4659266ea, type: 2}
+  - {fileID: 11400000, guid: 5a761d5ff285cc449b13181dbccf5e26, type: 2}
+  - {fileID: 11400000, guid: 3ec510ff5d5efb241b025373b4f3cc78, type: 2}
 --- !u!4 &2057735479
 Transform:
   m_ObjectHideFlags: 0

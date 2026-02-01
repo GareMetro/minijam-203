@@ -50,6 +50,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bc1f395a45b6fa40aa7b3bdd86162fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ConveyorBelt
+  batiInfo: {fileID: 11400000, guid: 04824f7900639954782bbdcdab247f49, type: 2}
   Position: {x: 0, y: 0}
   Rotation: 0
   LocalTiles:
@@ -66,6 +67,7 @@ MonoBehaviour:
     Direction: {x: 0, y: 1}
   mover: {fileID: 817686374026817671}
   middle: {fileID: 3273387582280100363}
+  buildingAnimator: {fileID: 0}
   bouffesTickActuel: []
   bouffeTickSuivant: []
 --- !u!114 &817686374026817671

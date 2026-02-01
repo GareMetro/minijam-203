@@ -36,7 +36,7 @@ public class RecipeViewer : MonoBehaviour
                     if (i > 2) break;
                 }
 
-                recipeUIComponent.iconList[3].sprite = building.Icon;
+                recipeUIComponent.iconList[3].sprite = building.batiInfo.icon;
                 recipeUIComponent.iconList[4].sprite = recipe.outputs[0].icon;
 
             }
