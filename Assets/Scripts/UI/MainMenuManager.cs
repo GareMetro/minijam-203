@@ -39,6 +39,20 @@ public class MainMenuManager : MonoBehaviour
         CreditsMenu.SetActive(false);
     }
 
+    public void SetGeneralVolume(float newVol)
+    {
+        AudioManager.Instance.generalVolume = newVol;
+    }
+    
+    public void SetMusicVolume(float newVol)
+    {
+        AudioManager.Instance.musicVolume = newVol;
+    }
+    public void SetSFXVolume(float newVol)
+    {
+        AudioManager.Instance.sfxVolume = newVol;
+    }
+
     public void OpenMainMenu()
     {
         MainMenu.SetActive(true);

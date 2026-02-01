@@ -35,6 +35,11 @@ public class FoodReceiver : AbstractBuilding
 
     [SerializeField] private Image requiredFoodIcon;
 
+    protected override void Start()
+    {
+        base.Start();
+        requiredFoodIcon.transform.Rotate(Vector3.forward, 90 * (2 - Rotation));
+    }
     public override void ProcessInputs()
     {
         base.ProcessInputs();

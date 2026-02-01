@@ -31,10 +31,10 @@ public struct FoodInfo
 {
     public List<FoodIO> inputs;
     public FoodIO output;
+    public bool doNotWait;
     
     //public int numberOfStepsNeeded;
-
-    public float timeBeforeNextOrder;
+    
     //public GameObject prefab;
 }
 
@@ -60,14 +60,20 @@ public class FoodManager : Singleton<FoodManager>
     {
         CurrentReceivers = new();
 
-        StartCoroutine(wallPlacementCoroutine(timeBeforeFirstOrder));
-        StartCoroutine(newOrderCoroutine(timeBeforeFirstOrder));
+        
+        StartCoroutine(DelayRoutine(newOrderCoroutine()));
+        StartCoroutine(DelayRoutine(wallPlacementCoroutine()));
     }
 
-    IEnumerator wallPlacementCoroutine(float timeNeeded)
+    IEnumerator DelayRoutine(IEnumerator routine)
     {
-
-        yield return new WaitForSeconds(timeNeeded);
+        yield return new WaitForSeconds(0.5f);
+        StartCoroutine(routine);
+    }
+    
+    IEnumerator wallPlacementCoroutine()
+    {
+        
 
         foreach (Vector2Int pos in Walls)
         {
@@ -79,38 +85,48 @@ public class FoodManager : Singleton<FoodManager>
         
         
         
-    IEnumerator newOrderCoroutine(float timeNeeded)
+    IEnumerator newOrderCoroutine()
     {
-        yield return new WaitForSeconds(timeNeeded);
-        currentFoodOrderIndex++;
-
-        if (currentFoodOrderIndex >= foodDict.Count)
+        if (currentFoodOrderIndex == -1)
         {
-            currentFoodOrderIndex = foodDict.Count;
+            currentFoodOrderIndex++;
+            AddNewFoodOrder();
+            StartCoroutine(newOrderCoroutine());
+        }
+        else
+        {
             bool shouldWin = true;
-            foreach (GameObject receiver in CurrentReceivers)
+            if (!foodDict[currentFoodOrderIndex].doNotWait)
             {
-                if (receiver.GetComponent<FoodReceiver>().satisfaction < satisfactionWinThreshold)
+                foreach (GameObject receiver in CurrentReceivers)
                 {
-                    shouldWin = false;
-                    break;
-
+                    if (receiver.GetComponent<FoodReceiver>().satisfaction < satisfactionWinThreshold)
+                    {
+                        shouldWin = false;
+                        break;
+                    }
                 }
             }
             if (shouldWin)
             {
-                GameManager.Instance.Victory();
-                yield return null;
+                if (currentFoodOrderIndex >= foodDict.Count - 1)
+                {
+                    GameManager.Instance.Victory();
+                    yield return null;
+                }
+                else
+                {
+                    currentFoodOrderIndex++;
+                    AddNewFoodOrder();
+                    yield return new WaitForSeconds(1);
+                    StartCoroutine(newOrderCoroutine());
+                }
             }
             else
             {
-                StartCoroutine(newOrderCoroutine(1));
-            }
-        }
-        else
-        {
-            AddNewFoodOrder();
-            StartCoroutine(newOrderCoroutine(foodDict[currentFoodOrderIndex].timeBeforeNextOrder));
+                yield return new WaitForSeconds(1);
+                StartCoroutine(newOrderCoroutine());
+            }  
         }
     }
 

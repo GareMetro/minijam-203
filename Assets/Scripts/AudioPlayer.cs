@@ -5,6 +5,7 @@ using UnityEngine;
 public class AudioPlayer : MonoBehaviour
 {
     public bool isMusic = false;
+    public int playAwake = -1;
     AudioSource selfSource;
     public List<AudioClip> audioClips;
     public float selfVolumeMod = 1f;
@@ -12,6 +13,12 @@ public class AudioPlayer : MonoBehaviour
     private void Awake() 
     {
         selfSource = GetComponent<AudioSource>();
+    }
+
+    void Start()
+    {
+        if (playAwake >= 0 && playAwake < audioClips.Count)
+            PlaySound(playAwake);
     }
 
     void Update()
