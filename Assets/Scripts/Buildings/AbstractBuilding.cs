@@ -7,6 +7,7 @@ using System;
 using System.Reflection;
 using DG.Tweening;
 using UnityEngine.UIElements;
+using Random = UnityEngine.Random;
 
 // Permet de gérer les cas d'envoi invalides
 [System.Serializable]
@@ -117,6 +118,15 @@ public abstract class AbstractBuilding : MonoBehaviour
 
     public virtual void GiveOutput() //1 tick par seconde
     {
+        if (bouffesTickActuel.Count != 0)
+        {
+            //Jouer le son du bâtiment
+            if (TryGetComponent<AudioPlayer>(out AudioPlayer player))
+            {
+                int soundClips = player.audioClips.Count;
+                player.PlaySound(Random.Range(0, soundClips));
+            }
+        }
         // donner ce qu'il y a besoins au autres
 
         for (int i = 0; i < bouffesTickActuel.Count && i < OutputTiles.Count; ++i)

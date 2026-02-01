@@ -1,6 +1,7 @@
 using UnityEditor;
 using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class FoodReceiver : AbstractBuilding
 {
@@ -46,7 +47,7 @@ public class FoodReceiver : AbstractBuilding
         satisfaction = Math.Min(satisfaction, 1f); //1 == 100% = max SATISFAIT
 
         if (satisfaction <= 0)
-        {
+        { 
             GameManager.Instance.Defeat();
         }
 
@@ -54,6 +55,16 @@ public class FoodReceiver : AbstractBuilding
 
     public override void GiveOutput()
     {
+        if (bouffesTickActuel.Count != 0)
+        {
+            //Jouer le son du bâtiment
+            if (TryGetComponent<AudioPlayer>(out AudioPlayer player))
+            {
+                int soundClips = player.audioClips.Count;
+                player.PlaySound(Random.Range(0, soundClips));
+            }
+        }
+        
         foreach (var item in bouffesTickActuel)
         {
             Destroy(item.gameObject);
