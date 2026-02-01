@@ -15,18 +15,6 @@ Pour placer auto un conveyor, il suffit de lui rentrer Position (vecteur2DInt de
 */
 public class ConveyorBelt : AbstractBuilding
 {
-    [SerializeField] Food TEST;
-    [SerializeField] bool TESTFIRST;
-
-    protected override void Start() {
-        base.Start();
-
-        if(TESTFIRST)
-        {
-            bouffeTickSuivant.Add(new FoodDelivery(Vector2Int.zero, Vector2Int.up, TEST));
-        }
-    }
-
     public override void ProcessInputs()
     {
         base.ProcessInputs();
@@ -42,8 +30,6 @@ public class ConveyorBelt : AbstractBuilding
             mover.MoveObject(item.transform, Grid.GridInstance.TickDuration);
         }
     }
-
-
     public override void HandleCaca()
     {
         StartCoroutine(CacaRoutine());

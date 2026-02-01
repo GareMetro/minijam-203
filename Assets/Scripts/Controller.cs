@@ -127,7 +127,7 @@ public class Controller : MonoBehaviour
         SelectedTile += move;
         SelectedTile.Clamp(new Vector2Int(0, 0), Grid.GridInstance.Size - new Vector2Int(1, 1));
         
-        cursor.transform.position = new Vector3(SelectedTile.x * Grid.GridInstance.tileSize, 25f, SelectedTile.y * Grid.GridInstance.tileSize);
+        cursor.transform.position = new Vector3(SelectedTile.x * Grid.GridInstance.tileSize, 5.8f, SelectedTile.y * Grid.GridInstance.tileSize);
     }
 
     private IEnumerator MovementRepeat(Vector2Int movement)

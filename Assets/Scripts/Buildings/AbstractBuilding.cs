@@ -187,7 +187,7 @@ public abstract class AbstractBuilding : MonoBehaviour
         return tile + Position;
     }
 
-    protected IEnumerator CacaRoutine()
+    protected virtual IEnumerator CacaRoutine()
     {
         foreach (var item in bouffesTickActuel)
         {

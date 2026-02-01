@@ -5,6 +5,7 @@ using DG;
 using DG.Tweening;
 using System.Linq;
 using UnityEditor;
+using static DG.Tweening.DOCurve;
 
 public class Mover : MonoBehaviour
 {

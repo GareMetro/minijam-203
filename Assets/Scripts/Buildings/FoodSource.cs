@@ -8,8 +8,6 @@ public class FoodSource : AbstractBuilding
 
     [SerializeField] Transform spawnPoint;
 
-    [SerializeField] Mover mover;
-
     public override void ProcessInputs()
     {
         foreach (var item in bouffeTickSuivant)

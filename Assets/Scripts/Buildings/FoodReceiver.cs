@@ -20,9 +20,6 @@ public class FoodReceiver : AbstractBuilding
     //Combien on perd quand il y a rien
     private float satisfactionDecayPerTick;
 
-
-    [SerializeField] Mover mover;
-
     public override void ProcessInputs()
     {
         base.ProcessInputs();
