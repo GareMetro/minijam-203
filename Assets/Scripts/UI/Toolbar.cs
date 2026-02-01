@@ -25,7 +25,7 @@ public class Toolbar : MonoBehaviour
         }
         else
         {
-            SelectionTransform.localPosition = new Vector2(FirstToolPos + ToolSpacing * (1 -toolIndex), SelectionTransform.localPosition.y); //nice hardcoded position
+            SelectionTransform.localPosition = new Vector2(FirstToolPos + ToolSpacing * (toolIndex - 1), SelectionTransform.localPosition.y); //nice hardcoded position
         }
     }
 }
