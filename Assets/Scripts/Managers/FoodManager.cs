@@ -67,16 +67,25 @@ public class FoodManager : Singleton<FoodManager>
         if (currentFoodOrderIndex >= foodDict.Count)
         {
             currentFoodOrderIndex = foodDict.Count;
+            bool shouldWin = true;
             foreach (GameObject receiver in CurrentReceivers)
             {
                 if (receiver.GetComponent<FoodReceiver>().satisfaction < satisfactionWinThreshold)
                 {
-                    StartCoroutine(newOrderCoroutine(1));
-                    yield return null;
+                    shouldWin = false;
+                    break;
+
                 }
             }
-            GameManager.Instance.Victory();
-            yield return null;
+            if (shouldWin)
+            {
+                GameManager.Instance.Victory();
+                yield return null;
+            }
+            else
+            {
+                StartCoroutine(newOrderCoroutine(1));
+            }
         }
         else
         {

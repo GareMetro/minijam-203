@@ -87,6 +87,7 @@ public class TransformativeBuilding : AbstractBuilding
         for (int i = 0; i < recipe.outputs.Count; ++i)
         {
             GameObject Output = Instantiate(recipe.outputs[i].prefab, middle.transform.position, Quaternion.identity);
+            Output.transform.localScale *= Grid.GridInstance.tileSize * 0.8f;
             bouffesTickActuel.Add(Output.GetComponent<Food>());
             mover.MoveObject(Output.transform, Grid.GridInstance.TickDuration / 2f);
         }

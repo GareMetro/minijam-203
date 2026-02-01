@@ -30,6 +30,7 @@ public class FoodSource : AbstractBuilding
         yield return new WaitForSeconds(Grid.GridInstance.TickDuration / 2f);
 
         GameObject g = Instantiate(food.prefab, spawnPoint.position, Quaternion.identity);
+        g.transform.localScale *= Grid.GridInstance.tileSize * 0.8f;
 
         Boing();
 
