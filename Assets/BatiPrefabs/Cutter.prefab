@@ -67,7 +67,15 @@ MonoBehaviour:
   buildingAnimator: {fileID: 7989676238781208872}
   bouffesTickActuel: []
   bouffeTickSuivant: []
-  recipes: []
+  recipes:
+  - ingredients:
+    - {fileID: 11400000, guid: cd2983ddc5cc09a44bf701d891a68f43, type: 2}
+    outputs:
+    - {fileID: 11400000, guid: d6a83acf475baf94fa5d4bbc2cd21d7f, type: 2}
+  - ingredients:
+    - {fileID: 11400000, guid: b03f037fa6b80b74391bdae610bf6a17, type: 2}
+    outputs:
+    - {fileID: 11400000, guid: db3208cc81eb3174b94e36ea30206496, type: 2}
 --- !u!82 &2860975242156522517
 AudioSource:
   m_ObjectHideFlags: 0
