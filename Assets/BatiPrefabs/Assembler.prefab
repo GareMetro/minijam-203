@@ -732,7 +732,7 @@ MonoBehaviour:
   OutputTiles: []
   mover: {fileID: 0}
   middle: {fileID: 0}
-  buildingAnimator: {fileID: 0}
+  buildingAnimator: {fileID: 425062729515581313}
   bouffesTickActuel: []
   bouffeTickSuivant: []
   recipes: []

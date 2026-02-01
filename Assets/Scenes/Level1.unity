@@ -1485,14 +1485,14 @@ MonoBehaviour:
   timeBeforeFirstOrder: 2
   foodDict:
   - inputs:
-    - ingredient: {fileID: 11400000, guid: c7991b2ee2d0b1644ae838f786f6f5e2, type: 2}
+    - ingredient: {fileID: 11400000, guid: 4d4b72e56a219584883def9e9e71015a, type: 2}
       position: {x: 0, y: 0}
       rotation: 3
-    - ingredient: {fileID: 11400000, guid: c7991b2ee2d0b1644ae838f786f6f5e2, type: 2}
+    - ingredient: {fileID: 11400000, guid: 4d4b72e56a219584883def9e9e71015a, type: 2}
       position: {x: 0, y: 1}
       rotation: 3
     output:
-      ingredient: {fileID: 11400000, guid: 835ddd82aff072b4292dd54db971f4f3, type: 2}
+      ingredient: {fileID: 11400000, guid: 041881f11659c7347966d30b1a50e50c, type: 2}
       position: {x: 9, y: 4}
       rotation: 2
     timeBeforeNextOrder: 5
@@ -1500,6 +1500,7 @@ MonoBehaviour:
   caca: {fileID: 11400000, guid: 81586f882a13b0e40930719909bfcecf, type: 2}
   inputBuildingPrefab: {fileID: 8300613802659117624, guid: 96cffbe1950891d588dc69ed374df956, type: 3}
   outputBuildingPrefab: {fileID: 5620856709639682498, guid: 6781669dd23a78dd6b2189169b7f95ea, type: 3}
+  satisfactionWinThreshold: 0
 --- !u!4 &1702569225
 Transform:
   m_ObjectHideFlags: 0

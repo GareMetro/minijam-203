@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
@@ -46,12 +47,15 @@ public class FoodManager : Singleton<FoodManager>
     //[SerializeField] GameObject foodOutputPrefab;
     [SerializeField] private FoodSource inputBuildingPrefab;
     [SerializeField] private FoodReceiver outputBuildingPrefab;
-    
 
+    private List<GameObject> CurrentReceivers;
+    [SerializeField] private float satisfactionWinThreshold;
+    
     private int currentFoodOrderIndex = -1;
 
     public void Initialize()
     {
+        CurrentReceivers = new();
         StartCoroutine(newOrderCoroutine(timeBeforeFirstOrder));
     }
 
@@ -60,8 +64,17 @@ public class FoodManager : Singleton<FoodManager>
         yield return new WaitForSeconds(timeNeeded);
         currentFoodOrderIndex++;
 
-        if (currentFoodOrderIndex == foodDict.Count)
+        if (currentFoodOrderIndex >= foodDict.Count)
         {
+            currentFoodOrderIndex = foodDict.Count;
+            foreach (GameObject receiver in CurrentReceivers)
+            {
+                if (receiver.GetComponent<FoodReceiver>().satisfaction < satisfactionWinThreshold)
+                {
+                    StartCoroutine(newOrderCoroutine(1));
+                    yield return null;
+                }
+            }
             GameManager.Instance.Victory();
             yield return null;
         }
@@ -88,7 +101,7 @@ public class FoodManager : Singleton<FoodManager>
         
         FoodIO nextFoodOutput = foodDict[currentFoodOrderIndex].output;
         outputBuildingPrefab.requiredFood = nextFoodOutput.ingredient;
-        Grid.GridInstance.AddObject(outputBuildingPrefab, nextFoodOutput.position, nextFoodOutput.rotation);
+        CurrentReceivers.Add(Grid.GridInstance.AddObject(outputBuildingPrefab, nextFoodOutput.position, nextFoodOutput.rotation));
         // instanciate a foodOutput building at nextFoodOutput.position
         
         // add inputs at their position

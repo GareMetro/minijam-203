@@ -67,7 +67,7 @@ MonoBehaviour:
     Direction: {x: 0, y: 1}
   mover: {fileID: -4955415403796343511}
   middle: {fileID: 8261194737551478214}
-  buildingAnimator: {fileID: 0}
+  buildingAnimator: {fileID: 8387294147354089264}
   bouffesTickActuel: []
   bouffeTickSuivant: []
   recipes:

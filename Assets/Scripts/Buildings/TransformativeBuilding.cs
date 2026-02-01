@@ -21,7 +21,7 @@ public class TransformativeBuilding : AbstractBuilding
         base.ProcessInputs();
 
         if (bouffesTickActuel.Count > 0)
-            buildingAnimator.PlayAnimation();
+            buildingAnimator?.PlayAnimation();
 
         foreach (var recipe in recipes)
         {
