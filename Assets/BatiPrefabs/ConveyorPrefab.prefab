@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4419726104045664695}
   - component: {fileID: 2849224877654530544}
   - component: {fileID: 817686374026817671}
+  - component: {fileID: 1858594116304175387}
   m_Layer: 0
   m_Name: ConveyorPrefab
   m_TagString: Untagged
@@ -78,6 +79,37 @@ MonoBehaviour:
   wayPoints:
   - {fileID: 3273387582280100363}
   - {fileID: 194656036961621581}
+--- !u!114 &1858594116304175387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3292237273507998538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f28222b13d2ee549ae773f1e6fa6dbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BuildingAnimator
+  buildingType: 0
+  armBase1: {fileID: 0}
+  armExtend1: {fileID: 0}
+  armBase2: {fileID: 0}
+  armExtend2: {fileID: 0}
+  armBase3: {fileID: 0}
+  armExtend3: {fileID: 0}
+  armBase4: {fileID: 0}
+  armExtend4: {fileID: 0}
+  sparks1: {fileID: 0}
+  sparks2: {fileID: 0}
+  sparks3: {fileID: 0}
+  sparks4: {fileID: 0}
+  hatchet1: {fileID: 0}
+  hatchet2: {fileID: 0}
+  hatchet3: {fileID: 0}
+  smoke: {fileID: 0}
+  launcher: {fileID: 4419726104045664695}
+  spoon: {fileID: 0}
 --- !u!1 &4667905978249533035
 GameObject:
   m_ObjectHideFlags: 0
