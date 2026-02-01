@@ -1468,7 +1468,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   DoNotDestroyOnLoad: 0
   endGameUI: {fileID: 1017374085}
-  DontEndGame: 1
+  DontEndGame: 0
 --- !u!114 &1702569224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1503,7 +1503,7 @@ MonoBehaviour:
   inputBuildingPrefab: {fileID: 8300613802659117624, guid: 96cffbe1950891d588dc69ed374df956, type: 3}
   outputBuildingPrefab: {fileID: 5620856709639682498, guid: 6781669dd23a78dd6b2189169b7f95ea, type: 3}
   wallPrefab: {fileID: 5141896982414922224, guid: 8e9abd511ec04314c9d39b62b4e479db, type: 3}
-  satisfactionWinThreshold: 0
+  satisfactionWinThreshold: 0.99
 --- !u!4 &1702569225
 Transform:
   m_ObjectHideFlags: 0
@@ -1607,6 +1607,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 374905486171714296, guid: e2ac14ecba5c53f4186ed36bdaa85a98, type: 3}
+      propertyPath: TransformativeBuildingList.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 374905486171714296, guid: e2ac14ecba5c53f4186ed36bdaa85a98, type: 3}
+      propertyPath: 'TransformativeBuildingList.Array.data[1]'
+      value: 
+      objectReference: {fileID: 4800142937897893561, guid: a9e64e53c4edb23408a156bbb61eb769, type: 3}
+    - target: {fileID: 374905486171714296, guid: e2ac14ecba5c53f4186ed36bdaa85a98, type: 3}
+      propertyPath: 'TransformativeBuildingList.Array.data[2]'
+      value: 
+      objectReference: {fileID: 6343662063788119634, guid: 269e15a75f524684d919134ababb0a1d, type: 3}
+    - target: {fileID: 374905486171714296, guid: e2ac14ecba5c53f4186ed36bdaa85a98, type: 3}
+      propertyPath: 'TransformativeBuildingList.Array.data[3]'
+      value: 
+      objectReference: {fileID: 5540417087504074403, guid: e2ebccdc04320594a90d30fcb2aa688e, type: 3}
+    - target: {fileID: 374905486171714296, guid: e2ac14ecba5c53f4186ed36bdaa85a98, type: 3}
+      propertyPath: 'TransformativeBuildingList.Array.data[4]'
+      value: 
+      objectReference: {fileID: 6542725303885402951, guid: 83543ab724b6f194a8cb8d5f11a5fa29, type: 3}
+    - target: {fileID: 374905486171714296, guid: e2ac14ecba5c53f4186ed36bdaa85a98, type: 3}
+      propertyPath: 'TransformativeBuildingList.Array.data[5]'
+      value: 
+      objectReference: {fileID: 6542725303885402951, guid: 83543ab724b6f194a8cb8d5f11a5fa29, type: 3}
     - target: {fileID: 2684137124701460034, guid: e2ac14ecba5c53f4186ed36bdaa85a98, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
