@@ -769,7 +769,36 @@ MonoBehaviour:
   buildingAnimator: {fileID: 425062729515581313}
   bouffesTickActuel: []
   bouffeTickSuivant: []
-  recipes: []
+  recipes:
+  - ingredients:
+    - {fileID: 11400000, guid: 48625fedebf01ed4ba00c540d532ad32, type: 2}
+    - {fileID: 11400000, guid: f62048cc5d80ba649aab2126a09503d7, type: 2}
+    outputs:
+    - {fileID: 11400000, guid: a588a42f5e0db76478f1f0aeba0b9ad1, type: 2}
+  - ingredients:
+    - {fileID: 11400000, guid: a8c3963675969874db36c73d08b439dd, type: 2}
+    - {fileID: 11400000, guid: d6a83acf475baf94fa5d4bbc2cd21d7f, type: 2}
+    - {fileID: 11400000, guid: 2eef3c4bcf50df94e80b555477e23645, type: 2}
+    outputs:
+    - {fileID: 11400000, guid: b277fd1f6a4e85540bccf54432a81845, type: 2}
+  - ingredients:
+    - {fileID: 11400000, guid: a8c3963675969874db36c73d08b439dd, type: 2}
+    - {fileID: 11400000, guid: 2eef3c4bcf50df94e80b555477e23645, type: 2}
+    - {fileID: 11400000, guid: 2bcdc799a3f306e45b2825ded008bdf8, type: 2}
+    outputs:
+    - {fileID: 11400000, guid: bdb9c99cc8e5064438348aa25258e544, type: 2}
+  - ingredients:
+    - {fileID: 11400000, guid: 35c1dac0b2dafdc4c9e3122067d1b76c, type: 2}
+    - {fileID: 11400000, guid: 2eef3c4bcf50df94e80b555477e23645, type: 2}
+    - {fileID: 11400000, guid: 48625fedebf01ed4ba00c540d532ad32, type: 2}
+    outputs:
+    - {fileID: 11400000, guid: bf65fb4b065a012469097974e8426d4a, type: 2}
+  - ingredients:
+    - {fileID: 11400000, guid: 35c1dac0b2dafdc4c9e3122067d1b76c, type: 2}
+    - {fileID: 11400000, guid: 2eef3c4bcf50df94e80b555477e23645, type: 2}
+    - {fileID: 11400000, guid: 48625fedebf01ed4ba00c540d532ad32, type: 2}
+    outputs:
+    - {fileID: 11400000, guid: bf65fb4b065a012469097974e8426d4a, type: 2}
 --- !u!82 &5588674615039030509
 AudioSource:
   m_ObjectHideFlags: 0

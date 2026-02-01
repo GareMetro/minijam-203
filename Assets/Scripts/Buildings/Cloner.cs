@@ -15,6 +15,9 @@ public class Cloner : AbstractBuilding
     {
         base.ProcessInputs();
 
+        if(bouffesTickActuel.Count == 0)
+            return;
+
         for (int i = bouffesTickActuel.Count - 1; i > 0; --i)
         {
             Destroy(bouffesTickActuel[i].gameObject);
