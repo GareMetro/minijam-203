@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2f4539c01b1b9dc8bb51575d9055c6c, type: 3}
   m_Name: MincedMeat
   m_EditorClassIdentifier: Assembly-CSharp::BaseIngredient
-  foodName: 
+  foodName: MincedMeat
   icon: {fileID: 0}
-  prefab: {fileID: 0}
+  prefab: {fileID: 4855827830520610611, guid: 2d1fc988b2fd59d4e90e7d6a81864e07, type: 3}

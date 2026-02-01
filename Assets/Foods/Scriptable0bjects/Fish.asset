@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2f4539c01b1b9dc8bb51575d9055c6c, type: 3}
   m_Name: Fish
   m_EditorClassIdentifier: Assembly-CSharp::BaseIngredient
-  foodName: 
+  foodName: Fish
   icon: {fileID: 0}
-  prefab: {fileID: 0}
+  prefab: {fileID: 4916040073947404829, guid: 69e55e10d4919bf45a26166c6883ea52, type: 3}

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2f4539c01b1b9dc8bb51575d9055c6c, type: 3}
   m_Name: CookedRice
   m_EditorClassIdentifier: Assembly-CSharp::BaseIngredient
-  foodName: 
+  foodName: Cooked Rice
   icon: {fileID: 0}
-  prefab: {fileID: 0}
+  prefab: {fileID: 5656472488832623976, guid: 28066fd6c19b8d74886db540e352d5a3, type: 3}
