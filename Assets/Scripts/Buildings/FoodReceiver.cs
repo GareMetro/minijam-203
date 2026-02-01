@@ -1,11 +1,21 @@
 using UnityEditor;
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 public class FoodReceiver : AbstractBuilding
 {
-    public BaseIngredient requiredFood;
+    private BaseIngredient _requiredFood;
+    public BaseIngredient requiredFood
+    {
+        get { return _requiredFood;}
+        set
+        {
+            _requiredFood = value;
+            requiredFoodIcon.sprite = value.icon;
+        }
+    }
 
     public float satisfaction = 0.5f;
 
@@ -22,6 +32,8 @@ public class FoodReceiver : AbstractBuilding
     [SerializeField]
     //Combien on perd quand il y a rien
     private float satisfactionDecayPerTick;
+
+    [SerializeField] private Image requiredFoodIcon;
 
     public override void ProcessInputs()
     {
