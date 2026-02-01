@@ -70,9 +70,9 @@ MonoBehaviour:
   bouffeTickSuivant: []
   recipes:
   - ingredients:
-    - {fileID: 11400000, guid: c7991b2ee2d0b1644ae838f786f6f5e2, type: 2}
+    - {fileID: 11400000, guid: 4d4b72e56a219584883def9e9e71015a, type: 2}
     outputs:
-    - {fileID: 11400000, guid: 835ddd82aff072b4292dd54db971f4f3, type: 2}
+    - {fileID: 11400000, guid: 041881f11659c7347966d30b1a50e50c, type: 2}
   Icon: {fileID: 21300000, guid: bef21f36bf746c847ab232bb56e59738, type: 3}
 --- !u!114 &-4955415403796343511
 MonoBehaviour:

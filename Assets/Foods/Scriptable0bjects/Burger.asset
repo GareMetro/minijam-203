@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2f4539c01b1b9dc8bb51575d9055c6c, type: 3}
   m_Name: Burger
   m_EditorClassIdentifier: Assembly-CSharp::BaseIngredient
-  foodName: 
+  foodName: Hamburger
   icon: {fileID: 0}
-  prefab: {fileID: 0}
+  prefab: {fileID: 614341749823646461, guid: 7b828797ae6976741b53d17bca45913a, type: 3}
