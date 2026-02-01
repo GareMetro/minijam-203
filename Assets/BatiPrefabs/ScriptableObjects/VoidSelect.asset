@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: VoidSelect
   m_EditorClassIdentifier: Assembly-CSharp::BatiInfo
   batiPrefab: {fileID: 0}
-  holoPrefab: {fileID: 0}
+  holoPrefab: {fileID: 3490870889295002519, guid: 46205008544d561429f82fa3110a08c3, type: 3}
   icon: {fileID: 0}
