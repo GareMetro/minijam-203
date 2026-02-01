@@ -16,6 +16,9 @@ public class Grid : MonoBehaviour
 
     public float tileSize = 10f;
 
+    public Material tileEvenMat;
+    public Material tileOddMat;
+
     private List<List<Tile>> PlayGrid;
 
     [SerializeField]
@@ -63,9 +66,10 @@ public class Grid : MonoBehaviour
         {
             for (int j = 0; j < Size.y; ++j)
             {
-                GameObject newPlane = GameObject.CreatePrimitive(PrimitiveType.Plane);
-                newPlane.transform.position = new Vector3(i * tileSize, 0f, j * tileSize);
-                newPlane.transform.localScale = (tileSize/10f) * 0.95f * Vector3.one;
+                GameObject newTile = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                newTile.transform.position = new Vector3(i * tileSize, 0f, j * tileSize);
+                newTile.transform.localScale = (tileSize/10f) * 0.95f * Vector3.one;
+                newTile.GetComponent<Renderer>().material = (i + j) % 2 == 0 ? tileEvenMat : tileOddMat;
             }
         }
     }
