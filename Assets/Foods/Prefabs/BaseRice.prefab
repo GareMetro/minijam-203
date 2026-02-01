@@ -144,6 +144,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4683669308469848369, guid: cf1e289a896ee5b43bd1282d8d5125c6, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 6c7b712f358501647b8d5f4bc744b32f, type: 2}
+    - target: {fileID: -3393059317818742671, guid: cf1e289a896ee5b43bd1282d8d5125c6, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 5bbf5d4bb0327564bb8e245f3e2652da, type: 2}
     - target: {fileID: 919132149155446097, guid: cf1e289a896ee5b43bd1282d8d5125c6, type: 3}
       propertyPath: m_Name
       value: baseRice
