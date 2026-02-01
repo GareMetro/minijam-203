@@ -1496,10 +1496,13 @@ MonoBehaviour:
       position: {x: 9, y: 4}
       rotation: 2
     timeBeforeNextOrder: 5
+  Walls:
+  - {x: 3, y: 3}
   givenIngredients: []
   caca: {fileID: 11400000, guid: 81586f882a13b0e40930719909bfcecf, type: 2}
   inputBuildingPrefab: {fileID: 8300613802659117624, guid: 96cffbe1950891d588dc69ed374df956, type: 3}
   outputBuildingPrefab: {fileID: 5620856709639682498, guid: 6781669dd23a78dd6b2189169b7f95ea, type: 3}
+  wallPrefab: {fileID: 5141896982414922224, guid: 8e9abd511ec04314c9d39b62b4e479db, type: 3}
   satisfactionWinThreshold: 0
 --- !u!4 &1702569225
 Transform:
@@ -1510,7 +1513,7 @@ Transform:
   m_GameObject: {fileID: 1702569220}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 517.3285, y: -0.00003, z: -982.1631}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -113,7 +113,7 @@ public class Controller : MonoBehaviour
         AbstractBuilding currentBuilding = Grid.GridInstance.GetTile(SelectedTile).ContentObject;
         if (currentBuilding == null)
             return;
-        if ( !(currentBuilding is FoodSource) && !(currentBuilding is FoodReceiver))
+        if ( !(currentBuilding is FoodSource) && !(currentBuilding is FoodReceiver) && !(currentBuilding is Wall))
         {
             Grid.GridInstance.RemoveObject(SelectedTile);
         }

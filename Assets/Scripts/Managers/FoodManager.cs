@@ -41,12 +41,14 @@ public class FoodManager : Singleton<FoodManager>
 {
     [SerializeField] float timeBeforeFirstOrder = 50;
     [SerializeField] List<FoodInfo> foodDict;
+    [SerializeField] List<Vector2Int> Walls;
     [SerializeField] List<BaseIngredient> givenIngredients;
     [SerializeField] public BaseIngredient caca;
     //[SerializeField] GameObject ingredientEntryPrefab;
     //[SerializeField] GameObject foodOutputPrefab;
     [SerializeField] private FoodSource inputBuildingPrefab;
     [SerializeField] private FoodReceiver outputBuildingPrefab;
+    [SerializeField] private Wall wallPrefab;
 
     private List<GameObject> CurrentReceivers;
     [SerializeField] private float satisfactionWinThreshold;
@@ -56,9 +58,26 @@ public class FoodManager : Singleton<FoodManager>
     public void Initialize()
     {
         CurrentReceivers = new();
+
         StartCoroutine(newOrderCoroutine(timeBeforeFirstOrder));
+        StartCoroutine(wallPlacementCoroutine(timeBeforeFirstOrder));
     }
 
+    IEnumerator wallPlacementCoroutine(float timeNeeded)
+    {
+
+        yield return new WaitForSeconds(timeNeeded);
+
+        foreach (Vector2Int pos in Walls)
+        {
+            Grid.GridInstance.AddObject(wallPrefab, pos, 0, true);
+        }
+
+        yield return null;
+    }
+        
+        
+        
     IEnumerator newOrderCoroutine(float timeNeeded)
     {
         yield return new WaitForSeconds(timeNeeded);
@@ -105,12 +124,12 @@ public class FoodManager : Singleton<FoodManager>
                 continue;
             // instanciate a foodInput building at foodInput.position
             inputBuildingPrefab.food = foodInput.ingredient;
-            Grid.GridInstance.AddObject(inputBuildingPrefab, foodInput.position, foodInput.rotation);
+            Grid.GridInstance.AddObject(inputBuildingPrefab, foodInput.position, foodInput.rotation,true);
         }
         
         FoodIO nextFoodOutput = foodDict[currentFoodOrderIndex].output;
         outputBuildingPrefab.requiredFood = nextFoodOutput.ingredient;
-        CurrentReceivers.Add(Grid.GridInstance.AddObject(outputBuildingPrefab, nextFoodOutput.position, nextFoodOutput.rotation));
+        CurrentReceivers.Add(Grid.GridInstance.AddObject(outputBuildingPrefab, nextFoodOutput.position, nextFoodOutput.rotation,true));
         // instanciate a foodOutput building at nextFoodOutput.position
         
         // add inputs at their position

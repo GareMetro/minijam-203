@@ -124,12 +124,17 @@ public class Grid : MonoBehaviour
 
     }
 
-    public GameObject AddObject(AbstractBuilding building, Vector2Int pos, int rot)
+    public GameObject AddObject(AbstractBuilding building, Vector2Int pos, int rot, bool force = false)
     {
-        //Si la tile est occup�e
-        if (GetTile(pos).ContentObject) 
+        //Si la tile est occup�e et qu'on ne force pas le placement
+        if (GetTile(pos).ContentObject && !force) 
         {
             return null;
+        }
+        //Si elle est occupée et qu'on force le placement, on supprime ce qu'il y avait dessus
+        if(force && GetTile(pos).ContentObject)
+        {
+            RemoveObject(pos);
         }
 
         //on cr�� une instance du type s�l�ction�
