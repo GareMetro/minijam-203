@@ -64,8 +64,8 @@ public class Grid : MonoBehaviour
             for (int j = 0; j < Size.y; ++j)
             {
                 GameObject newTile = GameObject.CreatePrimitive(PrimitiveType.Cube);
-                newTile.transform.position = new Vector3(i * tileSize, 0f, j * tileSize);
-                newTile.transform.localScale = (tileSize/10f) * 0.95f * Vector3.one;
+                newTile.transform.localScale = tileSize * 0.95f * (Vector3.one - Vector3.up * 0.75f);
+                newTile.transform.position = new Vector3(i * tileSize, -newTile.transform.localScale.y/2f, j * tileSize);
                 newTile.GetComponent<Renderer>().material = (i + j) % 2 == 0 ? tileEvenMat : tileOddMat;
             }
         }
