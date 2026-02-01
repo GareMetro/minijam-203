@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1084053556572323268}
   - component: {fileID: 843544859574493955}
-  - component: {fileID: -8274116789702979513}
+  - component: {fileID: 5422834921135779184}
+  - component: {fileID: 3963632496434551418}
   m_Layer: 0
   m_Name: Burrito
   m_TagString: Untagged
@@ -49,7 +50,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Food
   baseIngredient: {fileID: 11400000, guid: bf65fb4b065a012469097974e8426d4a, type: 2}
---- !u!54 &-8274116789702979513
+--- !u!54 &5422834921135779184
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -72,10 +73,31 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!135 &3963632496434551418
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2792546575042728790}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.2
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1027553510989110724
 PrefabInstance:
   m_ObjectHideFlags: 0

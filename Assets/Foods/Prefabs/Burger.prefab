@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 672223312825027958}
   - component: {fileID: -5007807137977256258}
-  - component: {fileID: 1787109877623554636}
+  - component: {fileID: -8983803940816131411}
+  - component: {fileID: -1102654473662743700}
   m_Layer: 0
   m_Name: Burger
   m_TagString: Untagged
@@ -49,7 +50,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Food
   baseIngredient: {fileID: 11400000, guid: b277fd1f6a4e85540bccf54432a81845, type: 2}
---- !u!54 &1787109877623554636
+--- !u!54 &-8983803940816131411
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -72,10 +73,31 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!135 &-1102654473662743700
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 614341749823646461}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.2
+  m_Center: {x: 0, y: 0.16, z: 0}
 --- !u!1001 &2788327054740967239
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -57,6 +57,8 @@ public abstract class AbstractBuilding : MonoBehaviour
     [SerializeField] protected Transform middle;
     [SerializeField] protected BuildingAnimator buildingAnimator;
 
+    AudioPlayer audioPlayer;
+
     [Serializable]
     public struct FoodDelivery
     {
@@ -87,6 +89,7 @@ public abstract class AbstractBuilding : MonoBehaviour
 
     private void Awake() 
     {
+        audioPlayer = GetComponent<AudioPlayer>();
         GridInstance = Grid.GridInstance;
     }
 
@@ -123,15 +126,7 @@ public abstract class AbstractBuilding : MonoBehaviour
 
     public virtual void GiveOutput() //1 tick par seconde
     {
-        if (bouffesTickActuel.Count != 0)
-        {
-            //Jouer le son du bâtiment
-            if (TryGetComponent<AudioPlayer>(out AudioPlayer player))
-            {
-                int soundClips = player.audioClips.Count;
-                player.PlaySound(Random.Range(0, soundClips));
-            }
-        }
+        
         // donner ce qu'il y a besoins au autres
 
         for (int i = 0; i < bouffesTickActuel.Count && i < OutputTiles.Count; ++i)
@@ -143,8 +138,8 @@ public abstract class AbstractBuilding : MonoBehaviour
             }
             else
             {
-                Destroy( bouffesTickActuel[i].gameObject);
-                //todo: ragdoll lol olololollloolololololols
+                Vector2Int dir = DirToWorldSpace(OutputTiles[i].Direction);
+                bouffesTickActuel[i].DisapearFalling(new Vector3(dir.x, 0f, dir.y));
             }
         }
 
@@ -164,7 +159,7 @@ public abstract class AbstractBuilding : MonoBehaviour
             else
             {
                 //todo animation?
-                Destroy(item.food.gameObject);
+                item.food.Disapear();
             }
         }
 
@@ -275,6 +270,13 @@ public abstract class AbstractBuilding : MonoBehaviour
 
     public void Boing()
     {
+        //Jouer le son du bâtiment
+        if (audioPlayer)
+        {
+            int soundClips = audioPlayer.audioClips.Count;
+            audioPlayer.PlaySound(Random.Range(0, soundClips));
+        }
+
         transform.DOPunchScale(transform.localScale * 0.2f, 0.3f, 6, 1);
     }
 

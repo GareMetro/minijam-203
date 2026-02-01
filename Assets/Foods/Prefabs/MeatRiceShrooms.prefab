@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 684958776461619685}
   - component: {fileID: 1953051657057624809}
-  - component: {fileID: -6251454733530929665}
+  - component: {fileID: -4100088070002377891}
+  - component: {fileID: -1936200665583089845}
   m_Layer: 0
   m_Name: MeatRiceShrooms
   m_TagString: Untagged
@@ -50,7 +51,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Food
   baseIngredient: {fileID: 11400000, guid: 2934a7c1033b0354ca10b2e328ba958a, type: 2}
---- !u!54 &-6251454733530929665
+--- !u!54 &-4100088070002377891
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -73,10 +74,31 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!135 &-1936200665583089845
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5597810475045376812}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.2
+  m_Center: {x: 0, y: 0.16, z: 0}
 --- !u!1001 &1753088331076871700
 PrefabInstance:
   m_ObjectHideFlags: 0
