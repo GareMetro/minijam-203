@@ -110,7 +110,14 @@ public class Controller : MonoBehaviour
     }
     private void DeleteBuilding()
     {
-        Grid.GridInstance.RemoveObject(SelectedTile);
+        AbstractBuilding currentBuilding = Grid.GridInstance.GetTile(SelectedTile).ContentObject;
+        if (currentBuilding == null)
+            return;
+        if ( !(currentBuilding is FoodSource) && !(currentBuilding is FoodReceiver))
+        {
+            Grid.GridInstance.RemoveObject(SelectedTile);
+        }
+
     }
 
     private void UpdateCursorPreview(int i)
