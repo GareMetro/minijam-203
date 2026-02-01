@@ -60,8 +60,8 @@ public class FoodManager : Singleton<FoodManager>
     {
         CurrentReceivers = new();
 
-        StartCoroutine(newOrderCoroutine(timeBeforeFirstOrder));
         StartCoroutine(wallPlacementCoroutine(timeBeforeFirstOrder));
+        StartCoroutine(newOrderCoroutine(timeBeforeFirstOrder));
     }
 
     IEnumerator wallPlacementCoroutine(float timeNeeded)
@@ -124,8 +124,10 @@ public class FoodManager : Singleton<FoodManager>
             if(!foodInput.ingredient)
                 continue;
             // instanciate a foodInput building at foodInput.position
-            inputBuildingPrefab.food = foodInput.ingredient;
+            //inputBuildingPrefab.food = foodInput.ingredient;
             Grid.GridInstance.AddObject(inputBuildingPrefab, foodInput.position, foodInput.rotation,true);
+            Grid.GridInstance.TryGetObjectAt(foodInput.position, out AbstractBuilding inputer);
+            ((FoodSource) inputer).food = foodInput.ingredient;
         }
         
         FoodIO nextFoodOutput = foodDict[currentFoodOrderIndex].output;

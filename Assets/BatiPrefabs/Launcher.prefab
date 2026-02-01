@@ -43,7 +43,6 @@ Transform:
   - {fileID: 1392204034331096031}
   - {fileID: 8491317589350734012}
   - {fileID: 1416259557488598683}
-  - {fileID: 7249102611451283239}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3971357337221613851
@@ -67,7 +66,6 @@ MonoBehaviour:
   - {fileID: 1392204034331096031}
   - {fileID: 8491317589350734012}
   - {fileID: 1416259557488598683}
-  - {fileID: 7249102611451283239}
 --- !u!114 &2221027776692603071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -533,37 +531,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 935791280571612687}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &5898314164916725800
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7249102611451283239}
-  m_Layer: 0
-  m_Name: End
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7249102611451283239
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5898314164916725800}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.46699998, z: 3.129}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 935791280571612687}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6428182293998008650
 GameObject:
   m_ObjectHideFlags: 0
@@ -749,6 +716,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: a033df6bcaaf67e459e3151f269fe1ec, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 3d33064889629734a8df2b4842b47a97, type: 2}
+    - target: {fileID: -7511558181221131132, guid: a033df6bcaaf67e459e3151f269fe1ec, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 912575fc8dcbdba4f9fcea9f862022c4, type: 2}
     - target: {fileID: 919132149155446097, guid: a033df6bcaaf67e459e3151f269fe1ec, type: 3}
       propertyPath: m_Name
       value: launcher

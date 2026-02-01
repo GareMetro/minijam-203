@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 733feb4221848f24e893ee8ae095eb45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Food
-  baseIngredient: {fileID: 0}
+  baseIngredient: {fileID: 11400000, guid: b946861748e53d14c9405120d3fb8b65, type: 2}
 --- !u!54 &-8447457420984978745
 Rigidbody:
   m_ObjectHideFlags: 0
