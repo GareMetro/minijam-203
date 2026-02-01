@@ -13,11 +13,15 @@ public class Launcher : AbstractBuilding
             return;
         }
 
+        if (bouffesTickActuel.Count > 0)
+            buildingAnimator.PlayAnimation();
+
         foreach (var item in bouffesTickActuel)
         {
             mover.MoveObject(item.transform, Grid.GridInstance.TickDuration);
         }
     }
+    
     public override void HandleCaca()
     {
         StartCoroutine(CacaRoutine());

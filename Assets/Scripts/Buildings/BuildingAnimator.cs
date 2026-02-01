@@ -65,9 +65,9 @@ public class BuildingAnimator : MonoBehaviour
         {
             case BuildingType.Launcher:
                 launchSequence = DOTween.Sequence();
-                launchSequence.Append(launcher.DORotate(new Vector3(-45f, 0f, 90f), 0.25f, RotateMode.Fast));
+                launchSequence.Append(launcher.DORotate(new Vector3(0f, -45f, 0f), 0.25f, RotateMode.LocalAxisAdd));
                 launchSequence.AppendInterval(0.2f);
-                launchSequence.Append(launcher.DORotate(new Vector3(-90f, 0f, 90f), 0.55f, RotateMode.Fast));
+                launchSequence.Append(launcher.DORotate(new Vector3(0f, 45f, 0f), 0.55f, RotateMode.LocalAxisAdd));
                 launchSequence.SetAutoKill(false);
                 break;
             case BuildingType.Cutter:    
@@ -156,14 +156,6 @@ public class BuildingAnimator : MonoBehaviour
                 break;
             default: break;
         }
-        StartCoroutine(moncul());
-    }
-
-    IEnumerator moncul()
-    {
-        yield return new WaitForSeconds(3f);
-        PlayAnimation();
-        StartCoroutine(moncul());
     }
 
     public void PlayAnimation()

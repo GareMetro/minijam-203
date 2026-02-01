@@ -52,6 +52,7 @@ public abstract class AbstractBuilding : MonoBehaviour
     [Header("Assignable")]
     [SerializeField] protected Mover mover;
     [SerializeField] protected Transform middle;
+    [SerializeField] protected BuildingAnimator buildingAnimator;
 
     [Serializable]
     public struct FoodDelivery
