@@ -33,7 +33,7 @@ public class GameManager : Singleton<GameManager>
 
 
             // temp solution
-        
+        Time.timeScale = 0;
         // display victory UI
         if (!endGameUI)
         {

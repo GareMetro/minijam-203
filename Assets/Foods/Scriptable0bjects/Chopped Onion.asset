@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Chopped Onion
   m_EditorClassIdentifier: Assembly-CSharp::BaseIngredient
   foodName: Chopped Onion
-  icon: {fileID: 0}
+  icon: {fileID: 945869118, guid: 9fca20788660c7844a21d11436db0ae9, type: 3}
   prefab: {fileID: 9119612658660322064, guid: 37fe6d78603e82a4bb7dc9f1b4613c35, type: 3}

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: MeatRiceShrooms
   m_EditorClassIdentifier: Assembly-CSharp::BaseIngredient
   foodName: Meat Rice Mushrooms
-  icon: {fileID: 0}
+  icon: {fileID: -1479064098, guid: 9fca20788660c7844a21d11436db0ae9, type: 3}
   prefab: {fileID: 5597810475045376812, guid: 7636f7345e7dee1488c9c7578d1c28b7, type: 3}

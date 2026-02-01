@@ -92,7 +92,7 @@ public class Grid : MonoBehaviour
                 //Debug.Log(TESTBUILDINGS[i].name + " : " + TESTBUILDINGS[i].ToWorldSpace(tile));
                 PlayGrid[locPos.x][locPos.y].ContentObject = TESTBUILDINGS[i];
             }
-            TESTBUILDINGS[i].transform.position = new Vector3(TESTBUILDINGSPOS[i].x, 1f, TESTBUILDINGSPOS[i].y);
+            //TESTBUILDINGS[i].transform.position = new Vector3(TESTBUILDINGS[i].Position.x, 1f, TESTBUILDINGS[i].Position.y);
         }
 
         StartCoroutine(TickBuildings());

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Sushi
   m_EditorClassIdentifier: Assembly-CSharp::BaseIngredient
   foodName: Sushi
-  icon: {fileID: 0}
+  icon: {fileID: -892014702, guid: 9fca20788660c7844a21d11436db0ae9, type: 3}
   prefab: {fileID: 5610370900780010726, guid: f29834bd3fa2fac4ba3eec8043da15d3, type: 3}

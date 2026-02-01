@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: FailureFood
   m_EditorClassIdentifier: Assembly-CSharp::BaseIngredient
   foodName: Failed Dish
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 2b3b652e4552c194cba50371ee2a53fa, type: 3}
   prefab: {fileID: 4365558970650751844, guid: 6f028d75308332d4db1c0da825e535ac, type: 3}

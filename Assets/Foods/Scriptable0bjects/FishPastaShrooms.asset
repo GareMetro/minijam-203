@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: FishPastaShrooms
   m_EditorClassIdentifier: Assembly-CSharp::BaseIngredient
   foodName: Fish Pasta Mushrooms
-  icon: {fileID: 0}
+  icon: {fileID: 888195994, guid: 9fca20788660c7844a21d11436db0ae9, type: 3}
   prefab: {fileID: 5597810475045376812, guid: 9845b273477987545a9320085b1765fb, type: 3}

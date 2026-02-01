@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Burrito
   m_EditorClassIdentifier: Assembly-CSharp::BaseIngredient
   foodName: Burrito
-  icon: {fileID: 0}
+  icon: {fileID: 358194757, guid: 9fca20788660c7844a21d11436db0ae9, type: 3}
   prefab: {fileID: 2792546575042728790, guid: 1a5d29e3d1af7c44abd3f99da6220077, type: 3}

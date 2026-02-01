@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Cheese
   m_EditorClassIdentifier: Assembly-CSharp::BaseIngredient
   foodName: Cheese
-  icon: {fileID: 0}
+  icon: {fileID: 1090210102, guid: 9fca20788660c7844a21d11436db0ae9, type: 3}
   prefab: {fileID: 7460442146137163760, guid: b90aefea77aee1342a8e0f0e029f7ab8, type: 3}

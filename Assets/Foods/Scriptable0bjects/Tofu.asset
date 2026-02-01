@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Tofu
   m_EditorClassIdentifier: Assembly-CSharp::BaseIngredient
   foodName: Tofu
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 2b3b652e4552c194cba50371ee2a53fa, type: 3}
   prefab: {fileID: 839699244779397805, guid: 4dfdf68799ecd9349a08adb5e1d6646c, type: 3}
