@@ -15043,6 +15043,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8839c7a5271a3cd489eb90d50247f69b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TransformativeBuilding
+  batiInfo: {fileID: 0}
   Position: {x: 0, y: 0}
   Rotation: 0
   LocalTiles:
@@ -15057,10 +15058,10 @@ MonoBehaviour:
     Direction: {x: 0, y: 0}
   mover: {fileID: 0}
   middle: {fileID: 0}
+  buildingAnimator: {fileID: 6043509774783083340}
   bouffesTickActuel: []
   bouffeTickSuivant: []
   recipes: []
-  Icon: {fileID: 0}
 --- !u!82 &-7363655528597184712
 AudioSource:
   m_ObjectHideFlags: 0

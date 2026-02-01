@@ -7,7 +7,7 @@ public class FoodReceiver : AbstractBuilding
 {
     public BaseIngredient requiredFood;
 
-    private float satisfaction = 0.5f;
+    public float satisfaction = 0.5f;
 
     [SerializeField] private RectTransform progressBar;
 
@@ -46,7 +46,7 @@ public class FoodReceiver : AbstractBuilding
             mover.MoveObject(food.transform, Grid.GridInstance.TickDuration / 2f);
         }
 
-        satisfaction = Math.Min(satisfaction, 1f); //1 == 100% = max SATISFAIT
+        satisfaction = Math.Clamp(satisfaction, 0f, 1f); //1 == 100% = max SATISFAIT
 
         progressBar.anchorMax = new Vector2(satisfaction, 1);
     }

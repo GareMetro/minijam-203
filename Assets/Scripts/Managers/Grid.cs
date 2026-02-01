@@ -124,12 +124,12 @@ public class Grid : MonoBehaviour
 
     }
 
-    public void AddObject(AbstractBuilding building, Vector2Int pos, int rot)
+    public GameObject AddObject(AbstractBuilding building, Vector2Int pos, int rot)
     {
         //Si la tile est occup�e
         if (GetTile(pos).ContentObject) 
         {
-            return;
+            return null;
         }
 
         //on cr�� une instance du type s�l�ction�
@@ -147,6 +147,8 @@ public class Grid : MonoBehaviour
             PlayGrid[tilePos.x][tilePos.y].ContentObject = Addedbuilding;
             Addedbuilding.TilesList.Add(PlayGrid[tilePos.x][tilePos.y]);
         }
+
+        return added;
     }
 
     public void RemoveObject(Vector2Int pos)
