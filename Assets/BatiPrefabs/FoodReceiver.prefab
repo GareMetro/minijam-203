@@ -24,12 +24,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3699145437642729029}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.68, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.872, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1620135712737575303}
+  m_Father: {fileID: 6846171933953652351}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4009149093676034684
 GameObject:
@@ -57,13 +57,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4009149093676034684}
-  m_LocalRotation: {x: -0.70710677, y: 0, z: 0, w: -0.70710677}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: -0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 1.34}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3088971829887204123}
-  m_Father: {fileID: 1620135712737575303}
+  m_Father: {fileID: 6846171933953652351}
   m_LocalEulerAnglesHint: {x: 90, y: 270, z: -90}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -133,6 +133,40 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!1 &6164399649208929768
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6846171933953652351}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6846171933953652351
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6164399649208929768}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2259769407337296533}
+  - {fileID: 8272400537587341866}
+  - {fileID: 8514977907141204577}
+  m_Father: {fileID: 1620135712737575303}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &6796099674159690248
 GameObject:
   m_ObjectHideFlags: 0
@@ -166,9 +200,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2259769407337296533}
-  - {fileID: 8272400537587341866}
-  - {fileID: 8514977907141204577}
+  - {fileID: 6846171933953652351}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5620856709639682498
@@ -187,13 +219,15 @@ MonoBehaviour:
   Rotation: 0
   LocalTiles:
   - {x: 0, y: 0}
-  InputTiles: []
+  InputTiles:
+  - Tile: {x: 0, y: 0}
+    Direction: {x: 0, y: 1}
   OutputTiles: []
   mover: {fileID: 6296677920594019739}
-  middle: {fileID: 0}
+  middle: {fileID: 8272400537587341866}
   bouffesTickActuel: []
   bouffeTickSuivant: []
-  requiredFood: {fileID: 11400000, guid: c7991b2ee2d0b1644ae838f786f6f5e2, type: 2}
+  requiredFood: {fileID: 11400000, guid: 041881f11659c7347966d30b1a50e50c, type: 2}
   satisfactionPerGoodFood: 0.1
   satisfactionPerBadFood: 0.2
   satisfactionDecayPerTick: 0.03
@@ -348,7 +382,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7491192852551339866}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -357,7 +391,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3944511869774978935
@@ -404,7 +438,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1620135712737575303}
+    m_TransformParent: {fileID: 6846171933953652351}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 32ba513ccf7884e45932c30702d031f6, type: 3}
       propertyPath: m_LocalPosition.x

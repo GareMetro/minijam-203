@@ -60,7 +60,7 @@ MonoBehaviour:
   - {x: 0, y: 0}
   InputTiles:
   - Tile: {x: 0, y: 0}
-    Direction: {x: 0, y: -1}
+    Direction: {x: 0, y: 1}
   OutputTiles:
   - Tile: {x: 0, y: 1}
     Direction: {x: 0, y: 1}
@@ -70,9 +70,25 @@ MonoBehaviour:
   bouffeTickSuivant: []
   recipes:
   - ingredients:
-    - {fileID: 11400000, guid: c7991b2ee2d0b1644ae838f786f6f5e2, type: 2}
+    - {fileID: 11400000, guid: 4d4b72e56a219584883def9e9e71015a, type: 2}
     outputs:
-    - {fileID: 11400000, guid: 835ddd82aff072b4292dd54db971f4f3, type: 2}
+    - {fileID: 11400000, guid: 041881f11659c7347966d30b1a50e50c, type: 2}
+  - ingredients:
+    - {fileID: 11400000, guid: f62048cc5d80ba649aab2126a09503d7, type: 2}
+    outputs:
+    - {fileID: 11400000, guid: bc9f793d730615e4f860543b19e6067b, type: 2}
+  - ingredients:
+    - {fileID: 11400000, guid: a30f4c7e15954f345ac8bd383c385328, type: 2}
+    outputs:
+    - {fileID: 11400000, guid: 4b1149303463d3a4e84dd738f4d8c054, type: 2}
+  - ingredients:
+    - {fileID: 11400000, guid: b946861748e53d14c9405120d3fb8b65, type: 2}
+    outputs:
+    - {fileID: 11400000, guid: 48625fedebf01ed4ba00c540d532ad32, type: 2}
+  - ingredients:
+    - {fileID: 11400000, guid: d4254e4d7df59ff44ac52553422d2321, type: 2}
+    outputs:
+    - {fileID: 11400000, guid: 2eef3c4bcf50df94e80b555477e23645, type: 2}
   Icon: {fileID: 21300000, guid: bef21f36bf746c847ab232bb56e59738, type: 3}
 --- !u!114 &-4955415403796343511
 MonoBehaviour:

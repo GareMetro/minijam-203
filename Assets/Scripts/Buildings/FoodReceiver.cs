@@ -76,7 +76,8 @@ public class FoodReceiver : AbstractBuilding
 #if UNITY_EDITOR
     void OnDrawGizmos()
     {
-        Handles.Label(transform.position + Vector3.up * Grid.GridInstance.tileSize * 2f, "sat: " + satisfaction.ToString());
+        if(Grid.GridInstance)
+            Handles.Label(transform.position + Vector3.up * Grid.GridInstance.tileSize * 2f, "sat: " + satisfaction.ToString());
     }
 #endif
 }

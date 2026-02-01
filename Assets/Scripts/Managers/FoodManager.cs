@@ -79,6 +79,8 @@ public class FoodManager : Singleton<FoodManager>
         // we're adding the currentFoodOrderIndex
         foreach (var foodInput in foodDict[currentFoodOrderIndex].inputs)
         {
+            if(!foodInput.ingredient)
+                continue;
             // instanciate a foodInput building at foodInput.position
             inputBuildingPrefab.food = foodInput.ingredient;
             Grid.GridInstance.AddObject(inputBuildingPrefab, foodInput.position, foodInput.rotation);

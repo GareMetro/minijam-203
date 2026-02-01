@@ -1390,16 +1390,20 @@ MonoBehaviour:
   - inputs:
     - ingredient: {fileID: 0}
       position: {x: 0, y: 0}
+      rotation: 0
     output:
       ingredient: {fileID: 0}
       position: {x: 0, y: 0}
+      rotation: 0
     numberOfStepsNeeded: 0
     timeBeforeNextOrder: 0
     prefab: {fileID: 0}
   givenIngredients: []
-  caca: {fileID: 11400000, guid: 1a2e7d9e7604dea3d9ce21590ce27928, type: 2}
+  caca: {fileID: 11400000, guid: 81586f882a13b0e40930719909bfcecf, type: 2}
   ingredientEntryPrefab: {fileID: 0}
   foodOutputPrefab: {fileID: 0}
+  inputBuildingPrefab: {fileID: 0}
+  outputBuildingPrefab: {fileID: 0}
 --- !u!4 &1702569225
 Transform:
   m_ObjectHideFlags: 0

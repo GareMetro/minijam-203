@@ -8,6 +8,7 @@ using System.Reflection;
 using DG.Tweening;
 using UnityEngine.UIElements;
 using Random = UnityEngine.Random;
+using System.Linq;
 
 // Permet de gérer les cas d'envoi invalides
 [System.Serializable]
@@ -134,7 +135,7 @@ public abstract class AbstractBuilding : MonoBehaviour
             Vector2Int output = ToWorldSpace(OutputTiles[i].Tile);
             if(Grid.GridInstance.TryGetObjectAt(output, out AbstractBuilding building))
             {
-                building.AddDelivery(output, OutputTiles[i].Direction, bouffesTickActuel[i]);
+                building.AddDelivery(output, DirToWorldSpace(OutputTiles[i].Direction), bouffesTickActuel[i]);
             }
             else
             {
@@ -152,7 +153,15 @@ public abstract class AbstractBuilding : MonoBehaviour
 
         foreach (var item in bouffeTickSuivant)
         {
-            bouffesTickActuel.Add(item.food);
+            if(InputTiles.Any((t) => t.Tile == ToLocalSpace(item.tile) && t.Direction == DirToLocalSpace(item.dir)))
+            {
+                bouffesTickActuel.Add(item.food);
+            }
+            else
+            {
+                //todo animation?
+                Destroy(item.food.gameObject);
+            }
         }
 
         bouffeTickSuivant.Clear();
@@ -202,6 +211,37 @@ public abstract class AbstractBuilding : MonoBehaviour
         }
 
         return tile + Position;
+    }
+
+    public Vector2Int DirToLocalSpace(Vector2Int tile)
+    {
+
+        switch(Rotation % 4)
+        {
+            case 0:
+                return tile;
+            case 1:
+                return new Vector2Int(tile.y, -tile.x);
+            case 2:
+                return new Vector2Int(-tile.x, -tile.y);
+            case 3:
+                return new Vector2Int(-tile.y, tile.x);
+        }
+        throw new System.Exception("nique");
+    }
+
+    public Vector2Int DirToWorldSpace(Vector2Int tile)
+    {
+        switch(Rotation % 4)
+        {
+            case 1:
+                tile = new Vector2Int(-tile.y, tile.x); break;
+            case 2:
+                tile = new Vector2Int(-tile.x, -tile.y); break;
+            case 3:
+                tile = new Vector2Int(tile.y, -tile.x); break;
+        }
+        return tile;
     }
 
     protected virtual IEnumerator CacaRoutine()
