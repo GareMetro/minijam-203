@@ -23,6 +23,7 @@ public class EndGameUI : MonoBehaviour
 
     public void DisplayMainMenu()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene("MainMenu");
     }
 }
