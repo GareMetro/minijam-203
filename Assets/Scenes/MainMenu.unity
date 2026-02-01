@@ -2370,6 +2370,8 @@ MonoBehaviour:
   - {fileID: 796671767}
   - {fileID: 592436386}
   - {fileID: 1901871594}
+  - {fileID: 2141548025}
+  - {fileID: 2042926025}
   TESTBUILDINGSPOS: []
 --- !u!4 &623378994
 Transform:
@@ -5970,6 +5972,14 @@ PrefabInstance:
       propertyPath: Position.y
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 5104834550913514929, guid: 28d8e2094ce8c85a2b45619e61bfc290, type: 3}
+      propertyPath: Position.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5104834550913514929, guid: 28d8e2094ce8c85a2b45619e61bfc290, type: 3}
+      propertyPath: Position.y
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5685366004386809172, guid: 28d8e2094ce8c85a2b45619e61bfc290, type: 3}
       propertyPath: m_Name
       value: Cloner (1)
@@ -6025,6 +6035,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8871426009321414191, guid: 28d8e2094ce8c85a2b45619e61bfc290, type: 3}
   m_PrefabInstance: {fileID: 2042926016}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2042926025 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5104834550913514929, guid: 28d8e2094ce8c85a2b45619e61bfc290, type: 3}
+  m_PrefabInstance: {fileID: 2042926016}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9356da12ee7ff4078861fc824e4c726, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1001 &2080644545
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6300,6 +6321,14 @@ PrefabInstance:
       propertyPath: Position.y
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 5104834550913514929, guid: 28d8e2094ce8c85a2b45619e61bfc290, type: 3}
+      propertyPath: Position.x
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5104834550913514929, guid: 28d8e2094ce8c85a2b45619e61bfc290, type: 3}
+      propertyPath: Position.y
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5685366004386809172, guid: 28d8e2094ce8c85a2b45619e61bfc290, type: 3}
       propertyPath: m_Name
       value: Cloner
@@ -6355,6 +6384,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8871426009321414191, guid: 28d8e2094ce8c85a2b45619e61bfc290, type: 3}
   m_PrefabInstance: {fileID: 2141548016}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2141548025 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5104834550913514929, guid: 28d8e2094ce8c85a2b45619e61bfc290, type: 3}
+  m_PrefabInstance: {fileID: 2141548016}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9356da12ee7ff4078861fc824e4c726, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1001 &1387309010022850554
 PrefabInstance:
   m_ObjectHideFlags: 0
