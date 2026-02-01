@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2f4539c01b1b9dc8bb51575d9055c6c, type: 3}
   m_Name: CookedCowMeat
   m_EditorClassIdentifier: Assembly-CSharp::BaseIngredient
-  foodName: 
+  foodName: Cooked Steak
   icon: {fileID: 0}
-  prefab: {fileID: 0}
+  prefab: {fileID: 4630931527715785103, guid: c610640ad999b7b42b023f66cc87ce4c, type: 3}
