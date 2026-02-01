@@ -18,10 +18,7 @@ public class EndGameUI : MonoBehaviour
         
         resultTextContainer.text = victory ? "Victory" : "Defeat";
         
-        if (!victory)
-        {
-            defeatPhraseContainer.text = defeatPhrases[Random.Range(0, defeatPhrases.Count)];    
-        }
+        defeatPhraseContainer.text = victory ? "" : defeatPhrases[Random.Range(0, defeatPhrases.Count)]; 
     }
 
     public void DisplayMainMenu()

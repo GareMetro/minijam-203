@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FoodSource : AbstractBuilding
 {
-    [SerializeField] BaseIngredient food;
+    [SerializeField] public BaseIngredient food;
 
     [SerializeField] Transform spawnPoint;
 

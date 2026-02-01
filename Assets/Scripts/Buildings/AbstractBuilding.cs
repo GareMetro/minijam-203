@@ -19,7 +19,7 @@ public struct InOutInfo
 /*
 
 Phase 1 du tick : copie toutes les bouffes de bouffeTickSuivant vers bouffeTickActuel
-Phase 2 du tick : gère tout ce qu'il y a dans sa liste bouffeTickActuel et les envoient vers les bouffeTickSuivant de ses voisins
+Phase 2 du tick : gère tout ce qu'il y a dans sa liste bouffeTickActuel et l'envoie vers les bouffeTickSuivant de ses voisins
 
 Uniquement le conveyor a été réalisé, il ne gère pas plusieurs bouffe en entrée (il devrait)
 Les bâtiments ne gèrent pas si ils sont en train d'envoyer de la bouffe vers un endroit invalide (sur le mur d'un four, sur l'avant d'un conveyor par exemple)
@@ -30,17 +30,24 @@ Les bâtiments ne gèrent pas si ils sont en train d'envoyer de la bouffe vers u
 
 public abstract class AbstractBuilding : MonoBehaviour
  {
-
     public List<Tile> TilesList = new();
+    
+    [Header("Instance Current State")]
     public Vector2Int Position = Vector2Int.zero;
     public int Rotation = 0;// sens trigo
 
-    //Sert au plaçeur de batiment pour savoir où vont être les tiles de ce bâtiment
+    
+    [Header("Building Configuration")]
+    [Tooltip("Sert au placeur de bâtiment pour savoir où vont être les tiles de ce bâtiment")]
     public List<Vector2Int> LocalTiles = new();
-    //Sert pour savoir quelles tiles du bâtiment peuvent recevoir/sortir de la bouffe, et dans quelle direction
+    
+    [Tooltip("Sert pour savoir quelles tiles du bâtiment peuvent recevoir de la bouffe, et dans quelle direction")]
     public List<InOutInfo> InputTiles = new();
+    
+    [Tooltip("Sert pour savoir quelles tiles du bâtiment peuvent expulser de la bouffe, et dans quelle direction")]
     public List<InOutInfo> OutputTiles = new();
 
+    [Header("Assignable")]
     [SerializeField] protected Mover mover;
     [SerializeField] protected Transform middle;
 

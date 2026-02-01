@@ -21,20 +21,19 @@ public struct FoodIO
 {
     public BaseIngredient ingredient;
     public Vector2Int position;
+    public int rotation;
 }
 
 [System.Serializable]
 public struct FoodInfo
 {
-    // public List<BaseIngredient> neededIngredients; // furta : not needed if we set the foodinfo for now
-    
     public List<FoodIO> inputs;
     public FoodIO output;
     
     public int numberOfStepsNeeded;
 
     public float timeBeforeNextOrder;
-    public GameObject prefab; // furta : is it really needed ?
+    public GameObject prefab;
 }
 
 public class FoodManager : Singleton<FoodManager>
@@ -45,8 +44,11 @@ public class FoodManager : Singleton<FoodManager>
     [SerializeField] public BaseIngredient caca;
     [SerializeField] GameObject ingredientEntryPrefab;
     [SerializeField] GameObject foodOutputPrefab;
+    [SerializeField] private FoodSource inputBuildingPrefab;
+    [SerializeField] private FoodReceiver outputBuildingPrefab;
+    
 
-    private int currentFoodOrder = -1;
+    private int currentFoodOrderIndex = -1;
 
     public void Initialize()
     {
@@ -56,18 +58,17 @@ public class FoodManager : Singleton<FoodManager>
     IEnumerator newOrderCoroutine(float timeNeeded)
     {
         yield return new WaitForSeconds(timeNeeded);
-        currentFoodOrder++;
+        currentFoodOrderIndex++;
 
-        if (currentFoodOrder == foodDict.Count)
+        if (currentFoodOrderIndex == foodDict.Count)
         {
-            // TODO : add victory (oui)
-            GameManager.Instance.Defeat();
+            GameManager.Instance.Victory();
             yield return null;
         }
         else
         {
             AddNewFoodOrder();
-            StartCoroutine(newOrderCoroutine(foodDict[currentFoodOrder].timeBeforeNextOrder));
+            StartCoroutine(newOrderCoroutine(foodDict[currentFoodOrderIndex].timeBeforeNextOrder));
         }
     }
 
@@ -75,13 +76,17 @@ public class FoodManager : Singleton<FoodManager>
     {
         // TODO Instantiate the next foodOutput on the grid
         
-        // we're adding the currentFoodOrder
-        foreach (var foodInput in foodDict[currentFoodOrder].inputs)
+        // we're adding the currentFoodOrderIndex
+        foreach (var foodInput in foodDict[currentFoodOrderIndex].inputs)
         {
             // instanciate a foodInput building at foodInput.position
+            inputBuildingPrefab.food = foodInput.ingredient;
+            Grid.GridInstance.AddObject(inputBuildingPrefab, foodInput.position, foodInput.rotation);
         }
         
-        FoodIO nextFoodOutput = foodDict[currentFoodOrder].output;
+        FoodIO nextFoodOutput = foodDict[currentFoodOrderIndex].output;
+        outputBuildingPrefab.requiredFood = nextFoodOutput.ingredient;
+        Grid.GridInstance.AddObject(outputBuildingPrefab, nextFoodOutput.position, nextFoodOutput.rotation);
         // instanciate a foodOutput building at nextFoodOutput.position
         
         // add inputs at their position

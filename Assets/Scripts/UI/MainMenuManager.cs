@@ -5,20 +5,28 @@ using Scene = Unity.VectorGraphics.Scene;
 
 public class MainMenuManager : MonoBehaviour
 {
-    [SerializeField] private String gameSceneName;
-
     [SerializeField] private GameObject MainMenu;
+    [SerializeField] private GameObject LevelSelectMenu;
     [SerializeField] private GameObject SettingsMenu;
     [SerializeField] private GameObject CreditsMenu;
 
-    public void PlayGame()
+    public void PlayLevel(String levelName)
     {
-        SceneManager.LoadScene(gameSceneName);
+        SceneManager.LoadScene(levelName);
+    }
+
+    public void OpenLevelSelect()
+    {
+        MainMenu.SetActive(false);
+        LevelSelectMenu.SetActive(true);
+        SettingsMenu.SetActive(false);
+        CreditsMenu.SetActive(false);
     }
 
     public void OpenCredits()
     {
         MainMenu.SetActive(false);
+        LevelSelectMenu.SetActive(false);
         SettingsMenu.SetActive(false);
         CreditsMenu.SetActive(true);
     }
@@ -26,6 +34,7 @@ public class MainMenuManager : MonoBehaviour
     public void OpenSettings()
     {
         MainMenu.SetActive(false);
+        LevelSelectMenu.SetActive(false);
         SettingsMenu.SetActive(true);
         CreditsMenu.SetActive(false);
     }
@@ -33,6 +42,7 @@ public class MainMenuManager : MonoBehaviour
     public void OpenMainMenu()
     {
         MainMenu.SetActive(true);
+        LevelSelectMenu.SetActive(false);
         SettingsMenu.SetActive(false);
         CreditsMenu.SetActive(false);
     }
