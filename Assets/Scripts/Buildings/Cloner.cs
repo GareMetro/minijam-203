@@ -19,6 +19,8 @@ public class Cloner : AbstractBuilding
         {
             Destroy(bouffesTickActuel[i].gameObject);
         }
+
+        StartCoroutine(ClonerRoutine());
     }
 
     public override void GiveOutput()
@@ -34,7 +36,9 @@ public class Cloner : AbstractBuilding
         Boing();
 
         GameObject obj1 = Instantiate(bouffesTickActuel.First().gameObject);
+        bouffesTickActuel.Add(obj1.GetComponent<Food>());
         GameObject obj2 = Instantiate(bouffesTickActuel.First().gameObject);
+        bouffesTickActuel.Add(obj2.GetComponent<Food>());
         
         clonedMoverDroite.MoveObject(obj1.transform, Grid.GridInstance.TickDuration / 2.0f);
         clonedMoverGauche.MoveObject(obj2.transform, Grid.GridInstance.TickDuration / 2.0f);

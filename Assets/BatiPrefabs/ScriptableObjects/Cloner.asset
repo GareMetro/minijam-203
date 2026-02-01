@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 643703d3ef4b27efb8e2549bcfaecdb3, type: 3}
   m_Name: Cloner
   m_EditorClassIdentifier: Assembly-CSharp::BatiInfo
-  batiPrefab: {fileID: 2092727004161711759, guid: 28d8e2094ce8c85a2b45619e61bfc290, type: 3}
+  batiPrefab: {fileID: 5104834550913514929, guid: 28d8e2094ce8c85a2b45619e61bfc290, type: 3}
   holoPrefab: {fileID: 154514386540215035, guid: fb598a0ece065324f962ffe3aa7a5c5d, type: 3}
   icon: {fileID: 21300000, guid: 84709a8826faeaf4893b59aab83049ff, type: 3}

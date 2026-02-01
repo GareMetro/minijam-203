@@ -15352,6 +15352,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9356da12ee7ff4078861fc824e4c726, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  batiInfo: {fileID: 11400000, guid: 8a6f18d44a346a946b55bfcc40dda38c, type: 2}
   Position: {x: 0, y: 0}
   Rotation: 0
   LocalTiles:
