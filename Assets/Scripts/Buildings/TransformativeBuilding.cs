@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,7 @@ public struct Recipe
 public class TransformativeBuilding : AbstractBuilding
 {
     public List<Recipe> recipes;
+
 
     public override void ProcessInputs()
     {
@@ -57,7 +59,7 @@ public class TransformativeBuilding : AbstractBuilding
             return;
         else
         {
-            StartCoroutine(CacaRoutine());
+            HandleCaca();
         }
     }
 
