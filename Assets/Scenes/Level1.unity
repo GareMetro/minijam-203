@@ -952,7 +952,6 @@ GameObject:
   - component: {fileID: 1433331304}
   - component: {fileID: 1433331303}
   - component: {fileID: 1433331302}
-  - component: {fileID: 1433331301}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -960,25 +959,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1433331301
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1433331300}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 159903be248f2184a9e3334f812766cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Grid
-  Size: {x: 10, y: 5}
-  tileSize: 20
-  SelectedTile: {x: 0, y: 0}
-  TickDuration: 1
-  batiInfos: {fileID: 11400000, guid: 2fa1556efe69a9e43952d34e7090b527, type: 2}
-  TESTBUILDINGS: []
-  TESTBUILDINGSPOS: []
 --- !u!114 &1433331302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1066,7 +1046,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 69
+  orthographic size: 85.4
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1090,8 +1070,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1433331300}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.63540465, y: 0, z: 0, w: 0.77217937}
-  m_LocalPosition: {x: 90, y: 96, z: 7.1}
+  m_LocalRotation: {x: 0.38841406, y: 0.081057444, z: -0.03432339, w: 0.9172711}
+  m_LocalPosition: {x: 84.4, y: 89.03, z: -57.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1323,6 +1303,7 @@ GameObject:
   - component: {fileID: 1702569223}
   - component: {fileID: 1702569222}
   - component: {fileID: 1702569221}
+  - component: {fileID: 1702569226}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -1375,7 +1356,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   DoNotDestroyOnLoad: 0
   endGameUI: {fileID: 1017374085}
-  DontEndGame: 0
+  DontEndGame: 1
 --- !u!114 &1702569224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1403,7 +1384,7 @@ MonoBehaviour:
       position: {x: 9, y: 4}
       rotation: 2
     numberOfStepsNeeded: 0
-    timeBeforeNextOrder: 65
+    timeBeforeNextOrder: 5
     prefab: {fileID: 0}
   givenIngredients: []
   caca: {fileID: 11400000, guid: 1a2e7d9e7604dea3d9ce21590ce27928, type: 2}
@@ -1426,6 +1407,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1702569226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1702569220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 159903be248f2184a9e3334f812766cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Grid
+  Size: {x: 10, y: 5}
+  tileSize: 20
+  SelectedTile: {x: 0, y: 0}
+  TickDuration: 1
+  batiInfos: {fileID: 11400000, guid: 2fa1556efe69a9e43952d34e7090b527, type: 2}
+  TESTBUILDINGS: []
+  TESTBUILDINGSPOS: []
 --- !u!1 &2057735477
 GameObject:
   m_ObjectHideFlags: 0

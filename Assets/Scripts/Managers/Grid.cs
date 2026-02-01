@@ -164,4 +164,18 @@ public class Grid : MonoBehaviour
         }
 
     }
+
+    private void OnDrawGizmos()
+    {
+        for (int i = 0; i < Size.x; ++i)
+        {
+            for (int j = 0; j < Size.y; ++j)
+            {
+                //GameObject newPlane = GameObject.CreatePrimitive(PrimitiveType.Plane);
+                //newPlane.transform.position = new Vector3(i * tileSize, 0f, j * tileSize);
+                //newPlane.transform.localScale = (tileSize / 10f) * 0.95f * Vector3.one;
+                Gizmos.DrawCube(new Vector3(i * tileSize, 0f, j * tileSize), new Vector3(tileSize, (tileSize / 10f) * 0.95f, tileSize));
+            }
+        }
+    }
 }
