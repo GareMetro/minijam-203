@@ -799,6 +799,45 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 48625fedebf01ed4ba00c540d532ad32, type: 2}
     outputs:
     - {fileID: 11400000, guid: bf65fb4b065a012469097974e8426d4a, type: 2}
+  - ingredients:
+    - {fileID: 11400000, guid: bc9f793d730615e4f860543b19e6067b, type: 2}
+    - {fileID: 11400000, guid: 4b1149303463d3a4e84dd738f4d8c054, type: 2}
+    outputs:
+    - {fileID: 11400000, guid: 9a2501a3e321475468fe7f3d931eb0d6, type: 2}
+  - ingredients:
+    - {fileID: 11400000, guid: bc9f793d730615e4f860543b19e6067b, type: 2}
+    - {fileID: 11400000, guid: 4b1149303463d3a4e84dd738f4d8c054, type: 2}
+    - {fileID: 11400000, guid: db3208cc81eb3174b94e36ea30206496, type: 2}
+    outputs:
+    - {fileID: 11400000, guid: eac500c4d5ceea647b496c682d34b9c3, type: 2}
+  - ingredients:
+    - {fileID: 11400000, guid: 041881f11659c7347966d30b1a50e50c, type: 2}
+    - {fileID: 11400000, guid: 4b1149303463d3a4e84dd738f4d8c054, type: 2}
+    outputs:
+    - {fileID: 11400000, guid: e34fa4400b186074ba814e3f825a511e, type: 2}
+  - ingredients:
+    - {fileID: 11400000, guid: 041881f11659c7347966d30b1a50e50c, type: 2}
+    - {fileID: 11400000, guid: 4b1149303463d3a4e84dd738f4d8c054, type: 2}
+    - {fileID: 11400000, guid: db3208cc81eb3174b94e36ea30206496, type: 2}
+    outputs:
+    - {fileID: 11400000, guid: 761729b5ab2801d44bcde89185dcca6e, type: 2}
+  - ingredients:
+    - {fileID: 11400000, guid: 041881f11659c7347966d30b1a50e50c, type: 2}
+    - {fileID: 11400000, guid: 48625fedebf01ed4ba00c540d532ad32, type: 2}
+    outputs:
+    - {fileID: 11400000, guid: b5f53d8d8942bd644be0b7345648c582, type: 2}
+  - ingredients:
+    - {fileID: 11400000, guid: 041881f11659c7347966d30b1a50e50c, type: 2}
+    - {fileID: 11400000, guid: 48625fedebf01ed4ba00c540d532ad32, type: 2}
+    - {fileID: 11400000, guid: db3208cc81eb3174b94e36ea30206496, type: 2}
+    outputs:
+    - {fileID: 11400000, guid: 2934a7c1033b0354ca10b2e328ba958a, type: 2}
+  - ingredients:
+    - {fileID: 11400000, guid: 041881f11659c7347966d30b1a50e50c, type: 2}
+    - {fileID: 11400000, guid: 48625fedebf01ed4ba00c540d532ad32, type: 2}
+    - {fileID: 11400000, guid: db3208cc81eb3174b94e36ea30206496, type: 2}
+    outputs:
+    - {fileID: 11400000, guid: 2934a7c1033b0354ca10b2e328ba958a, type: 2}
 --- !u!82 &5588674615039030509
 AudioSource:
   m_ObjectHideFlags: 0
