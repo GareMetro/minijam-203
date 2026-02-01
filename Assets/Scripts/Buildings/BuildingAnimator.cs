@@ -63,6 +63,15 @@ public class BuildingAnimator : MonoBehaviour
     {
         switch (buildingType)
         {
+            case BuildingType.Cloner:
+                sparks1.transform.localScale = sparks1.transform.parent.localScale;
+                sparks2.transform.localScale = sparks2.transform.parent.localScale;
+                sparks3.transform.localScale = sparks3.transform.parent.localScale;
+                sparks4.transform.localScale = sparks4.transform.parent.localScale;
+                break;
+            case BuildingType.Furnace:
+                smoke.transform.localScale = smoke.transform.parent.localScale;
+                break;
             case BuildingType.Launcher:
                 launchSequence = DOTween.Sequence();
                 launchSequence.Append(launcher.DORotate(new Vector3(0f, -45f, 0f), 0.25f, RotateMode.LocalAxisAdd));
