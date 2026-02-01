@@ -183,7 +183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f28222b13d2ee549ae773f1e6fa6dbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BuildingAnimator
-  buildingType: 0
+  buildingType: 3
   armBase1: {fileID: 0}
   armExtend1: {fileID: 0}
   armBase2: {fileID: 0}

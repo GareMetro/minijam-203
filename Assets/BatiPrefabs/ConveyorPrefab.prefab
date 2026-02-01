@@ -91,7 +91,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f28222b13d2ee549ae773f1e6fa6dbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BuildingAnimator
-  buildingType: 0
+  buildingType: 2
   armBase1: {fileID: 0}
   armExtend1: {fileID: 0}
   armBase2: {fileID: 0}
@@ -108,8 +108,9 @@ MonoBehaviour:
   hatchet2: {fileID: 0}
   hatchet3: {fileID: 0}
   smoke: {fileID: 0}
-  launcher: {fileID: 4419726104045664695}
+  launcher: {fileID: 0}
   spoon: {fileID: 0}
+  spoonMover: {fileID: 0}
 --- !u!1 &4667905978249533035
 GameObject:
   m_ObjectHideFlags: 0
