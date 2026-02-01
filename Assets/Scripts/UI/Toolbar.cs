@@ -1,12 +1,13 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem.Controls;
 
 public class Toolbar : MonoBehaviour
 {
     [SerializeField] private GameObject SelectionPrefab;
-    [SerializeField] private float FirstToolPos; //Coordonnée X de l'outil 1 sur l'UI
-    [SerializeField] private float ToolSpacing; //Espace entre 2 outils sur l'UI
+
+    [SerializeField] List<RectTransform> ToolCells;
     
     private RectTransform SelectionTransform;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -16,7 +17,7 @@ public class Toolbar : MonoBehaviour
     }
     public void SelectTool(int i)
     {
-        int toolIndex = Math.Clamp(i, 0, 7); //Nice hardcoded tool number
+        int toolIndex = Math.Clamp(i, 0, 8); //Nice hardcoded tool number
 
         if (toolIndex == 0)
         {
@@ -25,7 +26,7 @@ public class Toolbar : MonoBehaviour
         }
         else
         {
-            SelectionTransform.localPosition = new Vector2(FirstToolPos + ToolSpacing * (toolIndex - 1), SelectionTransform.localPosition.y); //nice hardcoded position
+            SelectionTransform.localPosition = ToolCells[toolIndex - 1].localPosition; //nice hardcoded position
         }
     }
 }
