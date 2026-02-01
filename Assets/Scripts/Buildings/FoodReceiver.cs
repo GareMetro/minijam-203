@@ -66,9 +66,10 @@ public class FoodReceiver : AbstractBuilding
         foreach (var item in bouffesTickActuel)
         {
             Destroy(item.gameObject);
+            Boing();
         }
         bouffesTickActuel.Clear();
-        Boing();
+        
     }
     
 #if UNITY_EDITOR
