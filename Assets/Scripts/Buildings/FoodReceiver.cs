@@ -9,6 +9,8 @@ public class FoodReceiver : AbstractBuilding
 
     private float satisfaction = 0.5f;
 
+    [SerializeField] private RectTransform progressBar;
+
     [SerializeField]
     //Combien on gagne par bonne bouffe
     private float satisfactionPerGoodFood;
@@ -46,11 +48,7 @@ public class FoodReceiver : AbstractBuilding
 
         satisfaction = Math.Min(satisfaction, 1f); //1 == 100% = max SATISFAIT
 
-        if (satisfaction <= 0)
-        { 
-            GameManager.Instance.Defeat();
-        }
-
+        progressBar.anchorMax = new Vector2(satisfaction, 1);
     }
 
     public override void GiveOutput()
