@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BatiInfo
   batiPrefab: {fileID: 6343662063788119634, guid: 269e15a75f524684d919134ababb0a1d, type: 3}
   holoPrefab: {fileID: 154514386540215035, guid: 02a5fab07a709d8479c89a25073e70d3, type: 3}
-  icon: {fileID: 21300000, guid: 84709a8826faeaf4893b59aab83049ff, type: 3}
+  icon: {fileID: 21300000, guid: 63570aa77bcc6f745bfdb83c3b374ecf, type: 3}
