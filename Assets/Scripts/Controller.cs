@@ -19,7 +19,7 @@ public class Controller : MonoBehaviour
     private GameObject cursor;
     private GameObject cursorHolo;
 
-    BatiInfos batiInfos;
+    [SerializeField] List<BatiInfo> batiInfos;
 
     private PlayerInput Controls;
 
@@ -27,10 +27,7 @@ public class Controller : MonoBehaviour
     
     void Start()
     {
-        batiInfos = Grid.GridInstance.batiInfos;
-
         Controls = new PlayerInput();
-        Controls.Enable();
 
         Controls.PlayerActions.MoveRight.performed += (context) => StartHold(Vector2Int.right);
         Controls.PlayerActions.MoveLeft.performed += (context) => StartHold(Vector2Int.left);
@@ -63,6 +60,7 @@ public class Controller : MonoBehaviour
         Controls.PlayerActions.Select8.started += (context) => ChangedSelected(8);
         Controls.PlayerActions.Select9.started += (context) => ChangedSelected(9);
 
+        Controls.Enable();
         cursor = new();
         ChangedSelected(0);
     }
@@ -72,6 +70,8 @@ public class Controller : MonoBehaviour
 
     private void ChangedSelected(int i)
     {
+        if (batiInfos.Count <= i)
+            return;
         OnSelectedChange?.Invoke(i);
         Toolbar.SelectTool(i);
         SelectedBati = i;
@@ -103,9 +103,9 @@ public class Controller : MonoBehaviour
 
     private void PlaceBuilding()
     {
-        if (batiInfos.batiInfos[SelectedBati].batiPrefab)
+        if (batiInfos[SelectedBati].batiPrefab)
         {
-            Grid.GridInstance.AddObject(batiInfos.batiInfos[SelectedBati].batiPrefab, SelectedTile, RotationBati);
+            Grid.GridInstance.AddObject(batiInfos[SelectedBati].batiPrefab, SelectedTile, RotationBati);
         }
     }
     private void DeleteBuilding()
@@ -119,10 +119,13 @@ public class Controller : MonoBehaviour
         {
             Destroy(cursorHolo);
         }
-        
-        cursorHolo = Instantiate(batiInfos.batiInfos[i].holoPrefab, cursor.transform.position, Quaternion.identity, cursor.transform);
-        cursorHolo.transform.localScale = (Grid.GridInstance.tileSize / 2) * 0.95f * Vector3.one;
-        cursorHolo.transform.rotation *= Quaternion.AngleAxis(-90f * RotationBati, Vector3.up);
+
+        if (batiInfos[i].holoPrefab)
+        {
+            cursorHolo = Instantiate(batiInfos[i].holoPrefab, cursor.transform.position, Quaternion.identity, cursor.transform);
+            cursorHolo.transform.localScale = (Grid.GridInstance.tileSize / 2) * 0.95f * Vector3.one;
+            cursorHolo.transform.rotation *= Quaternion.AngleAxis(-90f * RotationBati, Vector3.up);
+        }
     }
 
     void MoveCursor(Vector2Int move)

@@ -16,6 +16,9 @@ public class Grid : MonoBehaviour
 
     public float tileSize = 10f;
 
+    public Material tileEvenMat;
+    public Material tileOddMat;
+
     private List<List<Tile>> PlayGrid;
 
     [SerializeField]
@@ -24,9 +27,6 @@ public class Grid : MonoBehaviour
     private Dictionary<Vector2Int, Coroutine> coroutines = new();
     [SerializeField]
     public float TickDuration = 1;
-
-    [SerializeField]
-    public BatiInfos batiInfos;
 
     public List<AbstractBuilding> TESTBUILDINGS;
     public List<Vector2Int> TESTBUILDINGSPOS;
@@ -63,9 +63,10 @@ public class Grid : MonoBehaviour
         {
             for (int j = 0; j < Size.y; ++j)
             {
-                GameObject newPlane = GameObject.CreatePrimitive(PrimitiveType.Plane);
-                newPlane.transform.position = new Vector3(i * tileSize, 0f, j * tileSize);
-                newPlane.transform.localScale = (tileSize/10f) * 0.95f * Vector3.one;
+                GameObject newTile = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                newTile.transform.localScale = tileSize * 0.95f * (Vector3.one - Vector3.up * 0.75f);
+                newTile.transform.position = new Vector3(i * tileSize, -newTile.transform.localScale.y/2f, j * tileSize);
+                newTile.GetComponent<Renderer>().material = (i + j) % 2 == 0 ? tileEvenMat : tileOddMat;
             }
         }
     }
@@ -163,5 +164,19 @@ public class Grid : MonoBehaviour
             Destroy(Building.gameObject);
         }
 
+    }
+
+    private void OnDrawGizmos()
+    {
+        for (int i = 0; i < Size.x; ++i)
+        {
+            for (int j = 0; j < Size.y; ++j)
+            {
+                //GameObject newPlane = GameObject.CreatePrimitive(PrimitiveType.Plane);
+                //newPlane.transform.position = new Vector3(i * tileSize, 0f, j * tileSize);
+                //newPlane.transform.localScale = (tileSize / 10f) * 0.95f * Vector3.one;
+                Gizmos.DrawCube(new Vector3(i * tileSize, 0f, j * tileSize), new Vector3(tileSize, (tileSize / 10f) * 0.95f, tileSize));
+            }
+        }
     }
 }

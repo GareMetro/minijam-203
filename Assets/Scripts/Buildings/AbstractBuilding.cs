@@ -32,6 +32,8 @@ Les bâtiments ne gèrent pas si ils sont en train d'envoyer de la bouffe vers u
 
 public abstract class AbstractBuilding : MonoBehaviour
  {
+    public BatiInfo batiInfo;
+
     public List<Tile> TilesList = new();
     
     [Header("Instance Current State")]
