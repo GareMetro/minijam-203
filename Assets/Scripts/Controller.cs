@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
@@ -28,7 +29,7 @@ public class Controller : MonoBehaviour
     {
         batiInfos = Grid.GridInstance.batiInfos;
 
-        Controls = new();
+        Controls = new PlayerInput();
         Controls.Enable();
 
         Controls.PlayerActions.MoveRight.performed += (context) => StartHold(Vector2Int.right);
@@ -50,15 +51,17 @@ public class Controller : MonoBehaviour
         Controls.PlayerActions.Delete.started += (context) => DeleteBuilding();
         Controls.PlayerActions.Rotate.started += (context) => RotateSelection();
         Controls.PlayerActions.RecipeViewer.started += (context) => HideOrShowRecipeViewer();
-
-        for (int i = 0; i < batiInfos.batiInfos.Count ; i++)
-        {
-            BatiInfo batiInfo  = batiInfos.batiInfos[i];
-            var index = i;
-            batiInfo.inputAction.action.started += (context) => ChangedSelected(index);
-
-            batiInfo.inputAction.action.Enable();
-        }
+        
+        Controls.PlayerActions.Select0.started += (context) => ChangedSelected(0);
+        Controls.PlayerActions.Select1.started += (context) => ChangedSelected(1);
+        Controls.PlayerActions.Select2.started += (context) => ChangedSelected(2);
+        Controls.PlayerActions.Select3.started += (context) => ChangedSelected(3);
+        Controls.PlayerActions.Select4.started += (context) => ChangedSelected(4);
+        Controls.PlayerActions.Select5.started += (context) => ChangedSelected(5);
+        Controls.PlayerActions.Select6.started += (context) => ChangedSelected(6);
+        Controls.PlayerActions.Select7.started += (context) => ChangedSelected(7);
+        Controls.PlayerActions.Select8.started += (context) => ChangedSelected(8);
+        Controls.PlayerActions.Select9.started += (context) => ChangedSelected(9);
 
         cursor = new();
         ChangedSelected(0);
@@ -156,6 +159,7 @@ public class Controller : MonoBehaviour
 
     private void OnDestroy()
     {
+        Controls.Disable();
         Controls.Dispose();
     }
 }
