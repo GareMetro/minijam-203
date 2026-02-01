@@ -74,9 +74,10 @@ public class BuildingAnimator : MonoBehaviour
                 break;
             case BuildingType.Launcher:
                 launchSequence = DOTween.Sequence();
-                launchSequence.Append(launcher.DORotate(new Vector3(0f, -45f, 0f), 0.25f, RotateMode.LocalAxisAdd));
                 launchSequence.AppendInterval(0.2f);
-                launchSequence.Append(launcher.DORotate(new Vector3(0f, 45f, 0f), 0.55f, RotateMode.LocalAxisAdd));
+                launchSequence.Append(launcher.DORotate(new Vector3(0f, -45f, 0f), 0.15f, RotateMode.LocalAxisAdd));
+                launchSequence.AppendInterval(0.2f);
+                launchSequence.Append(launcher.DORotate(new Vector3(0f, 45f, 0f), 0.3f, RotateMode.LocalAxisAdd));
                 launchSequence.SetAutoKill(false);
                 break;
             case BuildingType.Cutter:    
