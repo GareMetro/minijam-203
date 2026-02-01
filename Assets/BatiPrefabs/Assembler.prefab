@@ -771,34 +771,23 @@ MonoBehaviour:
   bouffeTickSuivant: []
   recipes:
   - ingredients:
-    - {fileID: 11400000, guid: 48625fedebf01ed4ba00c540d532ad32, type: 2}
-    - {fileID: 11400000, guid: f62048cc5d80ba649aab2126a09503d7, type: 2}
-    outputs:
-    - {fileID: 11400000, guid: a588a42f5e0db76478f1f0aeba0b9ad1, type: 2}
-  - ingredients:
     - {fileID: 11400000, guid: a8c3963675969874db36c73d08b439dd, type: 2}
     - {fileID: 11400000, guid: d6a83acf475baf94fa5d4bbc2cd21d7f, type: 2}
     - {fileID: 11400000, guid: 2eef3c4bcf50df94e80b555477e23645, type: 2}
     outputs:
     - {fileID: 11400000, guid: b277fd1f6a4e85540bccf54432a81845, type: 2}
   - ingredients:
+    - {fileID: 11400000, guid: 35c1dac0b2dafdc4c9e3122067d1b76c, type: 2}
+    - {fileID: 11400000, guid: 2eef3c4bcf50df94e80b555477e23645, type: 2}
+    - {fileID: 11400000, guid: 48625fedebf01ed4ba00c540d532ad32, type: 2}
+    outputs:
+    - {fileID: 11400000, guid: bf65fb4b065a012469097974e8426d4a, type: 2}
+  - ingredients:
     - {fileID: 11400000, guid: a8c3963675969874db36c73d08b439dd, type: 2}
     - {fileID: 11400000, guid: 2eef3c4bcf50df94e80b555477e23645, type: 2}
     - {fileID: 11400000, guid: 2bcdc799a3f306e45b2825ded008bdf8, type: 2}
     outputs:
     - {fileID: 11400000, guid: bdb9c99cc8e5064438348aa25258e544, type: 2}
-  - ingredients:
-    - {fileID: 11400000, guid: 35c1dac0b2dafdc4c9e3122067d1b76c, type: 2}
-    - {fileID: 11400000, guid: 2eef3c4bcf50df94e80b555477e23645, type: 2}
-    - {fileID: 11400000, guid: 48625fedebf01ed4ba00c540d532ad32, type: 2}
-    outputs:
-    - {fileID: 11400000, guid: bf65fb4b065a012469097974e8426d4a, type: 2}
-  - ingredients:
-    - {fileID: 11400000, guid: 35c1dac0b2dafdc4c9e3122067d1b76c, type: 2}
-    - {fileID: 11400000, guid: 2eef3c4bcf50df94e80b555477e23645, type: 2}
-    - {fileID: 11400000, guid: 48625fedebf01ed4ba00c540d532ad32, type: 2}
-    outputs:
-    - {fileID: 11400000, guid: bf65fb4b065a012469097974e8426d4a, type: 2}
   - ingredients:
     - {fileID: 11400000, guid: bc9f793d730615e4f860543b19e6067b, type: 2}
     - {fileID: 11400000, guid: 4b1149303463d3a4e84dd738f4d8c054, type: 2}
@@ -810,6 +799,17 @@ MonoBehaviour:
     - {fileID: 11400000, guid: db3208cc81eb3174b94e36ea30206496, type: 2}
     outputs:
     - {fileID: 11400000, guid: eac500c4d5ceea647b496c682d34b9c3, type: 2}
+  - ingredients:
+    - {fileID: 11400000, guid: bc9f793d730615e4f860543b19e6067b, type: 2}
+    - {fileID: 11400000, guid: 48625fedebf01ed4ba00c540d532ad32, type: 2}
+    outputs:
+    - {fileID: 11400000, guid: 488c4fd588fe0274c8e5d64dad242dab, type: 2}
+  - ingredients:
+    - {fileID: 11400000, guid: bc9f793d730615e4f860543b19e6067b, type: 2}
+    - {fileID: 11400000, guid: 48625fedebf01ed4ba00c540d532ad32, type: 2}
+    - {fileID: 11400000, guid: db3208cc81eb3174b94e36ea30206496, type: 2}
+    outputs:
+    - {fileID: 11400000, guid: 6ab3aaed727e3a543a362ab221287f6b, type: 2}
   - ingredients:
     - {fileID: 11400000, guid: 041881f11659c7347966d30b1a50e50c, type: 2}
     - {fileID: 11400000, guid: 4b1149303463d3a4e84dd738f4d8c054, type: 2}
@@ -833,11 +833,10 @@ MonoBehaviour:
     outputs:
     - {fileID: 11400000, guid: 2934a7c1033b0354ca10b2e328ba958a, type: 2}
   - ingredients:
-    - {fileID: 11400000, guid: 041881f11659c7347966d30b1a50e50c, type: 2}
     - {fileID: 11400000, guid: 48625fedebf01ed4ba00c540d532ad32, type: 2}
-    - {fileID: 11400000, guid: db3208cc81eb3174b94e36ea30206496, type: 2}
+    - {fileID: 11400000, guid: f62048cc5d80ba649aab2126a09503d7, type: 2}
     outputs:
-    - {fileID: 11400000, guid: 2934a7c1033b0354ca10b2e328ba958a, type: 2}
+    - {fileID: 11400000, guid: a588a42f5e0db76478f1f0aeba0b9ad1, type: 2}
 --- !u!82 &5588674615039030509
 AudioSource:
   m_ObjectHideFlags: 0
@@ -950,6 +949,7 @@ MonoBehaviour:
   isMusic: 0
   audioClips:
   - {fileID: 8300000, guid: 40c7ca9159dd4df45b7ba1baf8cacd8b, type: 3}
+  selfVolumeMod: 1
 --- !u!114 &425062729515581313
 MonoBehaviour:
   m_ObjectHideFlags: 0
