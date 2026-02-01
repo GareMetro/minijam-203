@@ -30,10 +30,10 @@ public struct FoodInfo
     public List<FoodIO> inputs;
     public FoodIO output;
     
-    public int numberOfStepsNeeded;
+    //public int numberOfStepsNeeded;
 
     public float timeBeforeNextOrder;
-    public GameObject prefab;
+    //public GameObject prefab;
 }
 
 public class FoodManager : Singleton<FoodManager>
@@ -42,8 +42,8 @@ public class FoodManager : Singleton<FoodManager>
     [SerializeField] List<FoodInfo> foodDict;
     [SerializeField] List<BaseIngredient> givenIngredients;
     [SerializeField] public BaseIngredient caca;
-    [SerializeField] GameObject ingredientEntryPrefab;
-    [SerializeField] GameObject foodOutputPrefab;
+    //[SerializeField] GameObject ingredientEntryPrefab;
+    //[SerializeField] GameObject foodOutputPrefab;
     [SerializeField] private FoodSource inputBuildingPrefab;
     [SerializeField] private FoodReceiver outputBuildingPrefab;
     
