@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
+using UnityEngine.UIElements;
 
 //[System.Serializable]
 //public enum BaseIngredient
@@ -128,12 +129,15 @@ public class FoodManager : Singleton<FoodManager>
         }
         
         FoodIO nextFoodOutput = foodDict[currentFoodOrderIndex].output;
-        outputBuildingPrefab.requiredFood = nextFoodOutput.ingredient;
         CurrentReceivers.Add(Grid.GridInstance.AddObject(outputBuildingPrefab, nextFoodOutput.position, nextFoodOutput.rotation,true));
+        Grid.GridInstance.TryGetObjectAt(nextFoodOutput.position, out AbstractBuilding receiver);
+        ((FoodReceiver) receiver).requiredFood = nextFoodOutput.ingredient;
+
+
         // instanciate a foodOutput building at nextFoodOutput.position
-        
+
         // add inputs at their position
-        
+
         // TODO if foodOutput needs an ingredient we don't have, instantiate the ingredient(s) on the grid
         // TODO add the ingredient to the list givenIngredients
     }
