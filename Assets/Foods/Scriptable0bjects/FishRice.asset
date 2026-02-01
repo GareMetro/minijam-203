@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: FishRice
   m_EditorClassIdentifier: Assembly-CSharp::BaseIngredient
   foodName: Fish Rice
-  icon: {fileID: 0}
+  icon: {fileID: 1927960535, guid: 9fca20788660c7844a21d11436db0ae9, type: 3}
   prefab: {fileID: 5597810475045376812, guid: b3baa1d8d6faf814c83eebfd4fc91e9d, type: 3}

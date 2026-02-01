@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: CookedRice
   m_EditorClassIdentifier: Assembly-CSharp::BaseIngredient
   foodName: Cooked Rice
-  icon: {fileID: 0}
+  icon: {fileID: -1230922700, guid: 9fca20788660c7844a21d11436db0ae9, type: 3}
   prefab: {fileID: 5656472488832623976, guid: 28066fd6c19b8d74886db540e352d5a3, type: 3}

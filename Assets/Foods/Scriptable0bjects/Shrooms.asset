@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Shrooms
   m_EditorClassIdentifier: Assembly-CSharp::BaseIngredient
   foodName: Mushrooms
-  icon: {fileID: 0}
+  icon: {fileID: -1131106711, guid: 9fca20788660c7844a21d11436db0ae9, type: 3}
   prefab: {fileID: 4995789457498143629, guid: f4472e26a1cb5df4e8a540b922da5bb5, type: 3}

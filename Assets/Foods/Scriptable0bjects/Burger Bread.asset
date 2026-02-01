@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Burger Bread
   m_EditorClassIdentifier: Assembly-CSharp::BaseIngredient
   foodName: Burger Bread
-  icon: {fileID: 0}
+  icon: {fileID: -109745244, guid: 9fca20788660c7844a21d11436db0ae9, type: 3}
   prefab: {fileID: 1300448417902905524, guid: 01acfc75f52e53b4081d88a051a9e05a, type: 3}

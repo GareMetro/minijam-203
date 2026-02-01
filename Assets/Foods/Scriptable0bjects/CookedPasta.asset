@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: CookedPasta
   m_EditorClassIdentifier: Assembly-CSharp::BaseIngredient
   foodName: Cooked Pasta
-  icon: {fileID: 0}
+  icon: {fileID: -1167531755, guid: 9fca20788660c7844a21d11436db0ae9, type: 3}
   prefab: {fileID: 1631109447987124271, guid: 5374d5849e3deec4c9266a1d03916fc9, type: 3}

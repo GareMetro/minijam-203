@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: TacosBase
   m_EditorClassIdentifier: Assembly-CSharp::BaseIngredient
   foodName: Taco Base
-  icon: {fileID: 0}
+  icon: {fileID: -139348620, guid: 9fca20788660c7844a21d11436db0ae9, type: 3}
   prefab: {fileID: 6936995336098110568, guid: f3355ae11ef52d441be23b1bd39eda40, type: 3}

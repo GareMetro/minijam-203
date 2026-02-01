@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: CookedFish
   m_EditorClassIdentifier: Assembly-CSharp::BaseIngredient
   foodName: Cooked Fish
-  icon: {fileID: 0}
+  icon: {fileID: -1208491796, guid: 9fca20788660c7844a21d11436db0ae9, type: 3}
   prefab: {fileID: 7383276883520663327, guid: 1a9985cb4ffcf5547835840fe21d5d06, type: 3}
