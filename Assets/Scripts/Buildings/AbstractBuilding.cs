@@ -9,6 +9,7 @@ using DG.Tweening;
 using UnityEngine.UIElements;
 using Random = UnityEngine.Random;
 using System.Linq;
+using static UnityEditor.Rendering.CameraUI;
 
 // Permet de gérer les cas d'envoi invalides
 [System.Serializable]
@@ -267,6 +268,7 @@ public abstract class AbstractBuilding : MonoBehaviour
         //Todo: produire caca
 
         GameObject caca = Instantiate(FoodManager.Instance.caca.prefab, middle.transform.position, Quaternion.identity);
+        caca.transform.localScale *= Grid.GridInstance.tileSize * 0.8f;
         bouffesTickActuel.Add(caca.GetComponent<Food>());
         mover.MoveObject(caca.transform, Grid.GridInstance.TickDuration / 2f);
     }
