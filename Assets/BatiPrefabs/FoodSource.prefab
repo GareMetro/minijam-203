@@ -280,6 +280,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 32ba513ccf7884e45932c30702d031f6, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 4bf7b057db8e70943a06bdfc6400561f, type: 2}
     - target: {fileID: 919132149155446097, guid: 32ba513ccf7884e45932c30702d031f6, type: 3}
       propertyPath: m_Name
       value: foodEntry
