@@ -56,7 +56,7 @@ public abstract class AbstractBuilding : MonoBehaviour
     [SerializeField] protected Transform middle;
     [SerializeField] protected BuildingAnimator buildingAnimator;
 
-    AudioPlayer audioPlayer;
+    protected AudioPlayer audioPlayer;
 
     [Serializable]
     public struct FoodDelivery

@@ -14,14 +14,17 @@ public class Launcher : AbstractBuilding
         }
 
         if (bouffesTickActuel.Count > 0)
-            buildingAnimator.PlayAnimation();
+        {
+            audioPlayer.PlaySound(0);
+            buildingAnimator.PlayAnimation();   
+        }
 
         foreach (var item in bouffesTickActuel)
         {
             mover.MoveObject(item.transform, Grid.GridInstance.TickDuration);
         }
     }
-    
+
     public override void HandleCaca()
     {
         StartCoroutine(CacaRoutine());
