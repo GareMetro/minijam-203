@@ -19,7 +19,7 @@ public class EndGameUI : MonoBehaviour
     {
         if (NextLevelObject != null)
         {
-            if (SceneManager.sceneCount <= SceneManager.GetActiveScene().buildIndex + 1)
+            if (SceneManager.sceneCountInBuildSettings <= SceneManager.GetActiveScene().buildIndex + 1)
             {
                 Destroy(NextLevelObject);
             }
@@ -35,8 +35,11 @@ public class EndGameUI : MonoBehaviour
     }
     public void NextLevel()
     {
-        if(SceneManager.sceneCount > SceneManager.GetActiveScene().buildIndex+1)
+        if (SceneManager.sceneCountInBuildSettings > SceneManager.GetActiveScene().buildIndex + 1)
+        {
+            Time.timeScale = 1;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
     }
     public void DisplayMainMenu()
     {
