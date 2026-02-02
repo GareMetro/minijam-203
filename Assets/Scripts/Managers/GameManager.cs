@@ -8,6 +8,11 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] private bool DontEndGame = false;
 #endif
 
+    bool isPause = false;
+
+    [SerializeField] public GameObject PauseMenuPrefab;
+    private GameObject PauseMenu;
+
     private new void Awake()
     {
         base.Awake();
@@ -65,5 +70,26 @@ public class GameManager : Singleton<GameManager>
         // display defeat UI
         endGameUI.gameObject.SetActive(true);
         endGameUI.DisplayEndGame(false);
+    }
+
+    public void HideOrShowPauseMenu()
+    {
+        if(isPause)
+        {
+            isPause = !isPause;
+            if(PauseMenu!=null)
+            {
+                Destroy(PauseMenu);
+            }
+            Time.timeScale = 1;
+
+        }
+        else
+        {
+            isPause = !isPause;
+            PauseMenu = Instantiate(PauseMenuPrefab);
+            Time.timeScale = 0;
+
+        }
     }
 }

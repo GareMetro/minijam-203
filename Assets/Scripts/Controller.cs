@@ -48,6 +48,7 @@ public class Controller : MonoBehaviour
         Controls.PlayerActions.Delete.started += (context) => DeleteBuilding();
         Controls.PlayerActions.Rotate.started += (context) => RotateSelection();
         Controls.PlayerActions.RecipeViewer.started += (context) => HideOrShowRecipeViewer();
+        Controls.PlayerActions.Pause.started += (context) => GameManager.Instance.HideOrShowPauseMenu();
         
         Controls.PlayerActions.Select0.started += (context) => ChangedSelected(0);
         Controls.PlayerActions.Select1.started += (context) => ChangedSelected(1);
