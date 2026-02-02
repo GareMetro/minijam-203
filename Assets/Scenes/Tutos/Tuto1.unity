@@ -1924,6 +1924,20 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5291062494087541470, guid: 78ad7acfc8cad2f7f937d0b42269ff9d, type: 3}
+      propertyPath: m_text
+      value: 'Let''s automate cooking!
+
+
+        You can view the controls in the
+        pause menu (<b>Escape key</b>)
+
+
+        Connect the <color=red>input </color>to
+        the <color=blue>output</color> by placing
+
+        conveyor belts and a furnace<size=5>(4)</size>'
+      objectReference: {fileID: 0}
     - target: {fileID: 7413809425910212767, guid: 78ad7acfc8cad2f7f937d0b42269ff9d, type: 3}
       propertyPath: m_Name
       value: TutoCanvas
