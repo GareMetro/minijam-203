@@ -9,7 +9,6 @@ using DG.Tweening;
 using UnityEngine.UIElements;
 using Random = UnityEngine.Random;
 using System.Linq;
-using static UnityEditor.Rendering.CameraUI;
 
 // Permet de gérer les cas d'envoi invalides
 [System.Serializable]
@@ -57,7 +56,7 @@ public abstract class AbstractBuilding : MonoBehaviour
     [SerializeField] protected Transform middle;
     [SerializeField] protected BuildingAnimator buildingAnimator;
 
-    AudioPlayer audioPlayer;
+    protected AudioPlayer audioPlayer;
 
     [Serializable]
     public struct FoodDelivery

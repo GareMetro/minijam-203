@@ -1246,7 +1246,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 85.4
+  orthographic size: 70
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1270,8 +1270,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1433331300}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.40353936, y: 0.036713306, z: -0.01620781, w: 0.91408175}
-  m_LocalPosition: {x: 54.8, y: 110, z: -57.7}
+  m_LocalRotation: {x: 0.5334664, y: 0.019925129, z: -0.012571819, w: 0.84549314}
+  m_LocalPosition: {x: 78, y: 134.1, z: -21.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1616,8 +1616,6 @@ GameObject:
   - component: {fileID: 1702569222}
   - component: {fileID: 1702569221}
   - component: {fileID: 1702569226}
-  - component: {fileID: 1702569228}
-  - component: {fileID: 1702569227}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -1671,7 +1669,6 @@ MonoBehaviour:
   DoNotDestroyOnLoad: 0
   endGameUI: {fileID: 1017374085}
   DontEndGame: 0
-  victoryJinglePlayer: {fileID: 1702569227}
 --- !u!114 &1702569224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1685,37 +1682,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FoodManager
   DoNotDestroyOnLoad: 0
-  timeBeforeFirstOrder: 2
+  timeBeforeFirstOrder: 0.1
   foodDict:
   - inputs:
-    - ingredient: {fileID: 11400000, guid: b946861748e53d14c9405120d3fb8b65, type: 2}
-      position: {x: 0, y: 2}
-      rotation: 3
-    - ingredient: {fileID: 11400000, guid: f62048cc5d80ba649aab2126a09503d7, type: 2}
+    - ingredient: {fileID: 11400000, guid: a30f4c7e15954f345ac8bd383c385328, type: 2}
+      position: {x: 0, y: 3}
+      rotation: 2
+    - ingredient: {fileID: 11400000, guid: 4d4b72e56a219584883def9e9e71015a, type: 2}
       position: {x: 0, y: 4}
       rotation: 3
     output:
-      ingredient: {fileID: 11400000, guid: a588a42f5e0db76478f1f0aeba0b9ad1, type: 2}
-      position: {x: 6, y: 4}
-      rotation: 1
+      ingredient: {fileID: 11400000, guid: e34fa4400b186074ba814e3f825a511e, type: 2}
+      position: {x: 0, y: 1}
+      rotation: 2
     doNotWait: 0
   - inputs:
-    - ingredient: {fileID: 11400000, guid: 4d4b72e56a219584883def9e9e71015a, type: 2}
-      position: {x: 2, y: 6}
-      rotation: 3
-    - ingredient: {fileID: 11400000, guid: a30f4c7e15954f345ac8bd383c385328, type: 2}
-      position: {x: 4, y: 6}
-      rotation: 3
+    - ingredient: {fileID: 11400000, guid: b03f037fa6b80b74391bdae610bf6a17, type: 2}
+      position: {x: 8, y: 4}
+      rotation: 2
     output:
-      ingredient: {fileID: 11400000, guid: e34fa4400b186074ba814e3f825a511e, type: 2}
-      position: {x: 3, y: 0}
+      ingredient: {fileID: 11400000, guid: 761729b5ab2801d44bcde89185dcca6e, type: 2}
+      position: {x: 8, y: 0}
       rotation: 0
     doNotWait: 0
   Walls:
-  - {x: 0, y: 6}
-  - {x: 0, y: 0}
-  - {x: 6, y: 0}
-  - {x: 6, y: 6}
+  - {x: 1, y: 1}
+  - {x: 1, y: 3}
+  - {x: 3, y: 1}
+  - {x: 3, y: 3}
+  - {x: 5, y: 1}
+  - {x: 5, y: 3}
+  - {x: 7, y: 1}
+  - {x: 7, y: 3}
   givenIngredients: []
   caca: {fileID: 11400000, guid: 81586f882a13b0e40930719909bfcecf, type: 2}
   inputBuildingPrefab: {fileID: 8300613802659117624, guid: 96cffbe1950891d588dc69ed374df956, type: 3}
@@ -1749,7 +1747,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 159903be248f2184a9e3334f812766cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Grid
-  Size: {x: 7, y: 7}
+  Size: {x: 9, y: 5}
   tileSize: 20
   tileEvenMat: {fileID: 2100000, guid: a97da8887d0a6f74f82771d2ecde7990, type: 2}
   tileOddMat: {fileID: 2100000, guid: 342af6613eb49aa4689fe5ecc3b581f1, type: 2}
@@ -1757,120 +1755,6 @@ MonoBehaviour:
   TickDuration: 1
   TESTBUILDINGS: []
   TESTBUILDINGSPOS: []
---- !u!114 &1702569227
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1702569220}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f17d6933a9770944b4cfa305d4b32f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AudioPlayer
-  isMusic: 0
-  playAwake: -1
-  audioClips:
-  - {fileID: 8300000, guid: bce464869034e66459b532e18762545c, type: 3}
-  selfVolumeMod: 0.5
---- !u!82 &1702569228
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1702569220}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!1 &2057735477
 GameObject:
   m_ObjectHideFlags: 0

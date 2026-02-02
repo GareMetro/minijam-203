@@ -14,14 +14,17 @@ public class Launcher : AbstractBuilding
         }
 
         if (bouffesTickActuel.Count > 0)
-            buildingAnimator.PlayAnimation();
+        {
+            audioPlayer.PlaySound(0);
+            buildingAnimator.PlayAnimation();   
+        }
 
         foreach (var item in bouffesTickActuel)
         {
             mover.MoveObject(item.transform, Grid.GridInstance.TickDuration);
         }
     }
-    
+
     public override void HandleCaca()
     {
         StartCoroutine(CacaRoutine());
@@ -47,6 +50,7 @@ public class Launcher : AbstractBuilding
         //Todo: produire caca
 
         GameObject caca = Instantiate(FoodManager.Instance.caca.prefab, middle.transform.position, Quaternion.identity);
+        caca.transform.localScale *= Grid.GridInstance.tileSize * 0.8f;
         bouffesTickActuel.Add(caca.GetComponent<Food>());
         mover.MoveObject(caca.transform, Grid.GridInstance.TickDuration *  6f / 7f);
     }
