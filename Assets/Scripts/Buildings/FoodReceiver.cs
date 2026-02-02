@@ -17,7 +17,7 @@ public class FoodReceiver : AbstractBuilding
         }
     }
 
-    public float satisfaction = 0.5f;
+    public float satisfaction = 0.0f;
 
     [SerializeField] private RectTransform progressBar;
 

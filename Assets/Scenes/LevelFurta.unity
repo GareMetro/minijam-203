@@ -1246,7 +1246,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 102.3
+  orthographic size: 130.5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1271,7 +1271,7 @@ Transform:
   m_GameObject: {fileID: 1433331300}
   serializedVersion: 2
   m_LocalRotation: {x: 0.5334664, y: 0.019925129, z: -0.012571819, w: 0.84549314}
-  m_LocalPosition: {x: 97.8, y: 160.7, z: -21.8}
+  m_LocalPosition: {x: 112.9, y: 179, z: -21.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1686,25 +1686,25 @@ MonoBehaviour:
   foodDict:
   - inputs:
     - ingredient: {fileID: 11400000, guid: a30f4c7e15954f345ac8bd383c385328, type: 2}
-      position: {x: 8, y: 2}
+      position: {x: 10, y: 2}
       rotation: 1
     - ingredient: {fileID: 11400000, guid: 4d4b72e56a219584883def9e9e71015a, type: 2}
-      position: {x: 2, y: 5}
+      position: {x: 2, y: 7}
       rotation: 3
     output:
       ingredient: {fileID: 11400000, guid: e34fa4400b186074ba814e3f825a511e, type: 2}
       position: {x: 0, y: 0}
       rotation: 3
-    timeBeforeNextOrder: 0
+    doNotWait: 1
   - inputs:
     - ingredient: {fileID: 11400000, guid: b946861748e53d14c9405120d3fb8b65, type: 2}
-      position: {x: 8, y: 5}
+      position: {x: 10, y: 7}
       rotation: 1
     output:
       ingredient: {fileID: 11400000, guid: b5f53d8d8942bd644be0b7345648c582, type: 2}
-      position: {x: 10, y: 0}
+      position: {x: 12, y: 0}
       rotation: 0
-    timeBeforeNextOrder: 0
+    doNotWait: 1
   - inputs:
     - ingredient: {fileID: 11400000, guid: cd2983ddc5cc09a44bf701d891a68f43, type: 2}
       position: {x: 2, y: 2}
@@ -1714,36 +1714,44 @@ MonoBehaviour:
       rotation: 0
     output:
       ingredient: {fileID: 11400000, guid: b277fd1f6a4e85540bccf54432a81845, type: 2}
-      position: {x: 10, y: 7}
+      position: {x: 12, y: 9}
       rotation: 1
-    timeBeforeNextOrder: 0
+    doNotWait: 0
   Walls:
   - {x: 1, y: 1}
-  - {x: 9, y: 1}
+  - {x: 11, y: 1}
   - {x: 1, y: 2}
-  - {x: 9, y: 2}
+  - {x: 11, y: 2}
   - {x: 1, y: 3}
-  - {x: 9, y: 3}
+  - {x: 11, y: 3}
   - {x: 1, y: 4}
-  - {x: 9, y: 4}
+  - {x: 11, y: 4}
   - {x: 1, y: 5}
-  - {x: 9, y: 5}
+  - {x: 11, y: 5}
   - {x: 1, y: 6}
-  - {x: 9, y: 6}
+  - {x: 1, y: 7}
+  - {x: 1, y: 8}
+  - {x: 11, y: 6}
+  - {x: 11, y: 7}
+  - {x: 11, y: 8}
   - {x: 2, y: 1}
-  - {x: 2, y: 6}
+  - {x: 2, y: 8}
   - {x: 3, y: 1}
-  - {x: 3, y: 6}
+  - {x: 3, y: 8}
   - {x: 4, y: 1}
-  - {x: 4, y: 6}
+  - {x: 4, y: 8}
   - {x: 5, y: 1}
-  - {x: 5, y: 6}
+  - {x: 5, y: 8}
   - {x: 6, y: 1}
-  - {x: 6, y: 6}
+  - {x: 6, y: 8}
   - {x: 7, y: 1}
-  - {x: 7, y: 6}
+  - {x: 7, y: 8}
   - {x: 8, y: 1}
-  - {x: 8, y: 6}
+  - {x: 8, y: 8}
+  - {x: 9, y: 1}
+  - {x: 10, y: 1}
+  - {x: 9, y: 8}
+  - {x: 10, y: 8}
   givenIngredients: []
   caca: {fileID: 11400000, guid: 81586f882a13b0e40930719909bfcecf, type: 2}
   inputBuildingPrefab: {fileID: 8300613802659117624, guid: 96cffbe1950891d588dc69ed374df956, type: 3}
