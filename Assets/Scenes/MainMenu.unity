@@ -1089,7 +1089,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6210088250266078444, guid: 3321a5e3a8ef7364ba40eb26274333d7, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6210088250266078444, guid: 3321a5e3a8ef7364ba40eb26274333d7, type: 3}
       propertyPath: m_AnchorMin.x
@@ -1097,15 +1097,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6210088250266078444, guid: 3321a5e3a8ef7364ba40eb26274333d7, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6210088250266078444, guid: 3321a5e3a8ef7364ba40eb26274333d7, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 358.75793
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6210088250266078444, guid: 3321a5e3a8ef7364ba40eb26274333d7, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 65
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6210088250266078444, guid: 3321a5e3a8ef7364ba40eb26274333d7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1137,11 +1137,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6210088250266078444, guid: 3321a5e3a8ef7364ba40eb26274333d7, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 204.37897
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6210088250266078444, guid: 3321a5e3a8ef7364ba40eb26274333d7, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -212.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6210088250266078444, guid: 3321a5e3a8ef7364ba40eb26274333d7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1161,7 +1161,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7280485103460515162, guid: 3321a5e3a8ef7364ba40eb26274333d7, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8280515731152987954, guid: 3321a5e3a8ef7364ba40eb26274333d7, type: 3}
       propertyPath: m_Color.a
@@ -1309,7 +1309,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Font : Basteleur by Keussel. Distributed by velvetyne.fr.'
+  m_text: "<b>Developpers : </b>\nErwan S\xE9n\xE9chal\nUgo Larsonneur\nMathieu Simon\nHugo
+    Pierron\nTh\xE9odore Perrin\n\n<b>3D assets :  </b>\nErwan S\xE9n\xE9chal\n\n<b>2D
+    assets :</b>\nEnzo De Carvalho Bittencourt"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 42c36a8d7199bd3458fce359d4a83ed0, type: 2}
   m_sharedMaterial: {fileID: 978528457388543064, guid: 42c36a8d7199bd3458fce359d4a83ed0, type: 2}
@@ -1344,7 +1346,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_characterHorizontalScale: 1
@@ -1375,7 +1377,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: -19.676056, z: 0, w: -23.250443}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
