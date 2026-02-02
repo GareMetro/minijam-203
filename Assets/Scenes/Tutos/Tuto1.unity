@@ -1673,6 +1673,7 @@ MonoBehaviour:
   DoNotDestroyOnLoad: 0
   endGameUI: {fileID: 1017374085}
   DontEndGame: 0
+  PauseMenuPrefab: {fileID: 6368644300607373218, guid: 14cf51cb99bac0845848a18a1e5835cf, type: 3}
 --- !u!114 &1702569224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1686,7 +1687,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FoodManager
   DoNotDestroyOnLoad: 0
-  timeBeforeFirstOrder: 2
   foodDict:
   - inputs:
     - ingredient: {fileID: 11400000, guid: f62048cc5d80ba649aab2126a09503d7, type: 2}

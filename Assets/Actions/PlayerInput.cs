@@ -271,6 +271,15 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""d7d0a0f3-92dd-4a13-a0ef-75849f20330e"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -559,6 +568,17 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""action"": ""RecipeViewer"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""88a44a48-37b7-420b-b4da-5221725ce05c"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -587,6 +607,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         m_PlayerActions_Delete = m_PlayerActions.FindAction("Delete", throwIfNotFound: true);
         m_PlayerActions_Rotate = m_PlayerActions.FindAction("Rotate", throwIfNotFound: true);
         m_PlayerActions_RecipeViewer = m_PlayerActions.FindAction("RecipeViewer", throwIfNotFound: true);
+        m_PlayerActions_Pause = m_PlayerActions.FindAction("Pause", throwIfNotFound: true);
     }
 
     ~@PlayerInput()
@@ -687,6 +708,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     private readonly InputAction m_PlayerActions_Delete;
     private readonly InputAction m_PlayerActions_Rotate;
     private readonly InputAction m_PlayerActions_RecipeViewer;
+    private readonly InputAction m_PlayerActions_Pause;
     /// <summary>
     /// Provides access to input actions defined in input action map "PlayerActions".
     /// </summary>
@@ -779,6 +801,10 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         /// </summary>
         public InputAction @RecipeViewer => m_Wrapper.m_PlayerActions_RecipeViewer;
         /// <summary>
+        /// Provides access to the underlying input action "PlayerActions/Pause".
+        /// </summary>
+        public InputAction @Pause => m_Wrapper.m_PlayerActions_Pause;
+        /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
         public InputActionMap Get() { return m_Wrapper.m_PlayerActions; }
@@ -864,6 +890,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @RecipeViewer.started += instance.OnRecipeViewer;
             @RecipeViewer.performed += instance.OnRecipeViewer;
             @RecipeViewer.canceled += instance.OnRecipeViewer;
+            @Pause.started += instance.OnPause;
+            @Pause.performed += instance.OnPause;
+            @Pause.canceled += instance.OnPause;
         }
 
         /// <summary>
@@ -935,6 +964,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @RecipeViewer.started -= instance.OnRecipeViewer;
             @RecipeViewer.performed -= instance.OnRecipeViewer;
             @RecipeViewer.canceled -= instance.OnRecipeViewer;
+            @Pause.started -= instance.OnPause;
+            @Pause.performed -= instance.OnPause;
+            @Pause.canceled -= instance.OnPause;
         }
 
         /// <summary>
@@ -1115,5 +1147,12 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnRecipeViewer(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Pause" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnPause(InputAction.CallbackContext context);
     }
 }
