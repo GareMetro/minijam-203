@@ -1685,16 +1685,19 @@ MonoBehaviour:
   timeBeforeFirstOrder: 2
   foodDict:
   - inputs:
-    - ingredient: {fileID: 11400000, guid: b946861748e53d14c9405120d3fb8b65, type: 2}
-      position: {x: 0, y: 2}
-      rotation: 3
-    - ingredient: {fileID: 11400000, guid: f62048cc5d80ba649aab2126a09503d7, type: 2}
-      position: {x: 0, y: 4}
-      rotation: 3
+    - ingredient: {fileID: 11400000, guid: a8c3963675969874db36c73d08b439dd, type: 2}
+      position: {x: 0, y: 6}
+      rotation: 2
+    - ingredient: {fileID: 11400000, guid: 4d4b72e56a219584883def9e9e71015a, type: 2}
+      position: {x: 0, y: 0}
+      rotation: 0
+    - ingredient: {fileID: 11400000, guid: cd2983ddc5cc09a44bf701d891a68f43, type: 2}
+      position: {x: 6, y: 6}
+      rotation: 2
     output:
-      ingredient: {fileID: 11400000, guid: a588a42f5e0db76478f1f0aeba0b9ad1, type: 2}
-      position: {x: 6, y: 4}
-      rotation: 1
+      ingredient: {fileID: 11400000, guid: b277fd1f6a4e85540bccf54432a81845, type: 2}
+      position: {x: 6, y: 0}
+      rotation: 0
     doNotWait: 0
   - inputs:
     - ingredient: {fileID: 11400000, guid: 4d4b72e56a219584883def9e9e71015a, type: 2}
@@ -1709,10 +1712,19 @@ MonoBehaviour:
       rotation: 0
     doNotWait: 0
   Walls:
-  - {x: 0, y: 6}
-  - {x: 0, y: 0}
-  - {x: 6, y: 0}
-  - {x: 6, y: 6}
+  - {x: 3, y: 0}
+  - {x: 3, y: 1}
+  - {x: 3, y: 2}
+  - {x: 3, y: 3}
+  - {x: 3, y: 4}
+  - {x: 3, y: 5}
+  - {x: 0, y: 3}
+  - {x: 1, y: 3}
+  - {x: 2, y: 3}
+  - {x: 4, y: 3}
+  - {x: 5, y: 3}
+  - {x: 6, y: 3}
+  - {x: 3, y: 6}
   givenIngredients: []
   caca: {fileID: 11400000, guid: 81586f882a13b0e40930719909bfcecf, type: 2}
   inputBuildingPrefab: {fileID: 8300613802659117624, guid: 96cffbe1950891d588dc69ed374df956, type: 3}

@@ -1685,34 +1685,22 @@ MonoBehaviour:
   timeBeforeFirstOrder: 2
   foodDict:
   - inputs:
-    - ingredient: {fileID: 11400000, guid: b946861748e53d14c9405120d3fb8b65, type: 2}
-      position: {x: 0, y: 2}
+    - ingredient: {fileID: 11400000, guid: 35c1dac0b2dafdc4c9e3122067d1b76c, type: 2}
+      position: {x: 0, y: 1}
       rotation: 3
-    - ingredient: {fileID: 11400000, guid: f62048cc5d80ba649aab2126a09503d7, type: 2}
-      position: {x: 0, y: 4}
+    - ingredient: {fileID: 11400000, guid: b946861748e53d14c9405120d3fb8b65, type: 2}
+      position: {x: 0, y: 3}
+      rotation: 3
+    - ingredient: {fileID: 11400000, guid: 4d4b72e56a219584883def9e9e71015a, type: 2}
+      position: {x: 0, y: 5}
       rotation: 3
     output:
-      ingredient: {fileID: 11400000, guid: a588a42f5e0db76478f1f0aeba0b9ad1, type: 2}
-      position: {x: 6, y: 4}
+      ingredient: {fileID: 11400000, guid: bf65fb4b065a012469097974e8426d4a, type: 2}
+      position: {x: 6, y: 3}
       rotation: 1
     doNotWait: 0
-  - inputs:
-    - ingredient: {fileID: 11400000, guid: 4d4b72e56a219584883def9e9e71015a, type: 2}
-      position: {x: 2, y: 6}
-      rotation: 3
-    - ingredient: {fileID: 11400000, guid: a30f4c7e15954f345ac8bd383c385328, type: 2}
-      position: {x: 4, y: 6}
-      rotation: 3
-    output:
-      ingredient: {fileID: 11400000, guid: e34fa4400b186074ba814e3f825a511e, type: 2}
-      position: {x: 3, y: 0}
-      rotation: 0
-    doNotWait: 0
   Walls:
-  - {x: 0, y: 6}
-  - {x: 0, y: 0}
-  - {x: 6, y: 0}
-  - {x: 6, y: 6}
+  - {x: 3, y: 3}
   givenIngredients: []
   caca: {fileID: 11400000, guid: 81586f882a13b0e40930719909bfcecf, type: 2}
   inputBuildingPrefab: {fileID: 8300613802659117624, guid: 96cffbe1950891d588dc69ed374df956, type: 3}
