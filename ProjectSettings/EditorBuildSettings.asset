@@ -5,15 +5,36 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: b10feb0c87f6b414eab727089e354372
   - enabled: 1
-    path: Assets/Scenes/Level1.unity
-    guid: 399baef6a133fd94bb4df53869378f4d
+    path: Assets/Scenes/Tutos/Tuto1.unity
+    guid: d990566754633f71991ee3297f86b25e
+  - enabled: 1
+    path: Assets/Scenes/Tutos/Tuto2.unity
+    guid: 9decc16099a5e4cd18775850bcea1a5c
+  - enabled: 1
+    path: Assets/Scenes/Tutos/Tuto3.unity
+    guid: 850848ecf553352fdb90befa09b66437
+  - enabled: 1
+    path: Assets/Scenes/Tutos/Tuto4.unity
+    guid: 8d6e4f00931be26a89581d59f528901c
+  - enabled: 1
+    path: Assets/Scenes/LevelBurrito.unity
+    guid: 8bf9168e0143a0041ba5c2d046f2ce68
+  - enabled: 1
+    path: Assets/Scenes/LevelFurtaFacile.unity
+    guid: a85efd2cf6ddbfa45997285ce5a57f30
+  - enabled: 1
+    path: Assets/Scenes/LevelFrodon2.unity
+    guid: daef4336c388deb4ab6e85f33bca3132
+  - enabled: 1
+    path: Assets/Scenes/LevelFrodon.unity
+    guid: f9bac616d3738bf4f9a87c8e8752e669
+  - enabled: 1
+    path: Assets/Scenes/LevelFurta2.unity
+    guid: 4a9fa42a3320b8a41a0a159cb785d675
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

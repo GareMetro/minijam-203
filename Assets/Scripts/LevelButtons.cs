@@ -12,8 +12,12 @@ public class LevelButtons : MonoBehaviour
         for(int i = 1; i <SceneManager.sceneCountInBuildSettings; ++i)
         {
             GameObject obj = Instantiate(levelButtonPrefab, transform);
-            obj.GetComponent<TextMeshProUGUI>().text = "Level " + i;
-            obj.GetComponent<Button>().onClick.AddListener(() => SceneManager.LoadScene(i));
+            obj.GetComponentInChildren<TextMeshProUGUI>().text = "Level " + i;
+            int index = i;
+            obj.GetComponent<Button>().onClick.AddListener(() =>
+                {
+                    SceneManager.LoadScene(index);
+                });
         } 
     }
 }
