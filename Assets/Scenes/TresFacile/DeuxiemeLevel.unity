@@ -1686,34 +1686,17 @@ MonoBehaviour:
   foodDict:
   - inputs:
     - ingredient: {fileID: 11400000, guid: f62048cc5d80ba649aab2126a09503d7, type: 2}
-      position: {x: 1, y: 7}
-      rotation: 2
+      position: {x: 0, y: 3}
+      rotation: 3
     - ingredient: {fileID: 11400000, guid: b946861748e53d14c9405120d3fb8b65, type: 2}
-      position: {x: 9, y: 7}
-      rotation: 2
-    output:
-      ingredient: {fileID: 11400000, guid: 041881f11659c7347966d30b1a50e50c, type: 2}
-      position: {x: 5, y: 7}
-      rotation: 2
-    timeBeforeNextOrder: 3
-  - inputs:
-    - ingredient: {fileID: 11400000, guid: 4d4b72e56a219584883def9e9e71015a, type: 2}
-      position: {x: 0, y: 7}
-      rotation: 2
+      position: {x: 0, y: 1}
+      rotation: 3
     output:
       ingredient: {fileID: 11400000, guid: 488c4fd588fe0274c8e5d64dad242dab, type: 2}
-      position: {x: 6, y: 7}
-      rotation: 2
-    timeBeforeNextOrder: 0
-  - inputs: []
-    output:
-      ingredient: {fileID: 11400000, guid: a588a42f5e0db76478f1f0aeba0b9ad1, type: 2}
-      position: {x: 4, y: 7}
-      rotation: 2
-    timeBeforeNextOrder: 0
-  Walls:
-  - {x: 3, y: 7}
-  - {x: 7, y: 7}
+      position: {x: 7, y: 2}
+      rotation: 1
+    doNotWait: 0
+  Walls: []
   givenIngredients: []
   caca: {fileID: 11400000, guid: 81586f882a13b0e40930719909bfcecf, type: 2}
   inputBuildingPrefab: {fileID: 8300613802659117624, guid: 96cffbe1950891d588dc69ed374df956, type: 3}
@@ -1747,7 +1730,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 159903be248f2184a9e3334f812766cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Grid
-  Size: {x: 11, y: 8}
+  Size: {x: 8, y: 5}
   tileSize: 20
   tileEvenMat: {fileID: 2100000, guid: a97da8887d0a6f74f82771d2ecde7990, type: 2}
   tileOddMat: {fileID: 2100000, guid: 342af6613eb49aa4689fe5ecc3b581f1, type: 2}
