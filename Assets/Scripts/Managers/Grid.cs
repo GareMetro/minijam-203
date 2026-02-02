@@ -107,7 +107,7 @@ public class Grid : MonoBehaviour
     {
         if (position.x < 0 || position.x >= Size.x)
             return null;
-        if (position.y < 0 || position.y >= Size.x)
+        if (position.y < 0 || position.y >= Size.y)
             return null;
         return PlayGrid[position.x][position.y];
     }
