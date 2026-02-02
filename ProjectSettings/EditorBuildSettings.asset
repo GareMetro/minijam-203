@@ -35,6 +35,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LevelFurta2.unity
     guid: 4a9fa42a3320b8a41a0a159cb785d675
+  - enabled: 1
+    path: Assets/Scenes/LevelUguMediumHard.unity
+    guid: a4e1b608f73e6a47e899f384d882526b
+  - enabled: 1
+    path: Assets/Scenes/LevelFurta.unity
+    guid: 8fad23f96ace27b408605b780b6fc75b
+  - enabled: 1
+    path: Assets/Scenes/LevelAikeon.unity
+    guid: 397fd02ee1b6bfc47a431f45ae44875c
+  - enabled: 1
+    path: Assets/Scenes/LevelFurta3.unity
+    guid: c5cb32cce0767b840828825109245a33
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

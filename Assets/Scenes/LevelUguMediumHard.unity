@@ -1691,20 +1691,20 @@ MonoBehaviour:
     - ingredient: {fileID: 11400000, guid: b946861748e53d14c9405120d3fb8b65, type: 2}
       position: {x: 9, y: 7}
       rotation: 2
-    output:
-      ingredient: {fileID: 11400000, guid: 041881f11659c7347966d30b1a50e50c, type: 2}
-      position: {x: 5, y: 7}
-      rotation: 2
-    doNotWait: 0
-  - inputs:
     - ingredient: {fileID: 11400000, guid: 4d4b72e56a219584883def9e9e71015a, type: 2}
       position: {x: 0, y: 7}
       rotation: 2
     output:
+      ingredient: {fileID: 11400000, guid: 041881f11659c7347966d30b1a50e50c, type: 2}
+      position: {x: 5, y: 7}
+      rotation: 2
+    doNotWait: 1
+  - inputs: []
+    output:
       ingredient: {fileID: 11400000, guid: 488c4fd588fe0274c8e5d64dad242dab, type: 2}
       position: {x: 6, y: 7}
       rotation: 2
-    doNotWait: 0
+    doNotWait: 1
   - inputs: []
     output:
       ingredient: {fileID: 11400000, guid: a588a42f5e0db76478f1f0aeba0b9ad1, type: 2}
