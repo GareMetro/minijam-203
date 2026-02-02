@@ -9,7 +9,6 @@ using DG.Tweening;
 using UnityEngine.UIElements;
 using Random = UnityEngine.Random;
 using System.Linq;
-using static UnityEditor.Rendering.CameraUI;
 
 // Permet de gérer les cas d'envoi invalides
 [System.Serializable]

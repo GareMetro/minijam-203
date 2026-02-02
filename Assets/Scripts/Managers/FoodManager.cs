@@ -40,7 +40,6 @@ public struct FoodInfo
 
 public class FoodManager : Singleton<FoodManager>
 {
-    [SerializeField] float timeBeforeFirstOrder = 50;
     [SerializeField] List<FoodInfo> foodDict;
     [SerializeField] List<Vector2Int> Walls;
     [SerializeField] List<BaseIngredient> givenIngredients;
