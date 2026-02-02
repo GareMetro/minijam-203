@@ -1246,7 +1246,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 70
+  orthographic size: 100
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1270,8 +1270,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1433331300}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.5334664, y: 0.019925129, z: -0.012571819, w: 0.84549314}
-  m_LocalPosition: {x: 78, y: 134.1, z: -21.8}
+  m_LocalRotation: {x: 0.42997858, y: -0.044877738, z: 0.02140558, w: 0.90146893}
+  m_LocalPosition: {x: 66.7, y: 86.9, z: -27.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1685,35 +1685,35 @@ MonoBehaviour:
   timeBeforeFirstOrder: 0.1
   foodDict:
   - inputs:
-    - ingredient: {fileID: 11400000, guid: a30f4c7e15954f345ac8bd383c385328, type: 2}
-      position: {x: 0, y: 4}
-      rotation: 2
     - ingredient: {fileID: 11400000, guid: 4d4b72e56a219584883def9e9e71015a, type: 2}
-      position: {x: 0, y: 5}
-      rotation: 3
+      position: {x: 0, y: 6}
+      rotation: 2
+    - ingredient: {fileID: 11400000, guid: a30f4c7e15954f345ac8bd383c385328, type: 2}
+      position: {x: 0, y: 0}
+      rotation: 0
     output:
       ingredient: {fileID: 11400000, guid: e34fa4400b186074ba814e3f825a511e, type: 2}
-      position: {x: 0, y: 1}
+      position: {x: 4, y: 6}
       rotation: 2
     doNotWait: 0
-  - inputs:
-    - ingredient: {fileID: 11400000, guid: b03f037fa6b80b74391bdae610bf6a17, type: 2}
-      position: {x: 8, y: 5}
-      rotation: 2
+  - inputs: []
     output:
-      ingredient: {fileID: 11400000, guid: 761729b5ab2801d44bcde89185dcca6e, type: 2}
-      position: {x: 8, y: 0}
+      ingredient: {fileID: 11400000, guid: 4b1149303463d3a4e84dd738f4d8c054, type: 2}
+      position: {x: 4, y: 0}
+      rotation: 0
+    doNotWait: 0
+  - inputs: []
+    output:
+      ingredient: {fileID: 11400000, guid: e34fa4400b186074ba814e3f825a511e, type: 2}
+      position: {x: 6, y: 0}
       rotation: 0
     doNotWait: 0
   Walls:
-  - {x: 1, y: 1}
-  - {x: 1, y: 4}
-  - {x: 3, y: 1}
-  - {x: 3, y: 4}
-  - {x: 5, y: 1}
-  - {x: 5, y: 4}
-  - {x: 7, y: 1}
-  - {x: 7, y: 4}
+  - {x: 2, y: 0}
+  - {x: 2, y: 1}
+  - {x: 2, y: 2}
+  - {x: 2, y: 5}
+  - {x: 2, y: 6}
   givenIngredients: []
   caca: {fileID: 11400000, guid: 81586f882a13b0e40930719909bfcecf, type: 2}
   inputBuildingPrefab: {fileID: 8300613802659117624, guid: 96cffbe1950891d588dc69ed374df956, type: 3}
@@ -1747,7 +1747,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 159903be248f2184a9e3334f812766cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Grid
-  Size: {x: 9, y: 6}
+  Size: {x: 7, y: 7}
   tileSize: 20
   tileEvenMat: {fileID: 2100000, guid: a97da8887d0a6f74f82771d2ecde7990, type: 2}
   tileOddMat: {fileID: 2100000, guid: 342af6613eb49aa4689fe5ecc3b581f1, type: 2}
