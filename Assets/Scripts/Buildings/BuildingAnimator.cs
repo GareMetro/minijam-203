@@ -59,7 +59,7 @@ public class BuildingAnimator : MonoBehaviour
     [SerializeField] Transform spoon;
     [SerializeField] Mover spoonMover;
 
-    void Awake()
+    public void SetupAnimation()
     {
         switch (buildingType)
         {
@@ -70,7 +70,7 @@ public class BuildingAnimator : MonoBehaviour
                 sparks4.transform.localScale = sparks4.transform.parent.localScale;
                 break;
             case BuildingType.Furnace:
-                smoke.transform.localScale = smoke.transform.parent.localScale;
+                smoke.transform.localScale = smoke.transform.parent.localScale/2;
                 break;
             case BuildingType.Launcher:
                 launchSequence = DOTween.Sequence();

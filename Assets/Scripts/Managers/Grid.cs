@@ -146,6 +146,11 @@ public class Grid : MonoBehaviour
         Addedbuilding.Rotation = rot;
         added.transform.localScale = (tileSize/2) * 0.95f * Vector3.one;
 
+        added.TryGetComponent<BuildingAnimator>(out BuildingAnimator animator);
+
+        if(animator!=null)
+            animator.SetupAnimation();
+
         foreach (var item in building.LocalTiles)
         {
             Vector2Int tilePos = Addedbuilding.ToWorldSpace(item);

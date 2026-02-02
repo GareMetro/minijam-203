@@ -440,7 +440,7 @@ MonoBehaviour:
   buildingAnimator: {fileID: 0}
   bouffesTickActuel: []
   bouffeTickSuivant: []
-  satisfaction: 0.5
+  satisfaction: 0
   progressBar: {fileID: 1492262455926646913}
   satisfactionPerGoodFood: 0.1
   satisfactionPerBadFood: 0.2
@@ -570,6 +570,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioPlayer
   isMusic: 0
+  playAwake: -1
   audioClips:
   - {fileID: 8300000, guid: fa69fac29a570b44b9eca3a3bb60be08, type: 3}
   selfVolumeMod: 1
