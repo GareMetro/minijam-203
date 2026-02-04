@@ -82,23 +82,23 @@ public class BuildingAnimator : MonoBehaviour
                 break;
             case BuildingType.Cutter:    
                 hatchetRotation1 = DOTween.Sequence();
-                hatchetRotation1.Append(hatchet1.DORotate(new Vector3(-70f, 0f, 0f), 0.2f, RotateMode.WorldAxisAdd));
-                hatchetRotation1.Append(hatchet1.DORotate(new Vector3(92f, 0f, 0f), 0.15f, RotateMode.WorldAxisAdd));
-                hatchetRotation1.Append(hatchet1.DORotate(new Vector3(-22f, 0f, 0f), 0.55f, RotateMode.WorldAxisAdd));
+                hatchetRotation1.Append(hatchet1.DORotate(new Vector3(70f, 0f, 0f), 0.2f, RotateMode.LocalAxisAdd));
+                hatchetRotation1.Append(hatchet1.DORotate(new Vector3(-92f, 0f, 0f), 0.15f, RotateMode.LocalAxisAdd));
+                hatchetRotation1.Append(hatchet1.DORotate(new Vector3(22f, 0f, 0f), 0.55f, RotateMode.LocalAxisAdd));
                 hatchetRotation1.SetAutoKill(false);
                 
                 hatchetRotation2 = DOTween.Sequence();
                 hatchetRotation2.AppendInterval(0.075f);
-                hatchetRotation2.Append(hatchet2.DORotate(new Vector3(70f, 0f, 0f), 0.2f, RotateMode.WorldAxisAdd));
-                hatchetRotation2.Append(hatchet2.DORotate(new Vector3(-92f, 0f, 0f), 0.15f, RotateMode.WorldAxisAdd));
-                hatchetRotation2.Append(hatchet2.DORotate(new Vector3(22f, 0f, 0f), 0.55f, RotateMode.WorldAxisAdd));
+                hatchetRotation2.Append(hatchet2.DORotate(new Vector3(70f, 0f, 0f), 0.2f, RotateMode.LocalAxisAdd));
+                hatchetRotation2.Append(hatchet2.DORotate(new Vector3(-92f, 0f, 0f), 0.15f, RotateMode.LocalAxisAdd));
+                hatchetRotation2.Append(hatchet2.DORotate(new Vector3(22f, 0f, 0f), 0.55f, RotateMode.LocalAxisAdd));
                 hatchetRotation2.SetAutoKill(false);
                 
                 hatchetRotation3 = DOTween.Sequence();
                 hatchetRotation3.AppendInterval(0.15f);
-                hatchetRotation3.Append(hatchet3.DORotate(new Vector3(-70f, 0f, 0f), 0.2f, RotateMode.WorldAxisAdd));
-                hatchetRotation3.Append(hatchet3.DORotate(new Vector3(92f, 0f, 0f), 0.15f, RotateMode.WorldAxisAdd));
-                hatchetRotation3.Append(hatchet3.DORotate(new Vector3(-22f, 0f, 0f), 0.55f, RotateMode.WorldAxisAdd));
+                hatchetRotation3.Append(hatchet3.DORotate(new Vector3(70f, 0f, 0f), 0.2f, RotateMode.LocalAxisAdd));
+                hatchetRotation3.Append(hatchet3.DORotate(new Vector3(-92f, 0f, 0f), 0.15f, RotateMode.LocalAxisAdd));
+                hatchetRotation3.Append(hatchet3.DORotate(new Vector3(22f, 0f, 0f), 0.55f, RotateMode.LocalAxisAdd));
                 hatchetRotation3.SetAutoKill(false);
                 break;
             case BuildingType.Assembler:

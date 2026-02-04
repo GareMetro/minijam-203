@@ -8,16 +8,14 @@ public class AudioManager : Singleton<AudioManager>
 
     protected override void Awake()
     {
+        AudioPlayer.soundPlayerNumbers = new();
         if (Instance != null)
         {
-            Destroy(this);
-
-            if(TryGetComponent<AudioPlayer>(out AudioPlayer audio))
-                Destroy(audio);
+            Destroy(gameObject);
             return;
         }
         Instance = this;
         if (DoNotDestroyOnLoad)
-            DontDestroyOnLoad(this);
+            DontDestroyOnLoad(this.gameObject);
     }
 }

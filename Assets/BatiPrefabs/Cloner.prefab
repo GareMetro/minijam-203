@@ -168,8 +168,8 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 0
-  moveWithCustomTransform: {fileID: 0}
+  moveWithTransform: 2
+  moveWithCustomTransform: {fileID: 8871426009321414191}
   scalingMode: 1
   randomSeed: 0
   InitialModule:
@@ -4945,7 +4945,7 @@ ParticleSystemRenderer:
   m_SortingFudge: 0
   m_NormalDirection: 1
   m_ShadowBias: 0
-  m_RenderAlignment: 1
+  m_RenderAlignment: 2
   m_Pivot: {x: 0, y: 0, z: 0}
   m_Flip: {x: 0, y: 0, z: 0}
   m_EnableGPUInstancing: 1
@@ -10000,7 +10000,7 @@ ParticleSystemRenderer:
   m_SortingFudge: 0
   m_NormalDirection: 1
   m_ShadowBias: 0
-  m_RenderAlignment: 1
+  m_RenderAlignment: 2
   m_Pivot: {x: 0, y: 0, z: 0}
   m_Flip: {x: 0, y: 0, z: 0}
   m_EnableGPUInstancing: 1
@@ -10126,7 +10126,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 0
+  moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
   randomSeed: 0
@@ -14869,7 +14869,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 23a1cc1b30bee264fa5c9e33009e4c6c, type: 2}
+  - {fileID: 2100000, guid: b558f2413fe92d847b5c35a8bee87e4e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14903,7 +14903,7 @@ ParticleSystemRenderer:
   m_SortingFudge: 0
   m_NormalDirection: 1
   m_ShadowBias: 0
-  m_RenderAlignment: 1
+  m_RenderAlignment: 2
   m_Pivot: {x: 0, y: 0, z: 0}
   m_Flip: {x: 0, y: 0, z: 0}
   m_EnableGPUInstancing: 1
@@ -15117,11 +15117,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f17d6933a9770944b4cfa305d4b32f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioPlayer
+  reducedSoundType: 2
   isMusic: 0
+  loop: 0
+  playOnStart: -1
   audioClips:
   - {fileID: 8300000, guid: 0ce254ca6328981469339196d1bdbeee, type: 3}
   - {fileID: 8300000, guid: b375c571e8131c7439f825affbf9941b, type: 3}
-  selfVolumeMod: 1
 --- !u!114 &6043509774783083340
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20117,7 +20119,7 @@ ParticleSystemRenderer:
   m_SortingFudge: 0
   m_NormalDirection: 1
   m_ShadowBias: 0
-  m_RenderAlignment: 1
+  m_RenderAlignment: 2
   m_Pivot: {x: 0, y: 0, z: 0}
   m_Flip: {x: 0, y: 0, z: 0}
   m_EnableGPUInstancing: 1

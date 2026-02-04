@@ -768,7 +768,7 @@ MonoBehaviour:
   DoNotDestroyOnLoad: 1
   generalVolume: 0.8
   musicVolume: 0.8
-  sfxVolume: 0.8
+  sfxVolume: 0.6
 --- !u!4 &196012905
 Transform:
   m_ObjectHideFlags: 0
@@ -796,11 +796,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f17d6933a9770944b4cfa305d4b32f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioPlayer
+  reducedSoundType: 0
   isMusic: 1
-  playAwake: 0
+  loop: 1
+  playOnStart: 0
   audioClips:
   - {fileID: 8300000, guid: e3f687db69366194caaf9b56318b7be1, type: 3}
-  selfVolumeMod: 0.2
+  selfVolumeMod: 1
 --- !u!82 &196012907
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4827,7 +4829,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8558239449735880949, guid: 83543ab724b6f194a8cb8d5f11a5fa29, type: 3}
       propertyPath: selfVolumeMod
-      value: 0.02
+      value: 0.075
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -5485,7 +5487,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8558239449735880949, guid: 83543ab724b6f194a8cb8d5f11a5fa29, type: 3}
       propertyPath: selfVolumeMod
-      value: 0.02
+      value: 0.075
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -6193,7 +6195,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8469915392511178305, guid: ec878cb90779ebd45b36bf433ab103f3, type: 3}
       propertyPath: selfVolumeMod
-      value: 0.006
+      value: 0.075
       objectReference: {fileID: 0}
     - target: {fileID: 154514386540215035, guid: ec878cb90779ebd45b36bf433ab103f3, type: 3}
       propertyPath: m_Name
@@ -6618,7 +6620,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -2812406898088264640, guid: 28d8e2094ce8c85a2b45619e61bfc290, type: 3}
       propertyPath: selfVolumeMod
-      value: 0.02
+      value: 0.075
       objectReference: {fileID: 0}
     - target: {fileID: 2092727004161711759, guid: 28d8e2094ce8c85a2b45619e61bfc290, type: 3}
       propertyPath: Position.x
@@ -6967,7 +6969,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -2812406898088264640, guid: 28d8e2094ce8c85a2b45619e61bfc290, type: 3}
       propertyPath: selfVolumeMod
-      value: 0.02
+      value: 0.075
       objectReference: {fileID: 0}
     - target: {fileID: 2092727004161711759, guid: 28d8e2094ce8c85a2b45619e61bfc290, type: 3}
       propertyPath: Position.x

@@ -207,11 +207,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f17d6933a9770944b4cfa305d4b32f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioPlayer
+  reducedSoundType: 6
   isMusic: 0
-  playAwake: -1
+  loop: 0
+  playOnStart: -1
   audioClips:
   - {fileID: 8300000, guid: 2af948f11285c5d439dcd8a2adc890df, type: 3}
-  selfVolumeMod: 0.5
 --- !u!114 &6110212587929086431
 MonoBehaviour:
   m_ObjectHideFlags: 0
