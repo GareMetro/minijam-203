@@ -1309,9 +1309,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "<b>Developpers : </b>\nErwan S\xE9n\xE9chal\nUgo Larsonneur\nMathieu Simon\nHugo
+  m_text: "<b>Developpers : </b>\nErwan S\xE9n\xE9chal\nUgu\nMathieu Simon\nHugo
     Pierron\nTh\xE9odore Perrin\n\n<b>3D assets :  </b>\nErwan S\xE9n\xE9chal\n\n<b>2D
-    assets :</b>\nEnzo De Carvalho Bittencourt"
+    assets :</b>\nAnzo"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 42c36a8d7199bd3458fce359d4a83ed0, type: 2}
   m_sharedMaterial: {fileID: 978528457388543064, guid: 42c36a8d7199bd3458fce359d4a83ed0, type: 2}
